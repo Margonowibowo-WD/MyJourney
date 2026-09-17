@@ -1095,34 +1095,37 @@
       }
     }
 
-    let syncDebounceTimer = null;
-    function triggerAutoSave() {
-      // Selalu simpan cadangan lokal ke browser
-      localStorage.setItem('myjourney_local_backup', JSON.stringify(AppState));
+let syncDebounceTimer = null;
+function triggerAutoSave() {
+  localStorage.setItem('myjourney_local_backup', JSON.stringify(AppState));
 
-      if (!googleSheetUrl) {
-        updateSyncUI('offline');
-        return;
-      }
+  if (!googleSheetUrl) {
+    updateSyncUI('offline');
+    return;
+  }
 
-      updateSyncUI('syncing');
-      clearTimeout(syncDebounceTimer);
-      syncDebounceTimer = setTimeout(async () => {
-        try {
-          await fetch(googleSheetUrl, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(AppState)
-          });
-          updateSyncUI('synced');
-        } catch (e) {
-          console.error(e);
-          updateSyncUI('error');
-        }
-      }, 750);
+  updateSyncUI('syncing');
+  clearTimeout(syncDebounceTimer);
+  syncDebounceTimer = setTimeout(async () => {
+    try {
+      // Menggunakan form-data URL-encoded untuk menembus proteksi CORS browser
+      await fetch(googleSheetUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          data: JSON.stringify(AppState)
+        })
+      });
+      updateSyncUI('synced');
+    } catch (e) {
+      console.error(e);
+      updateSyncUI('error');
     }
-
+  }, 750);
+}
     async function fetchCloudData() {
       if (!googleSheetUrl) {
         updateSyncUI('offline');
