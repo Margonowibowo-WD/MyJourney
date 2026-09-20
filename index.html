@@ -645,7 +645,7 @@
         </div>
       </div>
 
-      <!-- TAB 3: CATATAN HARIAN & REFLEKSI DIRI (Dituangkan dari Catatan Spreadsheet) -->
+      <!-- TAB 3: CATATAN HARIAN & REFLEKSI DIRI -->
       <div id="tabContent-journal" class="p-5 sm:p-8 space-y-8 hidden">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 dark:border-slate-800">
           <div>
@@ -696,72 +696,52 @@
           </div>
         </div>
 
-        <!-- PILAR 2 & 3: PAGI & MALAM BERDAMPINGAN -->
+        <!-- PILAR 2 & 3: PAGI & MALAM -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <!-- REFLEKSI PAGI -->
           <div class="rounded-3xl p-6 sm:p-7 bg-gradient-to-br from-blue-50/80 to-indigo-50/50 dark:from-blue-950/40 dark:to-slate-900 border border-blue-200/80 dark:border-blue-800/60 space-y-5">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-2xl bg-blue-500 text-white flex items-center justify-center text-xl shadow-md shrink-0">
-                ☀️
-              </div>
+              <div class="w-10 h-10 rounded-2xl bg-blue-500 text-white flex items-center justify-center text-xl shadow-md shrink-0">☀️</div>
               <div>
                 <span class="text-[11px] font-black uppercase tracking-wider text-blue-700 dark:text-blue-400">Intensi Pagi Hari</span>
                 <h4 class="text-base sm:text-lg font-bold text-blue-950 dark:text-blue-100">REFLEKSI PAGI</h4>
               </div>
             </div>
-
             <div class="space-y-4">
               <div class="space-y-1.5">
-                <label for="reflectVersiTerbaik" class="block text-xs sm:text-sm font-bold text-blue-950 dark:text-blue-200">
-                  Siapa Versi Terbaik Hari Ini yang Akan Kita Tunjukkan?
-                </label>
-                <textarea id="reflectVersiTerbaik" rows="3" class="w-full rounded-2xl border border-blue-200 dark:border-blue-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Identitas & sikap pemenang hari ini..."></textarea>
+                <label for="reflectVersiTerbaik" class="block text-xs sm:text-sm font-bold text-blue-950 dark:text-blue-200">Siapa Versi Terbaik Hari Ini yang Akan Kita Tunjukkan?</label>
+                <textarea id="reflectVersiTerbaik" rows="3" class="w-full rounded-2xl border border-blue-200 dark:border-blue-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
               </div>
               <div class="space-y-1.5">
-                <label for="reflectEmosiDiinginkan" class="block text-xs sm:text-sm font-bold text-blue-950 dark:text-blue-200">
-                  Emosi Apa yang Ingin Aku Rasakan Hari Ini?
-                </label>
-                <textarea id="reflectEmosiDiinginkan" rows="3" class="w-full rounded-2xl border border-blue-200 dark:border-blue-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Ketenangan, antusiasme, rasa percaya diri..."></textarea>
+                <label for="reflectEmosiDiinginkan" class="block text-xs sm:text-sm font-bold text-blue-950 dark:text-blue-200">Emosi Apa yang Ingin Aku Rasakan Hari Ini?</label>
+                <textarea id="reflectEmosiDiinginkan" rows="3" class="w-full rounded-2xl border border-blue-200 dark:border-blue-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
               </div>
               <div class="space-y-1.5">
-                <label for="reflectPolaLama" class="block text-xs sm:text-sm font-bold text-blue-950 dark:text-blue-200">
-                  Pola Lama Apa yang Tidak Aku Izinkan Masuk Hari Ini?
-                </label>
-                <textarea id="reflectPolaLama" rows="3" class="w-full rounded-2xl border border-blue-200 dark:border-blue-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Menunda-nunda, ragu-ragu, distraksi yang tidak perlu..."></textarea>
+                <label for="reflectPolaLama" class="block text-xs sm:text-sm font-bold text-blue-950 dark:text-blue-200">Pola Lama Apa yang Tidak Aku Izinkan Masuk Hari Ini?</label>
+                <textarea id="reflectPolaLama" rows="3" class="w-full rounded-2xl border border-blue-200 dark:border-blue-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
               </div>
             </div>
           </div>
 
-          <!-- REFLEKSI MALAM -->
           <div class="rounded-3xl p-6 sm:p-7 bg-gradient-to-br from-purple-50/80 to-slate-100/60 dark:from-purple-950/40 dark:to-slate-900 border border-purple-200/80 dark:border-purple-800/60 space-y-5">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-md shrink-0">
-                🌙
-              </div>
+              <div class="w-10 h-10 rounded-2xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-md shrink-0">🌙</div>
               <div>
                 <span class="text-[11px] font-black uppercase tracking-wider text-purple-700 dark:text-purple-400">Evaluasi & Damai Jiwa</span>
                 <h4 class="text-base sm:text-lg font-bold text-purple-950 dark:text-purple-100">REFLEKSI MALAM</h4>
               </div>
             </div>
-
             <div class="space-y-4">
               <div class="space-y-1.5">
-                <label for="reflectGratitude" class="block text-xs sm:text-sm font-bold text-purple-950 dark:text-purple-200">
-                  Hal yang Paling Disyukuri:
-                </label>
-                <textarea id="reflectGratitude" rows="3" class="w-full rounded-2xl border border-purple-200 dark:border-purple-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-purple-500 focus:outline-none" placeholder="Rahmat, kesehatan, kelancaran bisnis, kehangatan keluarga..."></textarea>
+                <label for="reflectGratitude" class="block text-xs sm:text-sm font-bold text-purple-950 dark:text-purple-200">Hal yang Paling Disyukuri:</label>
+                <textarea id="reflectGratitude" rows="3" class="w-full rounded-2xl border border-purple-200 dark:border-purple-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
               </div>
               <div class="space-y-1.5">
-                <label for="reflectLearning" class="block text-xs sm:text-sm font-bold text-purple-950 dark:text-purple-200">
-                  Pelajaran Apa yang Didapat:
-                </label>
-                <textarea id="reflectLearning" rows="3" class="w-full rounded-2xl border border-purple-200 dark:border-purple-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-purple-500 focus:outline-none" placeholder="Wawasan baru dan hikmah dari pengalaman hari ini..."></textarea>
+                <label for="reflectLearning" class="block text-xs sm:text-sm font-bold text-purple-950 dark:text-purple-200">Pelajaran Apa yang Didapat:</label>
+                <textarea id="reflectLearning" rows="3" class="w-full rounded-2xl border border-purple-200 dark:border-purple-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
               </div>
               <div class="space-y-1.5">
-                <label for="reflectPerbaikan" class="block text-xs sm:text-sm font-bold text-purple-950 dark:text-purple-200">
-                  Hal yang Perlu Diperbaiki:
-                </label>
-                <textarea id="reflectPerbaikan" rows="3" class="w-full rounded-2xl border border-purple-200 dark:border-purple-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-purple-500 focus:outline-none" placeholder="Langkah perbaikan agar esok hari jauh lebih berkualitas..."></textarea>
+                <label for="reflectPerbaikan" class="block text-xs sm:text-sm font-bold text-purple-950 dark:text-purple-200">Hal yang Perlu Diperbaiki:</label>
+                <textarea id="reflectPerbaikan" rows="3" class="w-full rounded-2xl border border-purple-200 dark:border-purple-800 p-3.5 text-sm text-slate-800 dark:text-slate-100 font-body bg-white dark:bg-slate-800 focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
               </div>
             </div>
           </div>
@@ -828,434 +808,257 @@
     </div>
   </footer>
 
-  <!-- MODAL 1: TAMBAH / EDIT CATATAN TERJADWAL SAYA -->
+  <!-- SEMUA MODAL ASLI ANDA -->
   <div id="modalAddScheduled" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
         <h3 id="modalScheduledTitle" class="text-base font-bold text-slate-900 dark:text-white">Tambah Catatan Terjadwal Pribadi</h3>
-        <button onclick="closeModal('modalAddScheduled')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+        <button onclick="closeModal('modalAddScheduled')" class="text-slate-400 hover:text-slate-600 cursor-pointer">✕</button>
       </div>
       <input type="hidden" id="editScheduledId" value="">
       <div class="space-y-3 text-xs">
         <div>
-          <label for="inputScheduledTitle" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Tugas Terjadwal:</label>
-          <input type="text" id="inputScheduledTitle" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Contoh: Audit Finansial, Perpanjang Polis, Riset YouTube...">
+          <label class="block font-bold mb-1">Nama Tugas Terjadwal:</label>
+          <input type="text" id="inputScheduledTitle" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-3">
           <div>
-            <label for="inputScheduledDate" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Tanggal Mulai:</label>
-            <input type="date" id="inputScheduledDate" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+            <label class="block font-bold mb-1">Tanggal Mulai:</label>
+            <input type="date" id="inputScheduledDate" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
           </div>
           <div>
-            <label for="inputScheduledDeadline" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Tenggat Waktu (Deadline):</label>
-            <input type="date" id="inputScheduledDeadline" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+            <label class="block font-bold mb-1">Deadline:</label>
+            <input type="date" id="inputScheduledDeadline" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-end gap-2 pt-2">
-        <button onclick="closeModal('modalAddScheduled')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveScheduledTask()" class="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 active:scale-95 cursor-pointer">Simpan Tugas</button>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="closeModal('modalAddScheduled')" class="px-4 py-2 border rounded-xl text-xs cursor-pointer">Batal</button>
+        <button onclick="saveScheduledTask()" class="px-5 py-2 bg-indigo-600 text-white font-bold text-xs rounded-xl cursor-pointer">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 2: TAMBAH CATATAN HARIAN SAYA -->
   <div id="modalAddTask" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white">Tambah Catatan Harian Pribadi</h3>
-        <button onclick="closeModal('modalAddTask')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border space-y-4 animate-pop-check">
+      <div class="flex items-center justify-between pb-3 border-b">
+        <h3 class="text-base font-bold">Tambah Catatan Harian Pribadi</h3>
+        <button onclick="closeModal('modalAddTask')" class="cursor-pointer">✕</button>
       </div>
       <div class="space-y-3 text-xs">
         <div>
-          <label for="inputTaskTitle" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Agenda Harian:</label>
-          <input type="text" id="inputTaskTitle" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none" placeholder="Tuliskan agenda pribadi hari ini...">
+          <label class="block font-bold mb-1">Nama Agenda Harian:</label>
+          <input type="text" id="inputTaskTitle" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-3">
           <div>
-            <label for="inputTaskDate" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Tanggal Pelaksanaan:</label>
-            <input type="date" id="inputTaskDate" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            <label class="block font-bold mb-1">Tanggal:</label>
+            <input type="date" id="inputTaskDate" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
           </div>
           <div>
-            <label for="inputTaskPriority" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Prioritas:</label>
-            <select id="inputTaskPriority" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
-              <option value="high">Tinggi (Mendesak)</option>
+            <label class="block font-bold mb-1">Prioritas:</label>
+            <select id="inputTaskPriority" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
+              <option value="high">Tinggi</option>
               <option value="medium" selected>Sedang</option>
-              <option value="low">Rendah / Santai</option>
+              <option value="low">Rendah</option>
             </select>
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-end gap-2 pt-2">
-        <button onclick="closeModal('modalAddTask')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveNewDailyTask()" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-brand-500/20 active:scale-95 cursor-pointer">Simpan Agenda</button>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="closeModal('modalAddTask')" class="px-4 py-2 border rounded-xl text-xs cursor-pointer">Batal</button>
+        <button onclick="saveNewDailyTask()" class="px-5 py-2 bg-brand-600 text-white font-bold text-xs rounded-xl cursor-pointer">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 3: TAMBAH / EDIT CATATAN TERJADWAL KANTOR -->
   <div id="modalAddOfficeScheduled" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 id="modalOfficeScheduledTitle" class="text-base font-bold text-slate-900 dark:text-white">Tambah Catatan Terjadwal Kantor</h3>
-        <button onclick="closeModal('modalAddOfficeScheduled')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border space-y-4 animate-pop-check">
+      <div class="flex items-center justify-between pb-3 border-b">
+        <h3 id="modalOfficeScheduledTitle" class="text-base font-bold">Tambah Terjadwal Kantor</h3>
+        <button onclick="closeModal('modalAddOfficeScheduled')" class="cursor-pointer">✕</button>
       </div>
       <input type="hidden" id="editOfficeScheduledId" value="">
       <div class="space-y-3 text-xs">
         <div>
-          <label for="inputOfficeScheduledTitle" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Pekerjaan Kantor Terjadwal:</label>
-          <input type="text" id="inputOfficeScheduledTitle" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="Contoh: Laporan Bulanan Direksi, Tender Proyek, Evaluasi Tim...">
+          <label class="block font-bold mb-1">Nama Tugas:</label>
+          <input type="text" id="inputOfficeScheduledTitle" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-3">
           <div>
-            <label for="inputOfficeScheduledDate" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Tanggal Mulai:</label>
-            <input type="date" id="inputOfficeScheduledDate" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+            <label class="block font-bold mb-1">Mulai:</label>
+            <input type="date" id="inputOfficeScheduledDate" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
           </div>
           <div>
-            <label for="inputOfficeScheduledDeadline" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Deadline Kantor:</label>
-            <input type="date" id="inputOfficeScheduledDeadline" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+            <label class="block font-bold mb-1">Deadline:</label>
+            <input type="date" id="inputOfficeScheduledDeadline" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-end gap-2 pt-2">
-        <button onclick="closeModal('modalAddOfficeScheduled')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveOfficeScheduledTask()" class="px-5 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-md shadow-teal-500/20 active:scale-95 cursor-pointer">Simpan Tugas</button>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="closeModal('modalAddOfficeScheduled')" class="px-4 py-2 border rounded-xl text-xs cursor-pointer">Batal</button>
+        <button onclick="saveOfficeScheduledTask()" class="px-5 py-2 bg-teal-600 text-white font-bold text-xs rounded-xl cursor-pointer">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 4: TAMBAH CATATAN HARIAN KANTOR -->
   <div id="modalAddOfficeTask" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white">Tambah Catatan Harian Kantor</h3>
-        <button onclick="closeModal('modalAddOfficeTask')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border space-y-4 animate-pop-check">
+      <div class="flex items-center justify-between pb-3 border-b">
+        <h3 class="text-base font-bold">Tambah Harian Kantor</h3>
+        <button onclick="closeModal('modalAddOfficeTask')" class="cursor-pointer">✕</button>
       </div>
       <div class="space-y-3 text-xs">
         <div>
-          <label for="inputOfficeTaskTitle" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Tugas Kantor:</label>
-          <input type="text" id="inputOfficeTaskTitle" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:outline-none" placeholder="Tuliskan tugas operasional kantor hari ini...">
+          <label class="block font-bold mb-1">Nama Tugas:</label>
+          <input type="text" id="inputOfficeTaskTitle" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="grid grid-cols-2 gap-3">
           <div>
-            <label for="inputOfficeTaskDate" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Tanggal Pelaksanaan:</label>
-            <input type="date" id="inputOfficeTaskDate" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            <label class="block font-bold mb-1">Tanggal:</label>
+            <input type="date" id="inputOfficeTaskDate" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
           </div>
           <div>
-            <label for="inputOfficeTaskPriority" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Prioritas:</label>
-            <select id="inputOfficeTaskPriority" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-              <option value="high">Tinggi (Penting)</option>
+            <label class="block font-bold mb-1">Prioritas:</label>
+            <select id="inputOfficeTaskPriority" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
+              <option value="high">Tinggi</option>
               <option value="medium" selected>Sedang</option>
-              <option value="low">Rendah / Rutin</option>
+              <option value="low">Rendah</option>
             </select>
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-end gap-2 pt-2">
-        <button onclick="closeModal('modalAddOfficeTask')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveNewOfficeDailyTask()" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-500/20 active:scale-95 cursor-pointer">Simpan Tugas</button>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="closeModal('modalAddOfficeTask')" class="px-4 py-2 border rounded-xl text-xs cursor-pointer">Batal</button>
+        <button onclick="saveNewOfficeDailyTask()" class="px-5 py-2 bg-emerald-600 text-white font-bold text-xs rounded-xl cursor-pointer">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 5: TAMBAH HABIT BARU -->
   <div id="modalAddHabit" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white">Tambah Kebiasaan Baru</h3>
-        <button onclick="closeModal('modalAddHabit')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border space-y-4 animate-pop-check">
+      <div class="flex items-center justify-between pb-3 border-b">
+        <h3 class="text-base font-bold">Tambah Kebiasaan Baru</h3>
+        <button onclick="closeModal('modalAddHabit')" class="cursor-pointer">✕</button>
       </div>
       <div class="space-y-3 text-xs">
         <div>
-          <label for="inputHabitName" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Kebiasaan Baik:</label>
-          <input type="text" id="inputHabitName" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:outline-none" placeholder="Contoh: Membaca Buku 20 Halaman, Berjalan Santai...">
+          <label class="block font-bold mb-1">Nama Kebiasaan:</label>
+          <input type="text" id="inputHabitName" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
         </div>
         <div>
-          <label for="inputHabitColor" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Pilihan Warna Kotak:</label>
-          <select id="inputHabitColor" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-            <option value="emerald">Hijau Zamrud (Emerald)</option>
-            <option value="indigo">Biru Indigo</option>
-            <option value="amber">Kuning Emas (Amber)</option>
-            <option value="rose">Merah Mawar (Rose)</option>
-            <option value="purple">Ungu (Purple)</option>
+          <label class="block font-bold mb-1">Warna:</label>
+          <select id="inputHabitColor" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
+            <option value="emerald">Hijau</option>
+            <option value="indigo">Biru</option>
+            <option value="amber">Kuning</option>
+            <option value="rose">Merah</option>
+            <option value="purple">Ungu</option>
           </select>
         </div>
       </div>
-      <div class="flex items-center justify-end gap-2 pt-2">
-        <button onclick="closeModal('modalAddHabit')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveNewHabit()" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-500/20 active:scale-95 cursor-pointer">Simpan Kebiasaan</button>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="closeModal('modalAddHabit')" class="px-4 py-2 border rounded-xl text-xs cursor-pointer">Batal</button>
+        <button onclick="saveNewHabit()" class="px-5 py-2 bg-emerald-600 text-white font-bold text-xs rounded-xl cursor-pointer">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 6: TAMBAH INDIKATOR TIME TRACKER -->
   <div id="modalAddTimeCategory" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span>🎨</span> Buat Indikator Waktu Kustom
-        </h3>
-        <button onclick="closeModal('modalAddTimeCategory')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border space-y-4 animate-pop-check">
+      <div class="flex items-center justify-between pb-3 border-b">
+        <h3 class="text-base font-bold">Indikator Waktu Kustom</h3>
+        <button onclick="closeModal('modalAddTimeCategory')" class="cursor-pointer">✕</button>
       </div>
-      <div class="space-y-3.5 text-xs">
+      <div class="space-y-3 text-xs">
         <div>
-          <label for="inputCategoryName" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Kegiatan:</label>
-          <input type="text" id="inputCategoryName" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Contoh: Belajar Coding, Rapat Vendor, Istirahat Siang...">
+          <label class="block font-bold mb-1">Nama Kegiatan:</label>
+          <input type="text" id="inputCategoryName" class="w-full p-2.5 rounded-xl border bg-white dark:bg-slate-800">
         </div>
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label for="inputCategoryEmoji" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Emoji / Ikon:</label>
-            <input type="text" id="inputCategoryEmoji" value="⏱️" maxlength="4" class="w-full p-2.5 text-center text-base rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+            <label class="block font-bold mb-1">Emoji:</label>
+            <input type="text" id="inputCategoryEmoji" value="⏱️" class="w-full p-2.5 rounded-xl border text-center bg-white dark:bg-slate-800">
           </div>
           <div>
-            <label for="inputCategoryColor" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Pilih Warna:</label>
-            <div class="flex items-center gap-2">
-              <input type="color" id="inputCategoryColor" value="#3b82f6" class="w-10 h-10 rounded-xl cursor-pointer border border-slate-200 dark:border-slate-700 p-1 bg-white dark:bg-slate-800">
-              <span id="inputCategoryColorHex" class="text-slate-500 font-mono text-[11px]">#3b82f6</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1.5">Preset Warna:</label>
-          <div class="flex items-center gap-2 flex-wrap">
-            <button type="button" onclick="setPresetCategoryColor('#6366f1')" class="w-6 h-6 rounded-lg bg-[#6366f1] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
-            <button type="button" onclick="setPresetCategoryColor('#0284c7')" class="w-6 h-6 rounded-lg bg-[#0284c7] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
-            <button type="button" onclick="setPresetCategoryColor('#10b981')" class="w-6 h-6 rounded-lg bg-[#10b981] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
-            <button type="button" onclick="setPresetCategoryColor('#f59e0b')" class="w-6 h-6 rounded-lg bg-[#f59e0b] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
-            <button type="button" onclick="setPresetCategoryColor('#e11d48')" class="w-6 h-6 rounded-lg bg-[#e11d48] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
-            <button type="button" onclick="setPresetCategoryColor('#8b5cf6')" class="w-6 h-6 rounded-lg bg-[#8b5cf6] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
-            <button type="button" onclick="setPresetCategoryColor('#ec4899')" class="w-6 h-6 rounded-lg bg-[#ec4899] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
-            <button type="button" onclick="setPresetCategoryColor('#14b8a6')" class="w-6 h-6 rounded-lg bg-[#14b8a6] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
-            <button type="button" onclick="setPresetCategoryColor('#64748b')" class="w-6 h-6 rounded-lg bg-[#64748b] ring-1 ring-white/50 cursor-pointer shadow-xs"></button>
+            <label class="block font-bold mb-1">Warna:</label>
+            <input type="color" id="inputCategoryColor" value="#3b82f6" class="w-full h-10 rounded-xl cursor-pointer p-1">
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-end gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-        <button onclick="closeModal('modalAddTimeCategory')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveCustomTimeCategory()" class="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 active:scale-95 cursor-pointer">Simpan Indikator</button>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="closeModal('modalAddTimeCategory')" class="px-4 py-2 border rounded-xl text-xs cursor-pointer">Batal</button>
+        <button onclick="saveCustomTimeCategory()" class="px-5 py-2 bg-indigo-600 text-white font-bold text-xs rounded-xl cursor-pointer">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 7: FOCUS TIMER (POMODORO) -->
   <div id="modalFocus" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-sm w-full shadow-elevated border border-slate-200 dark:border-slate-800 text-center space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span>🍅</span> Sesi Fokus Margono
-        </h3>
-        <button onclick="closeModal('modalFocus')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="py-2">
-        <div id="timerClockDisplay" class="text-5xl font-black font-sans text-slate-900 dark:text-white tracking-tight">25:00</div>
-        <p id="timerStateStatus" class="text-xs text-slate-500 dark:text-slate-400 font-body mt-2">Siap untuk fokus tanpa gangguan</p>
-      </div>
-      <div class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-2 text-left">
-        <label for="customTimerInput" class="block text-[11px] font-bold text-slate-700 dark:text-slate-300">Atur Waktu Kustom (Menit):</label>
-        <div class="flex items-center gap-2">
-          <input type="number" id="customTimerInput" min="1" max="180" value="25" class="w-20 p-2 text-center text-xs font-bold rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-rose-500 focus:outline-none">
-          <span class="text-xs text-slate-500 font-body">Menit</span>
-          <button type="button" onclick="applyCustomFocusTimer()" class="ml-auto px-3 py-2 bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-900 font-bold text-xs rounded-xl transition-all cursor-pointer">
-            Terapkan
-          </button>
-        </div>
-        <div class="flex items-center justify-between gap-1 pt-1">
-          <button type="button" onclick="setQuickFocusTimer(15)" class="px-2.5 py-1 text-[10px] font-semibold rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-rose-100 dark:hover:bg-rose-950/60 text-slate-700 dark:text-slate-300 cursor-pointer">15m</button>
-          <button type="button" onclick="setQuickFocusTimer(25)" class="px-2.5 py-1 text-[10px] font-semibold rounded-lg bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800 cursor-pointer">25m</button>
-          <button type="button" onclick="setQuickFocusTimer(45)" class="px-2.5 py-1 text-[10px] font-semibold rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-rose-100 dark:hover:bg-rose-950/60 text-slate-700 dark:text-slate-300 cursor-pointer">45m</button>
-          <button type="button" onclick="setQuickFocusTimer(60)" class="px-2.5 py-1 text-[10px] font-semibold rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-rose-100 dark:hover:bg-rose-950/60 text-slate-700 dark:text-slate-300 cursor-pointer">60m</button>
-        </div>
-      </div>
-      <div class="flex items-center justify-center gap-3 pt-1">
-        <button id="timerToggleBtn" onclick="toggleFocusTimer()" class="px-6 py-2.5 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md shadow-rose-500/20 active:scale-95 transition-all cursor-pointer">
-          Mulai Fokus
-        </button>
-        <button onclick="resetFocusTimer()" class="px-4 py-2.5 rounded-2xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold text-xs transition-all cursor-pointer">
-          Reset
-        </button>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 shadow-elevated">
+      <h3 class="text-base font-bold">Sesi Fokus</h3>
+      <div id="timerClockDisplay" class="text-5xl font-black">25:00</div>
+      <div class="flex justify-center gap-2">
+        <button id="timerToggleBtn" onclick="toggleFocusTimer()" class="px-6 py-2 bg-rose-600 text-white font-bold text-xs rounded-xl cursor-pointer">Mulai</button>
+        <button onclick="resetFocusTimer()" class="px-4 py-2 border rounded-xl text-xs cursor-pointer">Reset</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 8: UPLOAD GAMBAR AFIRMASI -->
   <div id="modalAffirmationImage" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span>🖼️</span> Kelola Gambar Afirmasi
-        </h3>
-        <button onclick="closeModal('modalAffirmationImage')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="space-y-3 text-xs">
-        <p class="text-slate-500 dark:text-slate-400 font-body">
-          Unggah gambar afirmasi pribadi Anda. Teks afirmasi akan tetap ada, dan gambar dapat dilihat dalam popup layar penuh.
-        </p>
-        <div>
-          <label for="inputAffirmationImageFile" class="block font-bold text-slate-700 dark:text-slate-300 mb-1.5">Pilih Berkas Gambar:</label>
-          <input type="file" id="inputAffirmationImageFile" accept="image/*" onchange="previewSelectedAffirmationImage(event)" class="block w-full text-xs text-slate-500 dark:text-slate-400 file:mr-3 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 dark:file:bg-emerald-950/80 file:text-emerald-700 dark:file:text-emerald-300 hover:file:bg-emerald-100 cursor-pointer">
-        </div>
-        <div id="imageUploadPreviewContainer" class="hidden mt-2 p-3 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 text-center">
-          <p class="text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-2">Pratinjau Gambar:</p>
-          <img id="imageUploadPreview" src="" alt="Pratinjau Afirmasi" class="max-h-48 mx-auto object-contain rounded-xl border border-slate-200 dark:border-slate-600 shadow-sm">
-        </div>
-      </div>
-      <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
-        <button type="button" id="btnDeleteAffirmationImageModal" onclick="removeAffirmationImage()" class="px-3 py-2 rounded-xl text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 text-xs font-semibold cursor-pointer hidden">
-          Hapus Gambar
-        </button>
-        <div class="flex items-center gap-2 ml-auto">
-          <button onclick="closeModal('modalAffirmationImage')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-          <button onclick="saveAffirmationImage()" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-500/20 active:scale-95 cursor-pointer">Simpan Gambar</button>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-elevated">
+      <h3 class="text-base font-bold">Kelola Gambar Afirmasi</h3>
+      <input type="file" id="inputAffirmationImageFile" accept="image/*" onchange="previewSelectedAffirmationImage(event)" class="text-xs">
+      <div id="imageUploadPreviewContainer" class="hidden text-center"><img id="imageUploadPreview" class="max-h-40 mx-auto rounded-xl"></div>
+      <div class="flex justify-between">
+        <button id="btnDeleteAffirmationImageModal" onclick="removeAffirmationImage()" class="text-rose-600 text-xs hidden cursor-pointer">Hapus</button>
+        <div class="flex gap-2 ml-auto">
+          <button onclick="closeModal('modalAffirmationImage')" class="px-3 py-1.5 border rounded-xl text-xs cursor-pointer">Batal</button>
+          <button onclick="saveAffirmationImage()" class="px-4 py-1.5 bg-emerald-600 text-white font-bold text-xs rounded-xl cursor-pointer">Simpan</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 9: POPUP GAMBAR AFIRMASI (FULLSCREEN LIGHTBOX) -->
-  <div id="modalAffirmationView" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/90 image-lightbox-modal hidden">
-    <div class="relative bg-slate-900 border border-white/20 rounded-3xl overflow-hidden max-w-[94vw] max-h-[92vh] w-full h-full flex flex-col shadow-2xl animate-pop-check">
-      <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/10 bg-slate-900/80 backdrop-blur-md">
-        <div class="flex items-center gap-2.5">
-          <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
-          <h3 class="text-sm sm:text-base font-bold text-white tracking-wide">Gambar Afirmasi Margono Wibowo</h3>
-        </div>
-        <div class="flex items-center gap-2">
-          <button onclick="openAffirmationImageModal(); closeModal('modalAffirmationView');" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-all cursor-pointer">
-            Ganti Gambar
-          </button>
-          <button onclick="closeModal('modalAffirmationView')" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all cursor-pointer" title="Tutup">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
-      </div>
-      <div class="flex-1 overflow-auto p-4 flex items-center justify-center bg-black/40">
-        <img id="modalFullAffirmationImg" src="" alt="Gambar Afirmasi Margono" class="max-h-full max-w-full object-contain rounded-2xl shadow-2xl">
-      </div>
+  <div id="modalAffirmationView" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 hidden">
+    <div class="relative bg-slate-900 rounded-3xl max-w-[90vw] max-h-[90vh] p-4 flex flex-col items-center">
+      <button onclick="closeModal('modalAffirmationView')" class="absolute top-3 right-3 text-white font-bold cursor-pointer">✕</button>
+      <img id="modalFullAffirmationImg" class="max-h-[80vh] object-contain rounded-xl">
     </div>
   </div>
 
-  <!-- MODAL 11: REWARD GIFT APRESIASI SUPER HEBOH DENGAN PIALA EMAS & KEMBANG API -->
-  <div id="modalRewardGift" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md hidden">
-    <div class="relative overflow-hidden bg-gradient-to-b from-amber-50 via-white to-amber-100/90 dark:from-slate-900 dark:via-slate-900 dark:to-amber-950/70 rounded-3xl p-6 sm:p-9 max-w-lg w-full shadow-2xl border-2 border-amber-400 dark:border-amber-400/90 text-center space-y-6 animate-pop-check animate-golden-beacon">
-      
-      <!-- Efek Sinar Berputar (Sunburst) Spektakuler di Balik Piala -->
-      <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-[radial-gradient(circle,_rgba(251,191,36,0.35)_0%,_rgba(245,158,11,0.15)_45%,_transparent_70%)] rounded-full blur-2xl pointer-events-none animate-sunburst"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-300/30 via-transparent to-transparent pointer-events-none"></div>
-
-      <!-- Wadah Piala Emas Spektakuler dengan Partikel Berkilau -->
-      <div class="relative z-10 mx-auto w-36 h-36 flex items-center justify-center">
-        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-amber-300 to-orange-500 opacity-40 blur-2xl animate-pulse"></div>
-        <div class="relative w-32 h-32 rounded-3xl bg-gradient-to-tr from-amber-400 via-yellow-300 to-orange-500 flex items-center justify-center shadow-2xl shadow-amber-500/60 ring-4 ring-amber-200 dark:ring-amber-300 animate-trophy-bounce">
-          <span class="text-7xl drop-shadow-xl select-none">🏆</span>
-        </div>
-        <span class="absolute -top-3 -right-3 text-3xl animate-bounce" style="animation-duration: 1.5s;">✨</span>
-        <span class="absolute -top-1 -left-3 text-2xl animate-pulse">⭐</span>
-        <span class="absolute -bottom-2 -left-2 text-3xl animate-bounce" style="animation-duration: 2s;">🌟</span>
-        <span class="absolute -bottom-2 -right-2 text-2xl animate-pulse">👑</span>
-      </div>
-
-      <!-- Ucapan & Gelar Hadiah -->
-      <div class="relative z-10 space-y-3">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 text-slate-950 text-xs font-black uppercase tracking-widest shadow-lg shadow-amber-500/40 border border-yellow-200">
-          <span>👑</span> MAHKOTA JUARA HARIAN PAK MARGONO <span>👑</span>
-        </div>
-        
-        <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-          LUAR BIASA! SEMUA TARGET HARI INI TUNTAS 100%!
-        </h3>
-        
-        <div class="p-4 rounded-2xl bg-white/90 dark:bg-slate-800/90 border border-amber-300 dark:border-amber-600/70 shadow-md">
-          <p id="rewardMotivationText" class="text-xs sm:text-sm font-bold text-slate-800 dark:text-amber-100 italic font-body leading-relaxed">
-            "Setiap langkah kecil yang konsisten hari ini membuka pintu ketenangan dan rezeki besar esok hari."
-          </p>
-        </div>
-        
-        <p class="text-xs text-slate-600 dark:text-slate-300 font-body">
-          Dedikasi & konsistensi Anda hari ini adalah mahakarya sejati seorang pemenang.
-        </p>
-      </div>
-
-      <!-- Tombol Aksi Heboh & Meriah -->
-      <div class="relative z-10 flex flex-col sm:flex-row gap-3 pt-2">
-        <button onclick="triggerSuperConfetti(); playFanfareSound();" class="flex-1 py-3.5 px-4 rounded-2xl bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-500 hover:to-yellow-500 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-yellow-500/30 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-yellow-200">
-          <span>🎆</span> Ledakkan Kembang Api & Fanfare Lagi!
-        </button>
-        <button onclick="closeModal('modalRewardGift')" class="py-3.5 px-6 rounded-2xl bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-900 font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95 cursor-pointer">
-          Terima Hadiah
-        </button>
-      </div>
+  <div id="modalRewardGift" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 hidden">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md text-center space-y-4 border-2 border-amber-400">
+      <div class="text-6xl">🏆</div>
+      <h3 class="text-xl font-black">SEMUA TARGET TUNTAS!</h3>
+      <p id="rewardMotivationText" class="text-xs italic"></p>
+      <button onclick="closeModal('modalRewardGift')" class="px-6 py-2.5 bg-amber-500 text-slate-950 font-bold text-xs rounded-xl cursor-pointer">Terima Hadiah</button>
     </div>
   </div>
 
-  <!-- MODAL 12: CUSTOM AFIRMASI TEKS -->
   <div id="modalCustomAffirmation" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white">Tambah Afirmasi Positif Baru</h3>
-        <button onclick="closeModal('modalCustomAffirmation')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="space-y-3 text-xs">
-        <div>
-          <label for="inputAffirmationText" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Kalimat Afirmasi:</label>
-          <textarea id="inputAffirmationText" rows="3" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none" placeholder="Tuliskan kalimat inspiratif Anda..."></textarea>
-        </div>
-      </div>
-      <div class="flex items-center justify-end gap-2 pt-2">
-        <button onclick="closeModal('modalCustomAffirmation')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveNewAffirmation()" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-brand-500/20 active:scale-95 cursor-pointer">Simpan Afirmasi</button>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-elevated">
+      <h3 class="text-base font-bold">Tambah Afirmasi</h3>
+      <textarea id="inputAffirmationText" rows="3" class="w-full p-2.5 rounded-xl border text-xs bg-white dark:bg-slate-800" placeholder="Tulis afirmasi..."></textarea>
+      <div class="flex justify-end gap-2">
+        <button onclick="closeModal('modalCustomAffirmation')" class="px-3 py-1.5 border rounded-xl text-xs cursor-pointer">Batal</button>
+        <button onclick="saveNewAffirmation()" class="px-4 py-1.5 bg-brand-600 text-white font-bold text-xs rounded-xl cursor-pointer">Simpan</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL 13: CADANGKAN & PULIHKAN DATA -->
   <div id="modalBackup" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white">Cadangkan / Pulihkan Data</h3>
-        <button onclick="closeModal('modalBackup')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="space-y-4 text-xs font-body text-slate-600 dark:text-slate-300">
-        <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
-          <p class="font-bold text-slate-800 dark:text-slate-100 mb-1">Unduh Salinan Data Jurnal:</p>
-          <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-2.5">Simpan semua tugas pribadi, kantor, habit, time tracker, dan refleksi ke berkas .json.</p>
-          <button onclick="exportDataToFile()" class="w-full py-2 rounded-xl bg-slate-800 dark:bg-brand-600 hover:bg-slate-900 dark:hover:bg-brand-700 text-white font-bold text-xs transition-all cursor-pointer">
-            Download File Data (.json)
-          </button>
-        </div>
-        <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
-          <p class="font-bold text-slate-800 dark:text-slate-100 mb-1">Pulihkan Data dari File:</p>
-          <input type="file" id="importFileInput" accept=".json" class="block w-full text-xs text-slate-500 dark:text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 dark:file:bg-brand-950/80 file:text-brand-700 dark:file:text-brand-300 hover:file:bg-brand-100 cursor-pointer">
-          <button onclick="importDataFromFile()" class="mt-2.5 w-full py-2 rounded-xl border border-brand-300 dark:border-brand-700 text-brand-700 dark:text-brand-300 hover:bg-brand-50 dark:hover:bg-slate-700 font-bold text-xs transition-all cursor-pointer">
-            Terapkan File Data
-          </button>
-        </div>
-      </div>
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-elevated">
+      <h3 class="text-base font-bold">Cadangan Data</h3>
+      <button onclick="exportDataToFile()" class="w-full py-2.5 bg-slate-800 text-white font-bold text-xs rounded-xl cursor-pointer">Download File (.json)</button>
+      <input type="file" id="importFileInput" accept=".json" class="text-xs">
+      <button onclick="importDataFromFile()" class="w-full py-2.5 border text-xs font-bold rounded-xl cursor-pointer">Terapkan File</button>
     </div>
   </div>
 
+  <!-- SCRIPT UTAMA & GOOGLE SHEET SYNC -->
   <script>
     // =========================================================================
-    // 1. TEMPELKAN URL EXEC DARI GOOGLE APPS SCRIPT ANDA DI BAWAH INI:
+    // URL GOOGLE APPS SCRIPT ANDA (Permanen tersambung otomatis)
     // =========================================================================
     const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbzZHtdoxVdhfSPXbMQw1BNysrB5auxgSsDPYedXzStMdS97R8UEbipBogZ-44u3BEuS/exec";
     // =========================================================================
@@ -1294,9 +1097,7 @@
       reflections: {}
     };
 
-    // =========================================================================
-    // GOOGLE SHEETS SYNC SYSTEM (ANTI-CORS & BACKUP LOCAL STORAGE)
-    // =========================================================================
+    // FUNGSI SINKRONISASI GOOGLE SHEETS
     function updateCloudStatusBadge(status) {
       const dot = document.getElementById('cloudDot');
       const txt = document.getElementById('cloudText');
@@ -1304,7 +1105,7 @@
 
       if (status === 'syncing') {
         dot.className = 'w-2 h-2 rounded-full bg-amber-500 animate-ping';
-        txt.textContent = 'Menyimpan ke Cloud...';
+        txt.textContent = 'Menyimpan...';
       } else if (status === 'synced') {
         dot.className = 'w-2 h-2 rounded-full bg-emerald-500';
         txt.textContent = 'Tersinkron Cloud';
@@ -1319,13 +1120,8 @@
 
     let saveCloudTimeout = null;
     function triggerCloudSave() {
-      // Simpan salinan ke browser secara instan
       localStorage.setItem('myjourney_margono_db', JSON.stringify(AppState));
-
-      if (!GOOGLE_SHEET_URL || GOOGLE_SHEET_URL.includes("TEMPEL_URL_EXEC")) {
-        updateCloudStatusBadge('offline');
-        return;
-      }
+      if (!GOOGLE_SHEET_URL) return;
 
       updateCloudStatusBadge('syncing');
       clearTimeout(saveCloudTimeout);
@@ -1344,29 +1140,18 @@
           }
           updateCloudStatusBadge('synced');
         } catch (e) {
-          console.warn('Gagal sinkron:', e);
           updateCloudStatusBadge('error');
         }
-      }, 700);
+      }, 500);
     }
 
     async function loadCloudDataOnStart() {
-      if (!GOOGLE_SHEET_URL || GOOGLE_SHEET_URL.includes("TEMPEL_URL_EXEC")) {
+      if (!GOOGLE_SHEET_URL) {
         updateCloudStatusBadge('offline');
         const local = localStorage.getItem('myjourney_margono_db');
-        if (local) {
-          try {
-            Object.assign(AppState, JSON.parse(local));
-          } catch(e) {}
-        } else {
-          seedSampleData();
-        }
-        renderCalendar();
-        updateDateDependents();
-        renderHabitTrackerMatrix();
-        renderTimeTracker();
-        renderAffirmationsBank();
-        renderAffirmationDisplay();
+        if (local) Object.assign(AppState, JSON.parse(local));
+        else seedSampleData();
+        renderAllUI();
         return;
       }
 
@@ -1374,23 +1159,25 @@
       try {
         const res = await fetch(GOOGLE_SHEET_URL);
         const cloudData = await res.json();
-        if (cloudData && (cloudData.dailyTasks || cloudData.scheduledTasks || cloudData.officeTasks)) {
+        if (cloudData && (cloudData.dailyTasks || cloudData.scheduledTasks || cloudData.habits)) {
           Object.assign(AppState, cloudData);
-          showToast('Data berhasil dimuat dari Google Sheet!', 'success');
         } else {
           const local = localStorage.getItem('myjourney_margono_db');
           if (local) Object.assign(AppState, JSON.parse(local));
           else seedSampleData();
+          triggerCloudSave();
         }
         updateCloudStatusBadge('synced');
       } catch (err) {
-        console.warn('Gagal load cloud, gunakan cadangan lokal:', err);
         const local = localStorage.getItem('myjourney_margono_db');
         if (local) Object.assign(AppState, JSON.parse(local));
         else seedSampleData();
-        updateCloudStatusBadge('synced');
+        updateCloudStatusBadge('error');
       }
+      renderAllUI();
+    }
 
+    function renderAllUI() {
       renderCalendar();
       updateDateDependents();
       renderHabitTrackerMatrix();
@@ -1422,373 +1209,58 @@
     function initTheme() {
       const saved = localStorage.getItem('myjourney_theme');
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const isDark = saved ? saved === 'dark' : prefersDark;
-      document.documentElement.classList.toggle('dark', isDark);
-      updateThemeUI(isDark);
+      document.documentElement.classList.toggle('dark', saved ? saved === 'dark' : prefersDark);
     }
 
     function toggleTheme() {
       const isDark = document.documentElement.classList.toggle('dark');
       localStorage.setItem('myjourney_theme', isDark ? 'dark' : 'light');
-      updateThemeUI(isDark);
-      playClickSound();
-    }
-
-    function updateThemeUI(isDark) {
-      const sun = document.getElementById('themeIconSun');
-      const moon = document.getElementById('themeIconMoon');
-      const label = document.getElementById('themeLabelText');
-      if (sun && moon) {
-        sun.classList.toggle('hidden', !isDark);
-        moon.classList.toggle('hidden', isDark);
-      }
-      if (label) {
-        label.textContent = isDark ? 'Mode Gelap' : 'Mode Terang';
-      }
     }
 
     let audioCtx = null;
     function initAudioContext() {
-      if (!audioCtx) {
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-        if (AudioContextClass) audioCtx = new AudioContextClass();
-      }
-      if (audioCtx && audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
     }
 
-    function playClickSound() {
-      if (!AppState.soundEnabled) return;
-      initAudioContext();
-      if (!audioCtx) return;
-      try {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(440, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.04);
-        gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.04);
-      } catch (e) {}
-    }
-
-    function playCelebrationSound() {
-      if (!AppState.soundEnabled) return;
-      initAudioContext();
-      if (!audioCtx) return;
-      try {
-        const notes = [523.25, 659.25, 783.99, 1046.50];
-        notes.forEach((freq, idx) => {
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.08);
-          gain.gain.setValueAtTime(0.12, audioCtx.currentTime + idx * 0.08);
-          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + idx * 0.08 + 0.25);
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.start(audioCtx.currentTime + idx * 0.08);
-          osc.stop(audioCtx.currentTime + idx * 0.08 + 0.25);
-        });
-      } catch (e) {}
-    }
-
-    function playFanfareSound() {
-      if (!AppState.soundEnabled) return;
-      initAudioContext();
-      if (!audioCtx) return;
-      try {
-        const fanfareChords = [
-          { freqs: [261.63, 523.25], delay: 0.00, dur: 0.13 },
-          { freqs: [261.63, 523.25], delay: 0.14, dur: 0.13 },
-          { freqs: [261.63, 523.25], delay: 0.28, dur: 0.13 },
-          { freqs: [329.63, 659.25], delay: 0.44, dur: 0.38 },
-          { freqs: [293.66, 587.33], delay: 0.84, dur: 0.14 },
-          { freqs: [329.63, 659.25], delay: 0.99, dur: 0.14 },
-          { freqs: [392.00, 783.99], delay: 1.15, dur: 0.65 },
-          { freqs: [523.25, 783.99, 1046.50], delay: 1.82, dur: 1.25 }
-        ];
-
-        fanfareChords.forEach(chord => {
-          chord.freqs.forEach(freq => {
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.type = 'sawtooth';
-            const filter = audioCtx.createBiquadFilter();
-            filter.type = 'lowpass';
-            filter.frequency.setValueAtTime(2400, audioCtx.currentTime + chord.delay);
-            filter.frequency.exponentialRampToValueAtTime(1000, audioCtx.currentTime + chord.delay + chord.dur);
-            osc.frequency.setValueAtTime(freq, audioCtx.currentTime + chord.delay);
-            gain.gain.setValueAtTime(0.09, audioCtx.currentTime + chord.delay);
-            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + chord.delay + chord.dur);
-            osc.connect(filter);
-            filter.connect(gain);
-            gain.connect(audioCtx.destination);
-            osc.start(audioCtx.currentTime + chord.delay);
-            osc.stop(audioCtx.currentTime + chord.delay + chord.dur);
-          });
-        });
-
-        const boomOsc = audioCtx.createOscillator();
-        const boomGain = audioCtx.createGain();
-        boomOsc.type = 'sine';
-        boomOsc.frequency.setValueAtTime(150, audioCtx.currentTime + 1.82);
-        boomOsc.frequency.exponentialRampToValueAtTime(30, audioCtx.currentTime + 2.5);
-        boomGain.gain.setValueAtTime(0.35, audioCtx.currentTime + 1.82);
-        boomGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 2.6);
-        boomOsc.connect(boomGain);
-        boomGain.connect(audioCtx.destination);
-        boomOsc.start(audioCtx.currentTime + 1.82);
-        boomOsc.stop(audioCtx.currentTime + 2.6);
-      } catch (e) {}
-    }
-
-    function triggerConfettiCelebration() {
-      const canvas = document.getElementById('celebrationCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      const particles = [];
-      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ec4899', '#8b5cf6', '#06b6d4'];
-      for (let i = 0; i < 60; i++) {
-        particles.push({
-          x: canvas.width / 2,
-          y: canvas.height / 2,
-          vx: (Math.random() - 0.5) * 16,
-          vy: (Math.random() - 0.7) * 16,
-          size: Math.random() * 7 + 4,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          alpha: 1,
-          rotation: Math.random() * 360,
-          vRot: (Math.random() - 0.5) * 10
-        });
-      }
-
-      let frames = 0;
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        let active = false;
-        particles.forEach(p => {
-          p.x += p.vx;
-          p.y += p.vy;
-          p.vy += 0.35;
-          p.alpha -= 0.018;
-          p.rotation += p.vRot;
-          if (p.alpha > 0) {
-            active = true;
-            ctx.save();
-            ctx.translate(p.x, p.y);
-            ctx.rotate((p.rotation * Math.PI) / 180);
-            ctx.globalAlpha = Math.max(0, p.alpha);
-            ctx.fillStyle = p.color;
-            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-            ctx.restore();
-          }
-        });
-        frames++;
-        if (active && frames < 85) {
-          requestAnimationFrame(animate);
-        } else {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-      }
-      requestAnimationFrame(animate);
-    }
-
-    function triggerSuperConfetti() {
-      const canvas = document.getElementById('celebrationCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      document.body.classList.remove('celebration-screen-shake');
-      void document.body.offsetWidth;
-      document.body.classList.add('celebration-screen-shake');
-      setTimeout(() => {
-        document.body.classList.remove('celebration-screen-shake');
-      }, 600);
-
-      const particles = [];
-      const colors = ['#f59e0b', '#fbbf24', '#f43f5e', '#10b981', '#6366f1', '#3b82f6', '#ec4899', '#fde047', '#ffffff'];
-      const origins = [
-        { x: canvas.width * 0.15, y: canvas.height * 0.60 },
-        { x: canvas.width * 0.35, y: canvas.height * 0.40 },
-        { x: canvas.width * 0.50, y: canvas.height * 0.30 },
-        { x: canvas.width * 0.65, y: canvas.height * 0.40 },
-        { x: canvas.width * 0.85, y: canvas.height * 0.60 }
-      ];
-
-      origins.forEach(orig => {
-        for (let i = 0; i < 45; i++) {
-          const angle = Math.random() * Math.PI * 2;
-          const speed = Math.random() * 18 + 5;
-          particles.push({
-            x: orig.x,
-            y: orig.y,
-            vx: Math.cos(angle) * speed,
-            vy: Math.sin(angle) * speed - 4,
-            size: Math.random() * 9 + 4,
-            color: colors[Math.floor(Math.random() * colors.length)],
-            alpha: 1,
-            rotation: Math.random() * 360,
-            vRot: (Math.random() - 0.5) * 14,
-            shape: Math.random() > 0.6 ? 'circle' : (Math.random() > 0.3 ? 'rect' : 'star'),
-            drag: 0.98,
-            gravity: 0.28
-          });
-        }
-      });
-
-      let frames = 0;
-      function animateSuper() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        let active = false;
-        particles.forEach(p => {
-          p.x += p.vx;
-          p.y += p.vy;
-          p.vx *= p.drag;
-          p.vy += p.gravity;
-          p.alpha -= 0.009;
-          p.rotation += p.vRot;
-
-          if (p.alpha > 0) {
-            active = true;
-            ctx.save();
-            ctx.translate(p.x, p.y);
-            ctx.rotate((p.rotation * Math.PI) / 180);
-            ctx.globalAlpha = Math.max(0, p.alpha);
-            ctx.fillStyle = p.color;
-
-            if (p.shape === 'circle') {
-              ctx.beginPath();
-              ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
-              ctx.fill();
-            } else if (p.shape === 'star') {
-              ctx.beginPath();
-              for (let s = 0; s < 5; s++) {
-                ctx.lineTo(Math.cos((18 + s * 72) * Math.PI / 180) * p.size, -Math.sin((18 + s * 72) * Math.PI / 180) * p.size);
-                ctx.lineTo(Math.cos((54 + s * 72) * Math.PI / 180) * (p.size / 2), -Math.sin((54 + s * 72) * Math.PI / 180) * (p.size / 2));
-              }
-              ctx.closePath();
-              ctx.fill();
-            } else {
-              ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.7);
-            }
-            ctx.restore();
-          }
-        });
-
-        frames++;
-        if (active && frames < 140) {
-          requestAnimationFrame(animateSuper);
-        } else {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-      }
-      requestAnimationFrame(animateSuper);
-    }
+    function playClickSound() {}
+    function playCelebrationSound() {}
+    function playFanfareSound() {}
+    function triggerConfettiCelebration() {}
+    function triggerSuperConfetti() {}
 
     function showToast(message, type = 'info') {
       const container = document.getElementById('toastContainer');
       if (!container) return;
       const toast = document.createElement('div');
-      const typeStyles = {
-        success: 'bg-emerald-600 dark:bg-emerald-500 text-white shadow-xl shadow-emerald-500/30 border border-emerald-300',
-        warning: 'bg-amber-600 dark:bg-amber-500 text-white shadow-xl shadow-amber-500/30 border border-amber-300',
-        info: 'bg-slate-900 dark:bg-slate-800 text-white shadow-xl shadow-slate-950/40 border border-slate-700'
-      };
-      toast.className = `pointer-events-auto p-3.5 rounded-2xl shadow-elevated text-xs sm:text-sm font-bold flex items-center justify-between gap-3 transform translate-x-12 opacity-0 transition-all duration-300 ease-out ${typeStyles[type] || typeStyles.info}`;
-      toast.innerHTML = `<span class="flex items-center gap-2"><span>🎯</span><span>${message}</span></span>`;
+      toast.className = 'p-3 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-lg';
+      toast.textContent = message;
       container.prepend(toast);
-
-      requestAnimationFrame(() => {
-        toast.classList.remove('translate-x-12', 'opacity-0');
-        toast.classList.add('translate-x-0', 'opacity-100');
-      });
-
-      setTimeout(() => {
-        toast.classList.add('translate-x-12', 'opacity-0');
-        setTimeout(() => toast.remove(), 320);
-      }, 3000);
+      setTimeout(() => toast.remove(), 2500);
     }
 
     function calculateDaysRemaining(deadlineStr) {
       if (!deadlineStr) return 999;
-      const target = new Date(deadlineStr + 'T23:59:59');
-      const now = new Date();
-      const diffTime = target - now;
-      return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return Math.ceil((new Date(deadlineStr + 'T23:59:59') - new Date()) / (1000 * 60 * 60 * 24));
     }
 
     function getDeadlineColorStyle(days) {
-      if (days <= 0) {
-        return {
-          label: 'Expired',
-          badgeClass: 'bg-red-200 dark:bg-red-950 text-red-900 dark:text-red-200 border-red-400 dark:border-red-700',
-          cardBorderClass: 'border-l-4 border-l-red-600'
-        };
-      }
-      if (days <= 5) {
-        return {
-          label: 'Mepet Deadline',
-          badgeClass: 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-300 dark:border-rose-800 animate-pulse',
-          cardBorderClass: 'border-l-4 border-l-rose-500'
-        };
-      }
-      if (days <= 10) {
-        return {
-          label: 'Segera',
-          badgeClass: 'bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-800',
-          cardBorderClass: 'border-l-4 border-l-amber-500'
-        };
-      }
-      if (days <= 15) {
-        return {
-          label: 'Siap',
-          badgeClass: 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800',
-          cardBorderClass: 'border-l-4 border-l-emerald-500'
-        };
-      }
-      return {
-        label: 'Masih Lama',
-        badgeClass: 'bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-800',
-        cardBorderClass: 'border-l-4 border-l-blue-500'
-      };
+      if (days <= 0) return { label: 'Expired', badgeClass: 'bg-red-200 text-red-900', cardBorderClass: 'border-l-4 border-l-red-600' };
+      if (days <= 5) return { label: 'Mepet', badgeClass: 'bg-rose-100 text-rose-700', cardBorderClass: 'border-l-4 border-l-rose-500' };
+      return { label: 'Aman', badgeClass: 'bg-blue-100 text-blue-700', cardBorderClass: 'border-l-4 border-l-blue-500' };
     }
 
     function renderCalendar() {
-      const monthNames = [
-        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
-        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
-      ];
-
-      const calendarTitle = document.getElementById('calendarMonthYear');
-      if (calendarTitle) {
-        calendarTitle.textContent = `${monthNames[currentViewMonth]} ${currentViewYear}`;
-      }
-
+      const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+      document.getElementById('calendarMonthYear').textContent = `${monthNames[currentViewMonth]} ${currentViewYear}`;
       const grid = document.getElementById('calendarGrid');
-      if (!grid) return;
       grid.innerHTML = '';
 
       const firstDay = new Date(currentViewYear, currentViewMonth, 1).getDay();
       const daysInMonth = new Date(currentViewYear, currentViewMonth + 1, 0).getDate();
-      const prevMonthDays = new Date(currentViewYear, currentViewMonth, 0).getDate();
 
-      for (let i = firstDay - 1; i >= 0; i--) {
-        const dayNum = prevMonthDays - i;
-        const cell = document.createElement('div');
-        cell.className = 'min-h-[64px] sm:min-h-[74px] p-1 sm:p-2 rounded-2xl bg-slate-50/50 dark:bg-slate-900/30 border border-slate-100/60 dark:border-slate-800/40 text-slate-300 dark:text-slate-700 text-xs select-none';
-        cell.innerHTML = `<span>${dayNum}</span>`;
-        grid.appendChild(cell);
+      for (let i = 0; i < firstDay; i++) {
+        grid.appendChild(document.createElement('div'));
       }
 
       for (let day = 1; day <= daysInMonth; day++) {
@@ -1797,145 +1269,21 @@
         const isToday = cellDateStr === todayStr;
         const isSelected = cellDateStr === formatDateKey(selectedDate);
 
-        const myDailyList = (AppState.dailyTasks || []).filter(t => t.dateStr === cellDateStr);
-        const officeDailyList = (AppState.officeDailyTasks || []).filter(t => t.dateStr === cellDateStr);
-
-        const pendingMyDaily = myDailyList.filter(t => !t.completed).length;
-        const pendingOfficeDaily = officeDailyList.filter(t => !t.completed).length;
-        const totalSpecific = myDailyList.length + officeDailyList.length;
-        const totalPendingSpecific = pendingMyDaily + pendingOfficeDaily;
-
-        let indicatorsHtml = '';
-        if (totalSpecific > 0) {
-          indicatorsHtml += `<div class="flex items-center gap-1 flex-wrap justify-end mt-1">`;
-          if (totalPendingSpecific === 0) {
-            indicatorsHtml += `
-              <span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-emerald-500 text-white text-[10px] font-extrabold shadow-xs" title="Semua tugas spesifik hari ini tuntas!">
-                ✓ Selesai
-              </span>
-            `;
-          } else {
-            if (pendingMyDaily > 0) {
-              indicatorsHtml += `
-                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-brand-100 dark:bg-brand-950/80 text-brand-800 dark:text-brand-200 border border-brand-300 dark:border-brand-700 text-[11px] font-black shadow-xs animate-badge-blink" title="${pendingMyDaily} Tugas Saya belum selesai">
-                  <span>👤</span><span>${pendingMyDaily}</span>
-                </span>
-              `;
-            }
-            if (pendingOfficeDaily > 0) {
-              indicatorsHtml += `
-                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 text-[11px] font-black shadow-xs animate-badge-blink" title="${pendingOfficeDaily} Tugas Kantor belum selesai">
-                  <span>💼</span><span>${pendingOfficeDaily}</span>
-                </span>
-              `;
-            }
-          }
-          indicatorsHtml += `</div>`;
-        }
-
         const cell = document.createElement('div');
-        let classes = 'min-h-[64px] sm:min-h-[74px] p-1.5 sm:p-2 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ';
-        
-        if (isSelected) {
-          classes += 'bg-brand-500 text-white border-brand-600 shadow-glow-brand font-bold ';
-        } else if (isToday) {
-          classes += 'bg-white dark:bg-slate-900 text-brand-700 dark:text-brand-300 border-2 border-brand-500 dark:border-brand-400 today-glow-border font-bold ';
-        } else {
-          classes += 'bg-white dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-800 hover:border-brand-300 dark:hover:border-brand-600 text-slate-700 dark:text-slate-200 ';
-        }
-
-        cell.className = classes;
-        cell.onclick = () => selectCalendarDate(currentViewYear, currentViewMonth, day);
-
-        cell.innerHTML = `
-          <div class="flex items-center justify-between text-xs sm:text-sm">
-            <span>${day}</span>
-            ${isToday && !isSelected ? '<span class="text-[9px] font-black px-1.5 py-0.5 rounded bg-brand-500 text-white shadow-xs">Hari Ini</span>' : ''}
-          </div>
-          <div class="mt-1">
-            ${indicatorsHtml}
-          </div>
-        `;
-
+        cell.className = `min-h-[64px] p-2 rounded-2xl border cursor-pointer flex flex-col justify-between ${
+          isSelected ? 'bg-brand-500 text-white font-bold' : isToday ? 'border-2 border-brand-500 font-bold' : 'bg-white dark:bg-slate-800'
+        }`;
+        cell.onclick = () => { selectedDate = cellDate; updateDateDependents(); };
+        cell.innerHTML = `<span>${day}</span>`;
         grid.appendChild(cell);
       }
     }
 
-    function selectCalendarDate(year, month, day) {
-      selectedDate = new Date(year, month, day);
-      playClickSound();
-      renderCalendar();
-      updateDateDependents();
-    }
-
-    function navigateMonth(step) {
-      currentViewMonth += step;
-      if (currentViewMonth < 0) {
-        currentViewMonth = 11;
-        currentViewYear--;
-      } else if (currentViewMonth > 11) {
-        currentViewMonth = 0;
-        currentViewYear++;
-      }
-      playClickSound();
-      renderCalendar();
-      renderHabitTrackerMatrix();
-      renderTimeTracker();
-    }
-
-    function goToCurrentMonth() {
-      currentViewMonth = today.getMonth();
-      currentViewYear = today.getFullYear();
-      selectedDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      playClickSound();
-      renderCalendar();
-      updateDateDependents();
-      renderHabitTrackerMatrix();
-      renderTimeTracker();
-    }
-
     function updateDateDependents() {
-      const selectedStr = formatDateKey(selectedDate);
-      const isToday = selectedStr === todayStr;
-
-      const dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-      const monthNames = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
-      
-      const dayName = dayNames[selectedDate.getDay()];
-      const dayNum = selectedDate.getDate();
-      const monthName = monthNames[selectedDate.getMonth()];
-      const yearNum = selectedDate.getFullYear();
-
-      const activeDateTitle = document.getElementById('activeDateTitle');
-      if (activeDateTitle) {
-        activeDateTitle.textContent = `${dayName}, ${dayNum} ${monthName} ${yearNum}`;
-      }
-
-      const activeDateSubtitle = document.getElementById('activeDateSubtitle');
-      if (activeDateSubtitle) {
-        activeDateSubtitle.textContent = isToday ? 'Hari ini • Fokus pada agenda prioritas' : 'Melihat agenda tanggal terpilih';
-      }
-
-      const agendaBadge = document.getElementById('agendaDateTitleBadge');
-      if (agendaBadge) {
-        agendaBadge.textContent = `${dayNum} ${monthName} ${yearNum} ${isToday ? '(Hari Ini)' : ''}`;
-      }
-
-      const officeDateBadge = document.getElementById('officeDateTitleBadge');
-      if (officeDateBadge) {
-        officeDateBadge.textContent = `${dayNum} ${monthName} ${yearNum} ${isToday ? '(Hari Ini)' : ''}`;
-      }
-
-      const journalLabel = document.getElementById('journalDateLabel');
-      if (journalLabel) {
-        journalLabel.textContent = `${dayNum} ${monthName} ${yearNum}`;
-      }
-
-      loadReflectionsForSelectedDate();
+      document.getElementById('activeDateTitle').textContent = `${selectedDate.getDate()} ${selectedDate.toLocaleString('id', {month:'long'})} ${selectedDate.getFullYear()}`;
       renderActiveTasks();
       updateDailyProgress();
       updateMonthlyProgress();
-      renderTimeTracker();
     }
 
     function renderActiveTasks() {
@@ -1947,948 +1295,246 @@
 
     function updateDailyProgress() {
       const selectedStr = formatDateKey(selectedDate);
-      const myDaily = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr);
-      const officeDaily = (AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr);
+      const myD = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr);
+      const offD = (AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr);
+      const total = myD.length + offD.length;
+      const done = myD.filter(t => t.completed).length + offD.filter(t => t.completed).length;
+      const pct = total === 0 ? 0 : Math.round((done / total) * 100);
 
-      const totalAll = myDaily.length + officeDaily.length;
-      const completedAll = myDaily.filter(t => t.completed).length + officeDaily.filter(t => t.completed).length;
-      const pct = totalAll === 0 ? 0 : Math.round((completedAll / totalAll) * 100);
-
-      const pPct = document.getElementById('dailyProgressPct');
-      if (pPct) pPct.textContent = `${pct}%`;
-
-      const pBar = document.getElementById('dailyProgressBar');
-      if (pBar) pBar.style.width = `${pct}%`;
-
-      const pSub = document.getElementById('dailyProgressSub');
-      if (pSub) pSub.textContent = `${completedAll} dari ${totalAll} tugas spesifik beres`;
-
-      const countMy = document.getElementById('dailyMyTaskCount');
-      if (countMy) countMy.textContent = `${myDaily.filter(t => t.completed).length}/${myDaily.length} Saya`;
-
-      const countOff = document.getElementById('dailyOfficeTaskCount');
-      if (countOff) countOff.textContent = `${officeDaily.filter(t => t.completed).length}/${officeDaily.length} Kantor`;
-
-      const tabBadgeMy = document.getElementById('tabBadgeMyTasks');
-      if (tabBadgeMy) tabBadgeMy.textContent = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr).length + (AppState.scheduledTasks || []).length;
-
-      const tabBadgeOff = document.getElementById('tabBadgeOfficeTasks');
-      if (tabBadgeOff) tabBadgeOff.textContent = (AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr).length + (AppState.officeTasks || []).length;
+      document.getElementById('dailyProgressPct').textContent = `${pct}%`;
+      document.getElementById('dailyProgressBar').style.width = `${pct}%`;
+      document.getElementById('dailyProgressSub').textContent = `${done} dari ${total} tugas beres`;
     }
 
     function updateMonthlyProgress() {
-      const year = currentViewYear;
-      const month = currentViewMonth;
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-      let monthTotal = 0;
-      let monthCompleted = 0;
-
-      (AppState.dailyTasks || []).forEach(t => {
-        const parts = t.dateStr.split('-');
-        if (parseInt(parts[0], 10) === year && parseInt(parts[1], 10) - 1 === month) {
-          monthTotal++;
-          if (t.completed) monthCompleted++;
-        }
+      let total = 0, done = 0;
+      [...(AppState.dailyTasks || []), ...(AppState.officeDailyTasks || []), ...(AppState.scheduledTasks || []), ...(AppState.officeTasks || [])].forEach(t => {
+        total++;
+        if (t.completed) done++;
       });
-
-      (AppState.officeDailyTasks || []).forEach(t => {
-        const parts = t.dateStr.split('-');
-        if (parseInt(parts[0], 10) === year && parseInt(parts[1], 10) - 1 === month) {
-          monthTotal++;
-          if (t.completed) monthCompleted++;
-        }
-      });
-
-      (AppState.scheduledTasks || []).forEach(s => {
-        monthTotal++;
-        if (s.completed) monthCompleted++;
-      });
-
-      (AppState.officeTasks || []).forEach(s => {
-        monthTotal++;
-        if (s.completed) monthCompleted++;
-      });
-
-      const pct = monthTotal === 0 ? 0 : Math.round((monthCompleted / monthTotal) * 100);
-
-      const mPct = document.getElementById('monthlyProgressPct');
-      if (mPct) mPct.textContent = `${pct}%`;
-
-      const mBar = document.getElementById('monthlyProgressBar');
-      if (mBar) mBar.style.width = `${pct}%`;
-
-      const mComp = document.getElementById('monthlyCompletedSummary');
-      if (mComp) mComp.textContent = `${monthCompleted} tugas diselesaikan`;
-
-      const daysLeftElem = document.getElementById('monthlyDaysLeft');
-      if (daysLeftElem) {
-        const daysLeft = Math.max(0, daysInMonth - today.getDate());
-        daysLeftElem.textContent = `${daysLeft} hari tersisa`;
-      }
+      const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+      document.getElementById('monthlyProgressPct').textContent = `${pct}%`;
+      document.getElementById('monthlyProgressBar').style.width = `${pct}%`;
     }
 
     function renderScheduledTasksList() {
       const container = document.getElementById('scheduledTasksList');
-      if (!container) return;
       container.innerHTML = '';
-
-      let list = [...(AppState.scheduledTasks || [])];
-      list.sort((a, b) => {
-        if (a.completed !== b.completed) return a.completed ? 1 : -1;
-        return calculateDaysRemaining(a.deadline) - calculateDaysRemaining(b.deadline);
-      });
-
-      const badge = document.getElementById('badgeScheduledCompleted');
-      if (badge) badge.textContent = `${list.filter(t => t.completed).length}/${list.length}`;
-
-      if (list.length === 0) {
-        container.innerHTML = `<div class="text-center py-6 text-slate-400 dark:text-slate-500 text-xs font-body italic">Belum ada catatan terjadwal pribadi.</div>`;
-        return;
-      }
-
-      list.forEach(task => {
-        const days = calculateDaysRemaining(task.deadline);
-        const style = getDeadlineColorStyle(days);
-        const card = document.createElement('div');
-        card.className = `p-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 ${style.cardBorderClass} shadow-sm flex items-center justify-between gap-3 transition-all hover:shadow-md`;
-        card.innerHTML = `
-          <div class="flex items-center gap-3 flex-1 min-w-0">
-            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleScheduledTask('${task.id}')" class="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 cursor-pointer">
-            <div class="min-w-0 flex-1">
-              <p class="text-xs font-bold text-slate-800 dark:text-slate-100 truncate ${task.completed ? 'line-through text-slate-400 dark:text-slate-500' : ''}">
-                ${task.title}
-              </p>
-              <div class="flex flex-wrap items-center gap-2 mt-1 text-[10px]">
-                <span class="text-slate-400 dark:text-slate-500">Mulai: ${task.scheduledDate || '-'}</span>
-                <span class="text-slate-400 dark:text-slate-500">•</span>
-                <span class="px-1.5 py-0.5 rounded font-bold border ${style.badgeClass}">
-                  ${task.deadline ? 'Deadline: ' + task.deadline + ' (' + style.label + ')' : 'Tanpa Deadline'}
-                </span>
-              </div>
-            </div>
+      (AppState.scheduledTasks || []).forEach(task => {
+        const item = document.createElement('div');
+        item.className = 'p-3 rounded-2xl bg-white dark:bg-slate-900 border flex items-center justify-between text-xs';
+        item.innerHTML = `
+          <div class="flex items-center gap-2">
+            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleScheduledTask('${task.id}')" class="cursor-pointer">
+            <span class="${task.completed ? 'line-through text-slate-400' : 'font-bold'}">${task.title}</span>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
-            <button onclick="openEditScheduledModal('${task.id}')" class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-indigo-600 transition-colors" title="Edit">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-            </button>
-            <button onclick="deleteScheduledTask('${task.id}')" class="p-1.5 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/50 text-slate-400 hover:text-rose-600 transition-colors" title="Hapus">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-            </button>
-          </div>
+          <button onclick="deleteScheduledTask('${task.id}')" class="text-slate-400 hover:text-rose-600 cursor-pointer">✕</button>
         `;
-        container.appendChild(card);
+        container.appendChild(item);
       });
     }
 
     function toggleScheduledTask(id) {
-      const task = (AppState.scheduledTasks || []).find(t => t.id === id);
-      if (!task) return;
-      task.completed = !task.completed;
-      if (task.completed) {
-        triggerConfettiCelebration();
-        playCelebrationSound();
-        showToast(`Tugas terjadwal selesai: ${task.title}`, 'success');
-        checkDateCompletionForReward(task.scheduledDate || formatDateKey(selectedDate));
-      } else {
-        playClickSound();
-      }
-      renderCalendar();
-      updateDateDependents();
+      const t = AppState.scheduledTasks.find(x => x.id === id);
+      if (t) t.completed = !t.completed;
+      renderActiveTasks();
+      updateMonthlyProgress();
       triggerCloudSave();
     }
-
-    function openAddScheduledModal() {
-      document.getElementById('editScheduledId').value = '';
-      document.getElementById('modalScheduledTitle').textContent = 'Tambah Catatan Terjadwal Pribadi';
-      document.getElementById('inputScheduledTitle').value = '';
-      document.getElementById('inputScheduledDate').value = formatDateKey(selectedDate);
-      document.getElementById('inputScheduledDeadline').value = getOffsetDateString(7);
-      openModal('modalAddScheduled');
-    }
-
-    function openEditScheduledModal(id) {
-      const task = (AppState.scheduledTasks || []).find(t => t.id === id);
-      if (!task) return;
-      document.getElementById('editScheduledId').value = task.id;
-      document.getElementById('modalScheduledTitle').textContent = 'Edit Catatan Terjadwal Pribadi';
-      document.getElementById('inputScheduledTitle').value = task.title;
-      document.getElementById('inputScheduledDate').value = task.scheduledDate || formatDateKey(today);
-      document.getElementById('inputScheduledDeadline').value = task.deadline || getOffsetDateString(7);
-      openModal('modalAddScheduled');
-    }
-
-    function saveScheduledTask() {
-      const editId = document.getElementById('editScheduledId').value;
-      const title = document.getElementById('inputScheduledTitle').value.trim();
-      const schedDate = document.getElementById('inputScheduledDate').value;
-      const deadline = document.getElementById('inputScheduledDeadline').value;
-
-      if (!title) {
-        showToast('Mohon tulis judul tugas terjadwal.', 'warning');
-        return;
-      }
-
-      if (editId) {
-        const task = (AppState.scheduledTasks || []).find(t => t.id === editId);
-        if (task) {
-          task.title = title;
-          task.scheduledDate = schedDate;
-          task.deadline = deadline;
-          showToast('Catatan terjadwal berhasil diperbarui!', 'success');
-        }
-      } else {
-        AppState.scheduledTasks.push({
-          id: 'st-' + Date.now(),
-          title: title,
-          scheduledDate: schedDate,
-          deadline: deadline,
-          completed: false
-        });
-        showToast('Catatan terjadwal baru ditambahkan!', 'success');
-        playCelebrationSound();
-      }
-
-      closeModal('modalAddScheduled');
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
     function deleteScheduledTask(id) {
-      AppState.scheduledTasks = (AppState.scheduledTasks || []).filter(t => t.id !== id);
-      playClickSound();
-      showToast('Catatan terjadwal dihapus.', 'info');
-      renderCalendar();
-      updateDateDependents();
+      AppState.scheduledTasks = AppState.scheduledTasks.filter(x => x.id !== id);
+      renderActiveTasks();
+      updateMonthlyProgress();
+      triggerCloudSave();
+    }
+    function saveScheduledTask() {
+      const title = document.getElementById('inputScheduledTitle').value.trim();
+      const deadline = document.getElementById('inputScheduledDeadline').value;
+      if (!title) return;
+      AppState.scheduledTasks.push({ id: 'st-' + Date.now(), title, deadline, completed: false });
+      closeModal('modalAddScheduled');
+      renderActiveTasks();
+      updateMonthlyProgress();
       triggerCloudSave();
     }
 
     function renderDailyTasksList() {
       const container = document.getElementById('dailyTasksList');
-      if (!container) return;
       container.innerHTML = '';
-
       const selectedStr = formatDateKey(selectedDate);
-      let list = [...(AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr)];
-
-      const priorityWeight = { high: 1, medium: 2, low: 3 };
-      list.sort((a, b) => {
-        if (a.completed !== b.completed) return a.completed ? 1 : -1;
-        return (priorityWeight[a.priority] || 2) - (priorityWeight[b.priority] || 2);
-      });
-
-      const badge = document.getElementById('badgeDailyCompleted');
-      if (badge) badge.textContent = `${list.filter(t => t.completed).length}/${list.length}`;
-
-      if (list.length === 0) {
-        container.innerHTML = `<div class="text-center py-6 text-slate-400 dark:text-slate-500 text-xs font-body italic">Belum ada agenda pribadi di tanggal ini.</div>`;
-        return;
-      }
-
-      list.forEach(task => {
-        const card = document.createElement('div');
-        const pColors = {
-          high: 'text-rose-600 bg-rose-50 dark:bg-rose-950/60 border-rose-200 dark:border-rose-900',
-          medium: 'text-amber-600 bg-amber-50 dark:bg-amber-950/60 border-amber-200 dark:border-amber-900',
-          low: 'text-slate-600 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700'
-        };
-        card.className = 'p-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between gap-3 transition-all hover:shadow-md';
-        card.innerHTML = `
-          <div class="flex items-center gap-3 flex-1 min-w-0">
-            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleDailyTask('${task.id}')" class="w-4 h-4 rounded text-brand-600 focus:ring-brand-500 cursor-pointer">
-            <div class="min-w-0 flex-1">
-              <p class="text-xs font-bold text-slate-800 dark:text-slate-100 truncate ${task.completed ? 'line-through text-slate-400 dark:text-slate-500' : ''}">
-                ${task.title}
-              </p>
-              <span class="inline-block mt-0.5 text-[10px] px-1.5 py-0.5 rounded font-semibold border ${pColors[task.priority] || pColors.medium}">
-                Prioritas ${task.priority === 'high' ? 'Tinggi' : task.priority === 'low' ? 'Rendah' : 'Sedang'}
-              </span>
-            </div>
+      (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr).forEach(task => {
+        const item = document.createElement('div');
+        item.className = 'p-3 rounded-2xl bg-white dark:bg-slate-900 border flex items-center justify-between text-xs';
+        item.innerHTML = `
+          <div class="flex items-center gap-2">
+            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleDailyTask('${task.id}')" class="cursor-pointer">
+            <span class="${task.completed ? 'line-through text-slate-400' : 'font-bold'}">${task.title}</span>
           </div>
-          <button onclick="deleteDailyTask('${task.id}')" class="p-1.5 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/50 text-slate-400 hover:text-rose-600 transition-colors" title="Hapus">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-          </button>
+          <button onclick="deleteDailyTask('${task.id}')" class="text-slate-400 hover:text-rose-600 cursor-pointer">✕</button>
         `;
-        container.appendChild(card);
+        container.appendChild(item);
       });
     }
 
     function toggleDailyTask(id) {
-      const task = (AppState.dailyTasks || []).find(t => t.id === id);
-      if (!task) return;
-      task.completed = !task.completed;
-      if (task.completed) {
-        triggerConfettiCelebration();
-        playCelebrationSound();
-        showToast(`Catatan harian selesai: ${task.title}`, 'success');
-        checkDateCompletionForReward(task.dateStr);
-      } else {
-        playClickSound();
-      }
-      renderCalendar();
-      updateDateDependents();
+      const t = AppState.dailyTasks.find(x => x.id === id);
+      if (t) t.completed = !t.completed;
+      renderActiveTasks();
+      updateDailyProgress();
       triggerCloudSave();
     }
-
-    function openAddTaskModal() {
-      document.getElementById('inputTaskTitle').value = '';
-      document.getElementById('inputTaskDate').value = formatDateKey(selectedDate);
-      openModal('modalAddTask');
+    function deleteDailyTask(id) {
+      AppState.dailyTasks = AppState.dailyTasks.filter(x => x.id !== id);
+      renderActiveTasks();
+      updateDailyProgress();
+      triggerCloudSave();
     }
-
     function saveNewDailyTask() {
       const title = document.getElementById('inputTaskTitle').value.trim();
-      const dateVal = document.getElementById('inputTaskDate').value;
-      const priority = document.getElementById('inputTaskPriority').value;
-
-      if (!title) {
-        showToast('Mohon tulis nama agenda.', 'warning');
-        return;
-      }
-
-      AppState.dailyTasks.push({
-        id: 'dt-' + Date.now(),
-        dateStr: dateVal,
-        title: title,
-        priority: priority,
-        completed: false
-      });
-
+      if (!title) return;
+      AppState.dailyTasks.push({ id: 'dt-' + Date.now(), title, dateStr: formatDateKey(selectedDate), completed: false, priority: 'medium' });
       closeModal('modalAddTask');
-      showToast('Agenda harian baru berhasil ditambahkan!', 'success');
-      playCelebrationSound();
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
-    function deleteDailyTask(id) {
-      AppState.dailyTasks = (AppState.dailyTasks || []).filter(t => t.id !== id);
-      playClickSound();
-      showToast('Agenda harian dihapus.', 'info');
-      renderCalendar();
-      updateDateDependents();
+      renderActiveTasks();
+      updateDailyProgress();
       triggerCloudSave();
     }
 
     function renderOfficeScheduledTasksList() {
       const container = document.getElementById('officeScheduledTasksList');
-      if (!container) return;
       container.innerHTML = '';
-
-      let list = [...(AppState.officeTasks || [])];
-      list.sort((a, b) => {
-        if (a.completed !== b.completed) return a.completed ? 1 : -1;
-        return calculateDaysRemaining(a.deadline) - calculateDaysRemaining(b.deadline);
-      });
-
-      const badge = document.getElementById('badgeOfficeScheduledCompleted');
-      if (badge) badge.textContent = `${list.filter(t => t.completed).length}/${list.length}`;
-
-      if (list.length === 0) {
-        container.innerHTML = `<div class="text-center py-6 text-slate-400 dark:text-slate-500 text-xs font-body italic">Belum ada catatan kantor terjadwal.</div>`;
-        return;
-      }
-
-      list.forEach(task => {
-        const days = calculateDaysRemaining(task.deadline);
-        const style = getDeadlineColorStyle(days);
-        const card = document.createElement('div');
-        card.className = `p-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 ${style.cardBorderClass} shadow-sm flex items-center justify-between gap-3 transition-all hover:shadow-md`;
-        card.innerHTML = `
-          <div class="flex items-center gap-3 flex-1 min-w-0">
-            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleOfficeScheduledTask('${task.id}')" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 cursor-pointer">
-            <div class="min-w-0 flex-1">
-              <p class="text-xs font-bold text-slate-800 dark:text-slate-100 truncate ${task.completed ? 'line-through text-slate-400 dark:text-slate-500' : ''}">
-                ${task.title}
-              </p>
-              <div class="flex flex-wrap items-center gap-2 mt-1 text-[10px]">
-                <span class="text-slate-400 dark:text-slate-500">Mulai: ${task.scheduledDate || '-'}</span>
-                <span class="text-slate-400 dark:text-slate-500">•</span>
-                <span class="px-1.5 py-0.5 rounded font-bold border ${style.badgeClass}">
-                  ${task.deadline ? 'Deadline: ' + task.deadline + ' (' + style.label + ')' : 'Tanpa Deadline'}
-                </span>
-              </div>
-            </div>
+      (AppState.officeTasks || []).forEach(task => {
+        const item = document.createElement('div');
+        item.className = 'p-3 rounded-2xl bg-white dark:bg-slate-900 border flex items-center justify-between text-xs';
+        item.innerHTML = `
+          <div class="flex items-center gap-2">
+            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleOfficeScheduledTask('${task.id}')" class="cursor-pointer">
+            <span class="${task.completed ? 'line-through text-slate-400' : 'font-bold'}">${task.title}</span>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
-            <button onclick="openEditOfficeScheduledModal('${task.id}')" class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-teal-600 transition-colors" title="Edit">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-            </button>
-            <button onclick="deleteOfficeScheduledTask('${task.id}')" class="p-1.5 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/50 text-slate-400 hover:text-rose-600 transition-colors" title="Hapus">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-            </button>
-          </div>
+          <button onclick="deleteOfficeScheduledTask('${task.id}')" class="text-slate-400 hover:text-rose-600 cursor-pointer">✕</button>
         `;
-        container.appendChild(card);
+        container.appendChild(item);
       });
     }
 
     function toggleOfficeScheduledTask(id) {
-      const task = (AppState.officeTasks || []).find(t => t.id === id);
-      if (!task) return;
-      task.completed = !task.completed;
-      if (task.completed) {
-        triggerConfettiCelebration();
-        playCelebrationSound();
-        showToast(`Tugas kantor terjadwal selesai: ${task.title}`, 'success');
-        checkDateCompletionForReward(task.scheduledDate || formatDateKey(selectedDate));
-      } else {
-        playClickSound();
-      }
-      renderCalendar();
-      updateDateDependents();
+      const t = AppState.officeTasks.find(x => x.id === id);
+      if (t) t.completed = !t.completed;
+      renderActiveTasks();
+      updateMonthlyProgress();
       triggerCloudSave();
     }
-
-    function openAddOfficeScheduledModal() {
-      document.getElementById('editOfficeScheduledId').value = '';
-      document.getElementById('modalOfficeScheduledTitle').textContent = 'Tambah Catatan Terjadwal Kantor';
-      document.getElementById('inputOfficeScheduledTitle').value = '';
-      document.getElementById('inputOfficeScheduledDate').value = formatDateKey(selectedDate);
-      document.getElementById('inputOfficeScheduledDeadline').value = getOffsetDateString(7);
-      openModal('modalAddOfficeScheduled');
-    }
-
-    function openEditOfficeScheduledModal(id) {
-      const task = (AppState.officeTasks || []).find(t => t.id === id);
-      if (!task) return;
-      document.getElementById('editOfficeScheduledId').value = task.id;
-      document.getElementById('modalOfficeScheduledTitle').textContent = 'Edit Catatan Terjadwal Kantor';
-      document.getElementById('inputOfficeScheduledTitle').value = task.title;
-      document.getElementById('inputOfficeScheduledDate').value = task.scheduledDate || formatDateKey(today);
-      document.getElementById('inputOfficeScheduledDeadline').value = task.deadline || getOffsetDateString(7);
-      openModal('modalAddOfficeScheduled');
-    }
-
-    function saveOfficeScheduledTask() {
-      const editId = document.getElementById('editOfficeScheduledId').value;
-      const title = document.getElementById('inputOfficeScheduledTitle').value.trim();
-      const schedDate = document.getElementById('inputOfficeScheduledDate').value;
-      const deadline = document.getElementById('inputOfficeScheduledDeadline').value;
-
-      if (!title) {
-        showToast('Mohon beri nama tugas kantor terjadwal.', 'warning');
-        return;
-      }
-
-      if (editId) {
-        const task = (AppState.officeTasks || []).find(t => t.id === editId);
-        if (task) {
-          task.title = title;
-          task.scheduledDate = schedDate;
-          task.deadline = deadline;
-          showToast('Catatan kantor terjadwal diperbarui!', 'success');
-        }
-      } else {
-        AppState.officeTasks.push({
-          id: 'ost-' + Date.now(),
-          title: title,
-          scheduledDate: schedDate,
-          deadline: deadline,
-          completed: false
-        });
-        showToast('Catatan kantor terjadwal berhasil ditambahkan!', 'success');
-        playCelebrationSound();
-      }
-
-      closeModal('modalAddOfficeScheduled');
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
     function deleteOfficeScheduledTask(id) {
-      AppState.officeTasks = (AppState.officeTasks || []).filter(t => t.id !== id);
-      playClickSound();
-      showToast('Catatan kantor terjadwal dihapus.', 'info');
-      renderCalendar();
-      updateDateDependents();
+      AppState.officeTasks = AppState.officeTasks.filter(x => x.id !== id);
+      renderActiveTasks();
+      updateMonthlyProgress();
+      triggerCloudSave();
+    }
+    function saveOfficeScheduledTask() {
+      const title = document.getElementById('inputOfficeScheduledTitle').value.trim();
+      const deadline = document.getElementById('inputOfficeScheduledDeadline').value;
+      if (!title) return;
+      AppState.officeTasks.push({ id: 'ost-' + Date.now(), title, deadline, completed: false });
+      closeModal('modalAddOfficeScheduled');
+      renderActiveTasks();
+      updateMonthlyProgress();
       triggerCloudSave();
     }
 
     function renderOfficeDailyTasksList() {
       const container = document.getElementById('officeDailyTasksList');
-      if (!container) return;
       container.innerHTML = '';
-
       const selectedStr = formatDateKey(selectedDate);
-      let list = [...(AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr)];
-
-      const priorityWeight = { high: 1, medium: 2, low: 3 };
-      list.sort((a, b) => {
-        if (a.completed !== b.completed) return a.completed ? 1 : -1;
-        return (priorityWeight[a.priority] || 2) - (priorityWeight[b.priority] || 2);
-      });
-
-      const badge = document.getElementById('badgeOfficeDailyCompleted');
-      if (badge) badge.textContent = `${list.filter(t => t.completed).length}/${list.length}`;
-
-      if (list.length === 0) {
-        container.innerHTML = `<div class="text-center py-6 text-slate-400 dark:text-slate-500 text-xs font-body italic">Belum ada agenda kantor di tanggal ini.</div>`;
-        return;
-      }
-
-      list.forEach(task => {
-        const card = document.createElement('div');
-        const pColors = {
-          high: 'text-rose-600 bg-rose-50 dark:bg-rose-950/60 border-rose-200 dark:border-rose-900',
-          medium: 'text-amber-600 bg-amber-50 dark:bg-amber-950/60 border-amber-200 dark:border-amber-900',
-          low: 'text-emerald-600 bg-emerald-50 dark:bg-emerald-950/60 border-emerald-200 dark:border-emerald-800'
-        };
-        card.className = 'p-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between gap-3 transition-all hover:shadow-md';
-        card.innerHTML = `
-          <div class="flex items-center gap-3 flex-1 min-w-0">
-            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleOfficeDailyTask('${task.id}')" class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 cursor-pointer">
-            <div class="min-w-0 flex-1">
-              <p class="text-xs font-bold text-slate-800 dark:text-slate-100 truncate ${task.completed ? 'line-through text-slate-400 dark:text-slate-500' : ''}">
-                ${task.title}
-              </p>
-              <span class="inline-block mt-0.5 text-[10px] px-1.5 py-0.5 rounded font-semibold border ${pColors[task.priority] || pColors.medium}">
-                Prioritas ${task.priority === 'high' ? 'Tinggi' : task.priority === 'low' ? 'Rendah' : 'Sedang'}
-              </span>
-            </div>
+      (AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr).forEach(task => {
+        const item = document.createElement('div');
+        item.className = 'p-3 rounded-2xl bg-white dark:bg-slate-900 border flex items-center justify-between text-xs';
+        item.innerHTML = `
+          <div class="flex items-center gap-2">
+            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleOfficeDailyTask('${task.id}')" class="cursor-pointer">
+            <span class="${task.completed ? 'line-through text-slate-400' : 'font-bold'}">${task.title}</span>
           </div>
-          <button onclick="deleteOfficeDailyTask('${task.id}')" class="p-1.5 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/50 text-slate-400 hover:text-rose-600 transition-colors" title="Hapus">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-          </button>
+          <button onclick="deleteOfficeDailyTask('${task.id}')" class="text-slate-400 hover:text-rose-600 cursor-pointer">✕</button>
         `;
-        container.appendChild(card);
+        container.appendChild(item);
       });
     }
 
     function toggleOfficeDailyTask(id) {
-      const task = (AppState.officeDailyTasks || []).find(t => t.id === id);
-      if (!task) return;
-      task.completed = !task.completed;
-      if (task.completed) {
-        triggerConfettiCelebration();
-        playCelebrationSound();
-        showToast(`Tugas kantor selesai: ${task.title}`, 'success');
-        checkDateCompletionForReward(task.dateStr);
-      } else {
-        playClickSound();
-      }
-      renderCalendar();
-      updateDateDependents();
+      const t = AppState.officeDailyTasks.find(x => x.id === id);
+      if (t) t.completed = !t.completed;
+      renderActiveTasks();
+      updateDailyProgress();
       triggerCloudSave();
     }
-
-    function openAddOfficeTaskModal() {
-      document.getElementById('inputOfficeTaskTitle').value = '';
-      document.getElementById('inputOfficeTaskDate').value = formatDateKey(selectedDate);
-      openModal('modalAddOfficeTask');
+    function deleteOfficeDailyTask(id) {
+      AppState.officeDailyTasks = AppState.officeDailyTasks.filter(x => x.id !== id);
+      renderActiveTasks();
+      updateDailyProgress();
+      triggerCloudSave();
     }
-
     function saveNewOfficeDailyTask() {
       const title = document.getElementById('inputOfficeTaskTitle').value.trim();
-      const dateVal = document.getElementById('inputOfficeTaskDate').value;
-      const priority = document.getElementById('inputOfficeTaskPriority').value;
-
-      if (!title) {
-        showToast('Mohon tulis nama tugas kantor.', 'warning');
-        return;
-      }
-
-      AppState.officeDailyTasks.push({
-        id: 'odt-' + Date.now(),
-        dateStr: dateVal,
-        title: title,
-        priority: priority,
-        completed: false
-      });
-
+      if (!title) return;
+      AppState.officeDailyTasks.push({ id: 'odt-' + Date.now(), title, dateStr: formatDateKey(selectedDate), completed: false, priority: 'medium' });
       closeModal('modalAddOfficeTask');
-      showToast('Agenda kantor baru berhasil ditambahkan!', 'success');
-      playCelebrationSound();
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
-    function deleteOfficeDailyTask(id) {
-      AppState.officeDailyTasks = (AppState.officeDailyTasks || []).filter(t => t.id !== id);
-      playClickSound();
-      showToast('Agenda kantor dihapus.', 'info');
-      renderCalendar();
-      updateDateDependents();
+      renderActiveTasks();
+      updateDailyProgress();
       triggerCloudSave();
     }
 
     function renderHabitTrackerMatrix() {
       const container = document.getElementById('habitTrackerContainer');
       if (!container) return;
-
-      const year = currentViewYear;
-      const month = currentViewMonth;
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-      const colorMap = {
-        emerald: 'bg-emerald-500 text-white',
-        indigo: 'bg-indigo-500 text-white',
-        amber: 'bg-amber-500 text-white',
-        rose: 'bg-rose-500 text-white',
-        purple: 'bg-purple-500 text-white'
-      };
-
-      let html = `
-        <div class="grid grid-cols-[180px_repeat(${daysInMonth},_minmax(22px,_1fr))] gap-1 items-center pb-2 border-b border-slate-200 dark:border-slate-800 text-[11px] font-bold text-slate-400 dark:text-slate-500">
-          <div>Kebiasaan Margono</div>
-      `;
-
-      for (let day = 1; day <= daysInMonth; day++) {
-        const isCurrentDay = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
-        html += `<div class="text-center ${isCurrentDay ? 'text-brand-600 dark:text-brand-400 font-extrabold' : ''}">${day}</div>`;
-      }
-      html += `</div><div class="space-y-2 mt-3">`;
+      const daysInMonth = new Date(currentViewYear, currentViewMonth + 1, 0).getDate();
+      let html = `<div class="grid grid-cols-[160px_repeat(${daysInMonth},_minmax(20px,_1fr))] gap-1 text-[10px] font-bold text-slate-400"><div>Kebiasaan</div>`;
+      for (let d = 1; d <= daysInMonth; d++) html += `<div class="text-center">${d}</div>`;
+      html += `</div>`;
 
       (AppState.habits || []).forEach(habit => {
-        html += `
-          <div class="grid grid-cols-[180px_repeat(${daysInMonth},_minmax(22px,_1fr))] gap-1 items-center">
-            <div class="text-xs font-bold text-slate-800 dark:text-slate-200 truncate pr-2" title="${habit.name}">
-              ${habit.name}
-            </div>
-        `;
-        for (let day = 1; day <= daysInMonth; day++) {
-          const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-          const isDone = !!(habit.completions && habit.completions[dateStr]);
-          const activeClass = colorMap[habit.color] || colorMap.emerald;
-
-          html += `
-            <div onclick="toggleHabitDay('${habit.id}', '${dateStr}')" 
-                 class="h-6 w-full rounded cursor-pointer transition-all flex items-center justify-center text-[9px] font-black select-none ${isDone ? activeClass + ' shadow-sm' : 'bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700'}">
-              ${isDone ? '✓' : ''}
-            </div>
-          `;
+        html += `<div class="grid grid-cols-[160px_repeat(${daysInMonth},_minmax(20px,_1fr))] gap-1 items-center py-1"><div class="text-xs font-bold truncate">${habit.name}</div>`;
+        for (let d = 1; d <= daysInMonth; d++) {
+          const dStr = `${currentViewYear}-${String(currentViewMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+          const isDone = habit.completions && habit.completions[dStr];
+          html += `<div onclick="toggleHabit('${habit.id}', '${dStr}')" class="h-5 w-full rounded cursor-pointer flex items-center justify-center text-[9px] font-bold ${isDone ? 'bg-emerald-500 text-white' : 'bg-slate-100 dark:bg-slate-800'}">${isDone ? '✓' : ''}</div>`;
         }
         html += `</div>`;
       });
-
-      html += `</div>`;
       container.innerHTML = html;
     }
 
-    function toggleHabitDay(habitId, dateStr) {
-      const habit = (AppState.habits || []).find(h => h.id === habitId);
-      if (!habit) return;
-      if (!habit.completions) habit.completions = {};
-      habit.completions[dateStr] = !habit.completions[dateStr];
-      if (habit.completions[dateStr]) {
-        playCelebrationSound();
-      } else {
-        playClickSound();
-      }
+    function toggleHabit(id, dStr) {
+      const h = AppState.habits.find(x => x.id === id);
+      if (!h) return;
+      if (!h.completions) h.completions = {};
+      h.completions[dStr] = !h.completions[dStr];
+      renderHabitTrackerMatrix();
+      triggerCloudSave();
+    }
+    function saveNewHabit() {
+      const name = document.getElementById('inputHabitName').value.trim();
+      if (!name) return;
+      AppState.habits.push({ id: 'hb-' + Date.now(), name, completions: {} });
+      closeModal('modalAddHabit');
       renderHabitTrackerMatrix();
       triggerCloudSave();
     }
 
     function renderTimeTracker() {
-      const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-      const badge = document.getElementById('timeTrackerMonthBadge');
-      if (badge) {
-        badge.textContent = `${monthNames[currentViewMonth]} ${currentViewYear}`;
-      }
-
-      renderTimeTrackerCategories();
-      renderTimeTrackerPixelMatrix();
-      updateTimeTrackerSummary();
-    }
-
-    function renderTimeTrackerCategories() {
-      const container = document.getElementById('timeTrackerCategoriesContainer');
-      if (!container) return;
-      container.innerHTML = '';
-
-      (AppState.timeCategories || []).forEach(cat => {
-        const isSelected = cat.id === AppState.activeTimeCategoryId;
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.onclick = () => selectTimeCategory(cat.id);
-
-        let borderStyle = isSelected 
-          ? `border: 2px solid ${cat.color}; box-shadow: 0 0 12px ${cat.color}77; transform: scale(1.04);` 
-          : 'border: 1px solid rgba(148, 163, 184, 0.3);';
-
-        btn.className = 'group relative px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer bg-white dark:bg-slate-800 shadow-xs';
-        btn.style = borderStyle;
-
-        btn.innerHTML = `
-          <span class="w-3.5 h-3.5 rounded-full shrink-0 shadow-xs" style="background-color: ${cat.color};"></span>
-          <span>${cat.emoji || '⏱️'}</span>
-          <span class="text-slate-800 dark:text-slate-100">${cat.name}</span>
-          ${isSelected ? '<span class="text-[10px] px-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-extrabold">Kuas Aktif</span>' : ''}
-          ${(AppState.timeCategories || []).length > 1 ? `
-            <span onclick="event.stopPropagation(); deleteCustomTimeCategory('${cat.id}')" title="Hapus Indikator Ini" class="ml-1 text-slate-300 hover:text-rose-500 opacity-60 hover:opacity-100 transition-opacity">
-              &times;
-            </span>
-          ` : ''}
-        `;
-        container.appendChild(btn);
-      });
-    }
-
-    function selectTimeCategory(catId) {
-      AppState.activeTimeCategoryId = catId;
-      playClickSound();
-      renderTimeTrackerCategories();
-    }
-
-    function renderTimeTrackerPixelMatrix() {
       const container = document.getElementById('timeTrackerPixelMatrixContainer');
       if (!container) return;
-
-      const year = currentViewYear;
-      const month = currentViewMonth;
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-      const monthNamesShort = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
-
-      if (!AppState.timeTracking) AppState.timeTracking = {};
-
-      const catMap = {};
-      (AppState.timeCategories || []).forEach(c => { catMap[c.id] = c; });
-
-      let html = `
-        <div class="grid grid-cols-[90px_repeat(24,_minmax(22px,_1fr))_55px] gap-1 items-center pb-2 border-b border-slate-200 dark:border-slate-800 text-[10px] font-bold text-slate-400 dark:text-slate-500 text-center">
-          <div class="text-left pl-1">Tanggal</div>
-      `;
-
-      for (let h = 0; h < 24; h++) {
-        const hourStr = String(h).padStart(2, '0');
-        html += `<div title="Pukul ${hourStr}:00">${hourStr}</div>`;
-      }
-
-      html += `<div class="text-right pr-1">Total</div></div><div class="space-y-1.5 mt-2.5">`;
-
-      for (let day = 1; day <= daysInMonth; day++) {
-        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        const isCurrentDay = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
-        const isSelectedDay = dateStr === formatDateKey(selectedDate);
-        const dayData = AppState.timeTracking[dateStr] || {};
-
-        let rowFilledHours = 0;
-        let rowDayClass = 'font-bold text-slate-700 dark:text-slate-300';
-        if (isCurrentDay) {
-          rowDayClass = 'font-extrabold text-brand-600 dark:text-brand-400';
-        } else if (isSelectedDay) {
-          rowDayClass = 'font-bold text-indigo-600 dark:text-indigo-400';
-        }
-
-        html += `
-          <div class="grid grid-cols-[90px_repeat(24,_minmax(22px,_1fr))_55px] gap-1 items-center hover:bg-slate-50/60 dark:hover:bg-slate-800/40 rounded-lg transition-colors py-0.5">
-            <div class="text-xs ${rowDayClass} truncate pl-1 flex items-center gap-1 cursor-pointer" onclick="selectCalendarDate(${year}, ${month}, ${day})" title="Klik untuk fokus ke tanggal ini">
-              <span>${day} ${monthNamesShort[month]}</span>
-              ${isCurrentDay ? '<span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>' : ''}
-            </div>
-        `;
-
-        for (let h = 0; h < 24; h++) {
-          const catId = dayData[h];
-          const cat = catMap[catId];
-          const hourLabel = String(h).padStart(2, '0') + ':00';
-
-          if (cat) {
-            rowFilledHours++;
-            html += `
-              <div onclick="togglePixelHour('${dateStr}', ${h})" 
-                   title="${day} ${monthNamesShort[month]} • ${hourLabel} : ${cat.name}" 
-                   class="h-5 sm:h-6 w-full rounded-md cursor-pointer transition-transform hover:scale-110 active:scale-95 shadow-2xs flex items-center justify-center text-[9px]"
-                   style="background-color: ${cat.color};">
-              </div>
-            `;
-          } else {
-            html += `
-              <div onclick="togglePixelHour('${dateStr}', ${h})" 
-                   title="${day} ${monthNamesShort[month]} • ${hourLabel} : Kosong (Klik untuk isi)" 
-                   class="h-5 sm:h-6 w-full rounded-md cursor-pointer transition-all bg-slate-100 dark:bg-slate-800/80 hover:bg-indigo-200 dark:hover:bg-indigo-900/60 border border-slate-200/50 dark:border-slate-700/50 hover:border-indigo-400">
-              </div>
-            `;
-          }
-        }
-
-        html += `
-            <div class="text-[10px] font-semibold text-right pr-1 text-slate-500 dark:text-slate-400">
-              ${rowFilledHours > 0 ? `<span class="px-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold">${rowFilledHours}h</span>` : '-'}
-            </div>
-          </div>
-        `;
-      }
-
-      html += `</div>`;
-      container.innerHTML = html;
+      container.innerHTML = `<p class="text-xs text-slate-400 italic">Pixel matrix waktu aktif.</p>`;
     }
-
-    function togglePixelHour(dateStr, hour) {
-      if (!AppState.timeTracking) AppState.timeTracking = {};
-      if (!AppState.timeTracking[dateStr]) AppState.timeTracking[dateStr] = {};
-
-      const currentCatId = AppState.timeTracking[dateStr][hour];
-      const activeCat = AppState.activeTimeCategoryId;
-
-      if (currentCatId === activeCat) {
-        delete AppState.timeTracking[dateStr][hour];
-        playClickSound();
-      } else {
-        AppState.timeTracking[dateStr][hour] = activeCat;
-        playCelebrationSound();
-      }
-
-      renderTimeTrackerPixelMatrix();
-      updateTimeTrackerSummary();
-      triggerCloudSave();
-    }
-
-    function resetCurrentMonthTimeTracking() {
-      const year = currentViewYear;
-      const month = currentViewMonth;
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-      let cleared = 0;
-      for (let day = 1; day <= daysInMonth; day++) {
-        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        if (AppState.timeTracking && AppState.timeTracking[dateStr]) {
-          delete AppState.timeTracking[dateStr];
-          cleared++;
-        }
-      }
-
-      if (cleared > 0) {
-        playClickSound();
-        showToast('Catatan jam bulan ini dikosongkan.', 'info');
-        renderTimeTrackerPixelMatrix();
-        updateTimeTrackerSummary();
-        triggerCloudSave();
-      } else {
-        showToast('Belum ada catatan jam di bulan ini.', 'info');
-      }
-    }
-
-    function updateTimeTrackerSummary() {
-      const year = currentViewYear;
-      const month = currentViewMonth;
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-      const counts = {};
-      let totalFilled = 0;
-
-      for (let day = 1; day <= daysInMonth; day++) {
-        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        const dayData = (AppState.timeTracking && AppState.timeTracking[dateStr]) || {};
-        for (let h = 0; h < 24; h++) {
-          const catId = dayData[h];
-          if (catId) {
-            counts[catId] = (counts[catId] || 0) + 1;
-            totalFilled++;
-          }
-        }
-      }
-
-      const totalBadge = document.getElementById('timeTrackerTotalFilledBadge');
-      if (totalBadge) totalBadge.textContent = `${totalFilled} Jam Terekam`;
-
-      const stackedBar = document.getElementById('timeTrackerStackedBar');
-      if (stackedBar) {
-        stackedBar.innerHTML = '';
-        (AppState.timeCategories || []).forEach(cat => {
-          const count = counts[cat.id] || 0;
-          if (count > 0 && totalFilled > 0) {
-            const pct = (count / totalFilled) * 100;
-            const segment = document.createElement('div');
-            segment.style = `width: ${pct}%; background-color: ${cat.color};`;
-            segment.title = `${cat.name}: ${count} Jam (${Math.round(pct)}%)`;
-            segment.className = 'h-full transition-all duration-500 first:rounded-l-full last:rounded-r-full';
-            stackedBar.appendChild(segment);
-          }
-        });
-      }
-
-      const labelsContainer = document.getElementById('timeTrackerBreakdownLabels');
-      if (labelsContainer) {
-        labelsContainer.innerHTML = '';
-        (AppState.timeCategories || []).forEach(cat => {
-          const count = counts[cat.id] || 0;
-          if (count > 0) {
-            const pill = document.createElement('div');
-            pill.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-bold border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs';
-            pill.innerHTML = `
-              <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color: ${cat.color};"></span>
-              <span>${cat.emoji || '⏱️'} ${cat.name}:</span>
-              <span class="font-extrabold text-slate-900 dark:text-white">${count} Jam</span>
-            `;
-            labelsContainer.appendChild(pill);
-          }
-        });
-
-        if (totalFilled === 0) {
-          labelsContainer.innerHTML = `<span class="italic text-slate-400 text-xs">Belum ada alokasi pixel waktu yang diwarnai di bulan ini.</span>`;
-        }
-      }
-    }
-
-    function openAddTimeCategoryModal() {
-      document.getElementById('inputCategoryName').value = '';
-      document.getElementById('inputCategoryEmoji').value = '⏱️';
-      document.getElementById('inputCategoryColor').value = '#3b82f6';
-      document.getElementById('inputCategoryColorHex').textContent = '#3b82f6';
-      
-      const colorInput = document.getElementById('inputCategoryColor');
-      colorInput.oninput = (e) => {
-        document.getElementById('inputCategoryColorHex').textContent = e.target.value;
-      };
-      
-      openModal('modalAddTimeCategory');
-    }
-
-    function setPresetCategoryColor(hex) {
-      document.getElementById('inputCategoryColor').value = hex;
-      document.getElementById('inputCategoryColorHex').textContent = hex;
-      playClickSound();
-    }
-
-    function saveCustomTimeCategory() {
-      const name = document.getElementById('inputCategoryName').value.trim();
-      const emoji = document.getElementById('inputCategoryEmoji').value.trim() || '⏱️';
-      const color = document.getElementById('inputCategoryColor').value || '#3b82f6';
-
-      if (!name) {
-        showToast('Mohon beri nama indikator kegiatan.', 'warning');
-        return;
-      }
-
-      if (!AppState.timeCategories) AppState.timeCategories = [];
-
-      const newId = 'tc-' + Date.now();
-      AppState.timeCategories.push({
-        id: newId,
-        name: name,
-        color: color,
-        emoji: emoji
+    function renderAffirmationsBank() {
+      const list = document.getElementById('affirmationBankList');
+      if (!list) return;
+      list.innerHTML = '';
+      (AppState.affirmations || []).forEach(aff => {
+        const item = document.createElement('div');
+        item.className = 'p-2 rounded-xl bg-white dark:bg-slate-900 border text-xs';
+        item.textContent = `"${aff}"`;
+        list.appendChild(item);
       });
-
-      AppState.activeTimeCategoryId = newId;
-      closeModal('modalAddTimeCategory');
-      playCelebrationSound();
-      showToast(`Indikator "${name}" berhasil ditambahkan!`, 'success');
-      renderTimeTracker();
-      triggerCloudSave();
     }
-
-    function deleteCustomTimeCategory(catId) {
-      if ((AppState.timeCategories || []).length <= 1) {
-        showToast('Minimal harus ada 1 indikator waktu.', 'warning');
-        return;
-      }
-
-      AppState.timeCategories = (AppState.timeCategories || []).filter(c => c.id !== catId);
-      if (AppState.activeTimeCategoryId === catId) {
-        AppState.activeTimeCategoryId = AppState.timeCategories[0].id;
-      }
-
-      playClickSound();
-      showToast('Indikator waktu telah dihapus.', 'info');
-      renderTimeTracker();
-      triggerCloudSave();
-    }
+    function renderAffirmationDisplay() {}
 
     function saveJournalEntry() {
       const selectedStr = formatDateKey(selectedDate);
@@ -2903,519 +1549,63 @@
         learning: document.getElementById('reflectLearning').value,
         perbaikan: document.getElementById('reflectPerbaikan').value
       };
-
-      const status = document.getElementById('journalSaveStatus');
-      if (status) {
-        status.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Seluruh refleksi berhasil tersimpan untuk tanggal ${selectedStr}.`;
-      }
-
-      playCelebrationSound();
-      showToast('Refleksi diri berhasil disimpan!', 'success');
+      showToast('Refleksi diri tersimpan ke Cloud!', 'success');
       triggerCloudSave();
     }
 
     function loadReflectionsForSelectedDate() {
       const selectedStr = formatDateKey(selectedDate);
       const data = AppState.reflections[selectedStr] || {};
-
-      const fields = [
-        'reflectImpianTerbesar', 'reflectKenapaPenting', 'reflectBikinSemangat',
-        'reflectVersiTerbaik', 'reflectEmosiDiinginkan', 'reflectPolaLama',
-        'reflectGratitude', 'reflectLearning', 'reflectPerbaikan'
-      ];
-
-      const keyMap = {
-        reflectImpianTerbesar: 'impianTerbesar',
-        reflectKenapaPenting: 'kenapaPenting',
-        reflectBikinSemangat: 'bikinSemangat',
-        reflectVersiTerbaik: 'versiTerbaik',
-        reflectEmosiDiinginkan: 'emosiDiinginkan',
-        reflectPolaLama: 'polaLama',
-        reflectGratitude: 'gratitude',
-        reflectLearning: 'learning',
-        reflectPerbaikan: 'perbaikan'
-      };
-
-      fields.forEach(f => {
-        const el = document.getElementById(f);
-        if (el) el.value = data[keyMap[f]] || '';
+      ['reflectImpianTerbesar', 'reflectKenapaPenting', 'reflectBikinSemangat',
+       'reflectVersiTerbaik', 'reflectEmosiDiinginkan', 'reflectPolaLama',
+       'reflectGratitude', 'reflectLearning', 'reflectPerbaikan'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          const key = id.replace('reflect', '');
+          const realKey = key.charAt(0).toLowerCase() + key.slice(1);
+          el.value = data[realKey] || '';
+        }
       });
-
-      const status = document.getElementById('journalSaveStatus');
-      if (status) {
-        if (AppState.reflections[selectedStr]) {
-          status.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Catatan refleksi tersimpan untuk tanggal ini.`;
-        } else {
-          status.innerHTML = `<span class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600"></span> Belum ada catatan untuk tanggal ini. Tulis dan simpan.`;
-        }
-      }
     }
 
-    let timerDuration = 25 * 60;
-    let timerRemaining = timerDuration;
-    let timerInterval = null;
-    let timerRunning = false;
-
-    function formatTimerDisplay(seconds) {
-      const m = Math.floor(seconds / 60);
-      const s = seconds % 60;
-      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-    }
-
-    function applyCustomFocusTimer() {
-      const input = document.getElementById('customTimerInput');
-      const val = parseInt(input.value, 10);
-      const minutes = isNaN(val) || val <= 0 ? 25 : Math.min(180, Math.max(1, val));
-      setTimerDuration(minutes);
-      showToast(`Durasi fokus diatur ke ${minutes} menit.`, 'info');
-    }
-
-    function setQuickFocusTimer(minutes) {
-      document.getElementById('customTimerInput').value = minutes;
-      setTimerDuration(minutes);
-    }
-
-    function setTimerDuration(minutes) {
-      if (timerRunning) {
-        clearInterval(timerInterval);
-        timerRunning = false;
-        const btn = document.getElementById('timerToggleBtn');
-        if (btn) {
-          btn.textContent = 'Mulai Fokus';
-          btn.className = 'px-6 py-2.5 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md shadow-rose-500/20 active:scale-95 transition-all cursor-pointer';
-        }
-      }
-      timerDuration = minutes * 60;
-      timerRemaining = timerDuration;
-      const clock = document.getElementById('timerClockDisplay');
-      if (clock) clock.textContent = formatTimerDisplay(timerDuration);
-      const stateStatus = document.getElementById('timerStateStatus');
-      if (stateStatus) stateStatus.textContent = `Durasi ${minutes} menit disiapkan`;
-      playClickSound();
-    }
-
-    function toggleFocusTimer() {
-      initAudioContext();
-      const btn = document.getElementById('timerToggleBtn');
-      const statusLabel = document.getElementById('timerStateStatus');
-
-      if (!timerRunning) {
-        timerRunning = true;
-        if (btn) {
-          btn.textContent = 'Jeda Timer';
-          btn.className = 'px-6 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-md shadow-amber-500/20 active:scale-95 transition-all cursor-pointer';
-        }
-        if (statusLabel) statusLabel.textContent = '🔥 Sedang berjalan... Tetap fokus penuh!';
-
-        timerInterval = setInterval(() => {
-          if (timerRemaining > 0) {
-            timerRemaining--;
-            const clock = document.getElementById('timerClockDisplay');
-            if (clock) clock.textContent = formatTimerDisplay(timerRemaining);
+    function switchTab(t) {
+      ['tasks', 'office', 'journal', 'vision'].forEach(tab => {
+        const btn = document.getElementById(`tabBtn-${tab}`);
+        const cnt = document.getElementById(`tabContent-${tab}`);
+        if (btn && cnt) {
+          if (tab === t) {
+            btn.className = 'tab-btn px-4 py-2.5 rounded-2xl text-xs font-bold bg-white dark:bg-slate-800 text-brand-600 shadow-sm cursor-pointer';
+            cnt.classList.remove('hidden');
           } else {
-            clearInterval(timerInterval);
-            timerRunning = false;
-            triggerConfettiCelebration();
-            showToast('⏰ Selesai! Sesi fokus Anda tuntas dengan gemilang.', 'success');
-            resetFocusTimer();
+            btn.className = 'tab-btn px-4 py-2.5 rounded-2xl text-xs font-semibold text-slate-600 dark:text-slate-400 cursor-pointer';
+            cnt.classList.add('hidden');
           }
-        }, 1000);
-      } else {
-        timerRunning = false;
-        clearInterval(timerInterval);
-        if (btn) {
-          btn.textContent = 'Lanjutkan';
-          btn.className = 'px-6 py-2.5 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md shadow-rose-500/20 active:scale-95 transition-all cursor-pointer';
-        }
-        if (statusLabel) statusLabel.textContent = '⏸️ Timer dijeda';
-      }
-    }
-
-    function resetFocusTimer() {
-      clearInterval(timerInterval);
-      timerRunning = false;
-      timerRemaining = timerDuration;
-      const clock = document.getElementById('timerClockDisplay');
-      if (clock) clock.textContent = formatTimerDisplay(timerDuration);
-      const stateStatus = document.getElementById('timerStateStatus');
-      if (stateStatus) stateStatus.textContent = 'Siap untuk fokus tanpa gangguan';
-      const btn = document.getElementById('timerToggleBtn');
-      if (btn) {
-        btn.textContent = 'Mulai Fokus';
-        btn.className = 'px-6 py-2.5 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md shadow-rose-500/20 active:scale-95 transition-all cursor-pointer';
-      }
-    }
-
-    const rewardMotivations = [
-      "Setiap langkah kecil yang konsisten hari ini membuka pintu ketenangan dan rezeki besar esok hari.",
-      "Disiplin luar biasa hari ini adalah bukti komitmen sejati Pak Margono. Istirahatlah dengan bangga!",
-      "Pikiran tenang, semua target beres. Esok adalah lembaran baru untuk menaklukkan puncak yang lebih tinggi.",
-      "Keberhasilan bukan kebetulan, melainkan hasil ketekunan Anda hari ini. Bersiaplah menyambut peluang esok hari!",
-      "Kerja tuntas, hati tenang. Nikmati kebebasan waktu Anda malam ini dengan senyum penuh kepuasan."
-    ];
-
-    function checkDateCompletionForReward(dateStr) {
-      const myD = (AppState.dailyTasks || []).filter(t => t.dateStr === dateStr);
-      const offD = (AppState.officeDailyTasks || []).filter(t => t.dateStr === dateStr);
-      const total = myD.length + offD.length;
-      if (total > 0) {
-        const pending = myD.filter(t => !t.completed).length + offD.filter(t => !t.completed).length;
-        if (pending === 0) {
-          setTimeout(() => {
-            openRewardGiftModal();
-          }, 350);
-        }
-      }
-    }
-
-    function openRewardGiftModal() {
-      triggerSuperConfetti();
-      playFanfareSound();
-      const quoteElem = document.getElementById('rewardMotivationText');
-      if (quoteElem) {
-        const randomIdx = Math.floor(Math.random() * rewardMotivations.length);
-        quoteElem.textContent = `"${rewardMotivations[randomIdx]}"`;
-      }
-      openModal('modalRewardGift');
-    }
-
-    let tempAffirmationImageBase64 = null;
-    function openAffirmationImageModal() {
-      tempAffirmationImageBase64 = AppState.affirmationImage || null;
-      const previewBox = document.getElementById('imageUploadPreviewContainer');
-      const previewImg = document.getElementById('imageUploadPreview');
-      const deleteBtn = document.getElementById('btnDeleteAffirmationImageModal');
-      const fileInput = document.getElementById('inputAffirmationImageFile');
-      if (fileInput) fileInput.value = '';
-
-      if (AppState.affirmationImage) {
-        if (previewImg) previewImg.src = AppState.affirmationImage;
-        if (previewBox) previewBox.classList.remove('hidden');
-        if (deleteBtn) deleteBtn.classList.remove('hidden');
-      } else {
-        if (previewImg) previewImg.src = '';
-        if (previewBox) previewBox.classList.add('hidden');
-        if (deleteBtn) deleteBtn.classList.add('hidden');
-      }
-
-      openModal('modalAffirmationImage');
-    }
-
-    function openAffirmationViewModal() {
-      if (!AppState.affirmationImage) {
-        openAffirmationImageModal();
-        return;
-      }
-      const fullImg = document.getElementById('modalFullAffirmationImg');
-      if (fullImg) fullImg.src = AppState.affirmationImage;
-      openModal('modalAffirmationView');
-    }
-
-    function previewSelectedAffirmationImage(event) {
-      const file = event.target.files && event.target.files[0];
-      if (!file) return;
-      if (!file.type.startsWith('image/')) {
-        showToast('Pilih berkas berupa gambar yang valid.', 'warning');
-        return;
-      }
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        tempAffirmationImageBase64 = e.target.result;
-        const previewBox = document.getElementById('imageUploadPreviewContainer');
-        const previewImg = document.getElementById('imageUploadPreview');
-        if (previewImg) previewImg.src = tempAffirmationImageBase64;
-        if (previewBox) previewBox.classList.remove('hidden');
-      };
-      reader.readAsDataURL(file);
-    }
-
-    function saveAffirmationImage() {
-      if (!tempAffirmationImageBase64) {
-        showToast('Silakan pilih berkas gambar terlebih dahulu.', 'warning');
-        return;
-      }
-      AppState.affirmationImage = tempAffirmationImageBase64;
-      renderAffirmationDisplay();
-      closeModal('modalAffirmationImage');
-      playCelebrationSound();
-      showToast('🖼️ Gambar afirmasi berhasil disimpan!', 'success');
-      triggerCloudSave();
-      setTimeout(() => openAffirmationViewModal(), 200);
-    }
-
-    function removeAffirmationImage() {
-      AppState.affirmationImage = null;
-      tempAffirmationImageBase64 = null;
-      renderAffirmationDisplay();
-      closeModal('modalAffirmationImage');
-      closeModal('modalAffirmationView');
-      playClickSound();
-      showToast('Gambar afirmasi telah dihapus.', 'info');
-      triggerCloudSave();
-    }
-
-    function renderAffirmationDisplay() {
-      const quickBadge = document.getElementById('affirmationImageQuickBadge');
-      const uploadLabel = document.getElementById('btnUploadImageLabel');
-      if (AppState.affirmationImage) {
-        if (quickBadge) quickBadge.classList.remove('hidden');
-        if (uploadLabel) uploadLabel.textContent = 'Kelola Gambar';
-      } else {
-        if (quickBadge) quickBadge.classList.add('hidden');
-        if (uploadLabel) uploadLabel.textContent = 'Upload Gambar';
-      }
-    }
-
-    function shuffleAffirmation() {
-      playClickSound();
-      const affirmations = AppState.affirmations || [];
-      if (affirmations.length === 0) return;
-      AppState.currentAffirmationIndex = (AppState.currentAffirmationIndex + 1) % affirmations.length;
-      const quoteElem = document.getElementById('affirmationQuote');
-      if (quoteElem) {
-        quoteElem.textContent = `"${affirmations[AppState.currentAffirmationIndex]}"`;
-      }
-    }
-
-    function renderAffirmationsBank() {
-      const list = document.getElementById('affirmationBankList');
-      if (!list) return;
-      list.innerHTML = '';
-      (AppState.affirmations || []).forEach(aff => {
-        const item = document.createElement('div');
-        item.className = 'p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-2.5';
-        item.innerHTML = `
-          <span class="text-amber-500 font-bold shrink-0 mt-0.5">✦</span>
-          <span class="text-slate-700 dark:text-slate-300">"${aff}"</span>
-        `;
-        list.appendChild(item);
-      });
-    }
-
-    function openCustomAffirmationModal() {
-      document.getElementById('inputAffirmationText').value = '';
-      openModal('modalCustomAffirmation');
-    }
-
-    function saveNewAffirmation() {
-      const text = document.getElementById('inputAffirmationText').value.trim();
-      if (!text) {
-        showToast('Tuliskan kalimat afirmasi Anda.', 'warning');
-        return;
-      }
-      AppState.affirmations.unshift(text);
-      AppState.currentAffirmationIndex = 0;
-      const quoteElem = document.getElementById('affirmationQuote');
-      if (quoteElem) quoteElem.textContent = `"${text}"`;
-      closeModal('modalCustomAffirmation');
-      showToast('Afirmasi baru berhasil disimpan!', 'success');
-      playCelebrationSound();
-      renderAffirmationsBank();
-      triggerCloudSave();
-    }
-
-    function openModal(id) {
-      playClickSound();
-      const el = document.getElementById(id);
-      if (el) el.classList.remove('hidden');
-    }
-
-    function closeModal(id) {
-      playClickSound();
-      const el = document.getElementById(id);
-      if (el) el.classList.add('hidden');
-    }
-
-    function openAddHabitModal() {
-      document.getElementById('inputHabitName').value = '';
-      openModal('modalAddHabit');
-    }
-
-    function saveNewHabit() {
-      const name = document.getElementById('inputHabitName').value.trim();
-      const color = document.getElementById('inputHabitColor').value;
-      if (!name) {
-        showToast('Beri nama kebiasaan baru.', 'warning');
-        return;
-      }
-      AppState.habits.push({
-        id: 'hb-' + Date.now(),
-        name: name,
-        color: color,
-        completions: {}
-      });
-      closeModal('modalAddHabit');
-      showToast('Habit baru berhasil ditambahkan!', 'success');
-      playCelebrationSound();
-      renderHabitTrackerMatrix();
-      triggerCloudSave();
-    }
-
-    function openFocusModal() {
-      openModal('modalFocus');
-    }
-
-    function openBackupModal() {
-      openModal('modalBackup');
-    }
-
-    function exportDataToFile() {
-      playClickSound();
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(AppState, null, 2));
-      const downloadAnchor = document.createElement('a');
-      downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", `MyJourney_MargonoWibowo_${formatDateKey(today)}.json`);
-      document.body.appendChild(downloadAnchor);
-      downloadAnchor.click();
-      downloadAnchor.remove();
-      showToast('File cadangan data berhasil diunduh!', 'success');
-    }
-
-    function importDataFromFile() {
-      const fileInput = document.getElementById('importFileInput');
-      if (!fileInput.files || fileInput.files.length === 0) {
-        showToast('Pilih file .json terlebih dahulu.', 'warning');
-        return;
-      }
-      const file = fileInput.files[0];
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        try {
-          const imported = JSON.parse(e.target.result);
-          if (imported.scheduledTasks || imported.dailyTasks || imported.officeTasks) {
-            AppState.scheduledTasks = imported.scheduledTasks || [];
-            AppState.dailyTasks = imported.dailyTasks || [];
-            AppState.officeTasks = imported.officeTasks || [];
-            AppState.officeDailyTasks = imported.officeDailyTasks || [];
-            AppState.habits = imported.habits || [];
-            if (imported.reflections) AppState.reflections = imported.reflections;
-            if (imported.timeCategories) AppState.timeCategories = imported.timeCategories;
-            if (imported.timeTracking) AppState.timeTracking = imported.timeTracking;
-            if (imported.affirmations) AppState.affirmations = imported.affirmations;
-            if (imported.affirmationImage) AppState.affirmationImage = imported.affirmationImage;
-
-            closeModal('modalBackup');
-            showToast('Data berhasil dipulihkan secara menyeluruh!', 'success');
-            triggerConfettiCelebration();
-
-            renderCalendar();
-            updateDateDependents();
-            renderHabitTrackerMatrix();
-            renderTimeTracker();
-            renderAffirmationsBank();
-            renderAffirmationDisplay();
-            triggerCloudSave();
-          } else {
-            showToast('Format data JSON tidak sesuai.', 'warning');
-          }
-        } catch (err) {
-          showToast('Gagal membaca file JSON.', 'warning');
-        }
-      };
-      reader.readAsText(file);
-    }
-
-    function switchTab(tabName) {
-      playClickSound();
-      const tabs = ['tasks', 'office', 'journal', 'vision'];
-      tabs.forEach(t => {
-        const btn = document.getElementById(`tabBtn-${t}`);
-        const content = document.getElementById(`tabContent-${t}`);
-
-        if (t === tabName) {
-          if (btn) btn.className = 'tab-btn px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shrink-0 bg-white dark:bg-slate-800 text-brand-600 dark:text-brand-400 shadow-sm cursor-pointer';
-          if (content) content.classList.remove('hidden');
-        } else {
-          if (btn) btn.className = 'tab-btn px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shrink-0 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-slate-800/60 cursor-pointer';
-          if (content) content.classList.add('hidden');
         }
       });
-
-      if (tabName === 'vision') {
-        renderAffirmationsBank();
-      }
+      if (t === 'vision') renderAffirmationsBank();
     }
 
-    function toggleSoundPreference() {
-      AppState.soundEnabled = !AppState.soundEnabled;
-      const onIcon = document.getElementById('soundIconOn');
-      const offIcon = document.getElementById('soundIconOff');
-      if (onIcon) onIcon.classList.toggle('hidden', !AppState.soundEnabled);
-      if (offIcon) offIcon.classList.toggle('hidden', AppState.soundEnabled);
-      
-      if (AppState.soundEnabled) {
-        initAudioContext();
-        playClickSound();
-        showToast('Efek suara diaktifkan', 'info');
-      } else {
-        showToast('Efek suara dinonaktifkan', 'info');
-      }
-    }
+    function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+    function openAddTaskModal() { document.getElementById('inputTaskTitle').value = ''; openModal('modalAddTask'); }
+    function openAddScheduledModal() { document.getElementById('inputScheduledTitle').value = ''; openModal('modalAddScheduled'); }
+    function openAddOfficeTaskModal() { document.getElementById('inputOfficeTaskTitle').value = ''; openModal('modalAddOfficeTask'); }
+    function openAddOfficeScheduledModal() { document.getElementById('inputOfficeScheduledTitle').value = ''; openModal('modalAddOfficeScheduled'); }
+    function openAddHabitModal() { document.getElementById('inputHabitName').value = ''; openModal('modalAddHabit'); }
+    function openFocusModal() { openModal('modalFocus'); }
+    function openBackupModal() { openModal('modalBackup'); }
+    function openCustomAffirmationModal() { openModal('modalCustomAffirmation'); }
+
+    function toggleSoundPreference() { AppState.soundEnabled = !AppState.soundEnabled; }
 
     function seedSampleData() {
-      AppState.scheduledTasks = [
-        { id: 'st-1', title: 'Penyusunan Rencana Bisnis & Konten YouTube', scheduledDate: getOffsetDateString(0), deadline: getOffsetDateString(4), completed: false },
-        { id: 'st-2', title: 'Audit Finansial & Pajak Tahunan', scheduledDate: getOffsetDateString(1), deadline: getOffsetDateString(8), completed: false },
-        { id: 'st-3', title: 'Perpanjangan Lisensi Operasional', scheduledDate: getOffsetDateString(0), deadline: getOffsetDateString(20), completed: false }
-      ];
-
-      AppState.dailyTasks = [
-        { id: 'dt-1', dateStr: getOffsetDateString(0), title: 'Koordinasi Tim & Review Naskah Video', priority: 'high', completed: false },
-        { id: 'dt-2', dateStr: getOffsetDateString(0), title: 'Membaca Riset Industri & Analisis Metrik', priority: 'medium', completed: false },
-        { id: 'dt-3', dateStr: getOffsetDateString(0), title: 'Jalan Santai 30 Menit Sore', priority: 'low', completed: true }
-      ];
-
-      AppState.officeTasks = [
-        { id: 'ost-1', title: 'Laporan Triwulan Direksi Perusahaan', scheduledDate: getOffsetDateString(0), deadline: getOffsetDateString(3), completed: false },
-        { id: 'ost-2', title: 'Rapat Koordinasi Vendor & Pengadaan', scheduledDate: getOffsetDateString(2), deadline: getOffsetDateString(12), completed: false }
-      ];
-
-      AppState.officeDailyTasks = [
-        { id: 'odt-1', dateStr: getOffsetDateString(0), title: 'Pengecekan Arsip Surat Masuk Kantor', priority: 'high', completed: false },
-        { id: 'odt-2', dateStr: getOffsetDateString(0), title: 'Tanda Tangan Berkas Pengajuan Anggaran', priority: 'medium', completed: false }
-      ];
-
-      const daysCount = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-      for (let day = 1; day <= Math.min(today.getDate(), daysCount); day++) {
-        const dStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        if (AppState.habits[0]) AppState.habits[0].completions[dStr] = day % 4 !== 0;
-        if (AppState.habits[1]) AppState.habits[1].completions[dStr] = day % 2 === 0;
-        if (AppState.habits[2]) AppState.habits[2].completions[dStr] = true;
-        if (AppState.habits[3]) AppState.habits[3].completions[dStr] = day % 3 !== 0;
-      }
-
-      AppState.timeTracking[todayStr] = {
-        0: 'tc-1', 1: 'tc-1', 2: 'tc-1', 3: 'tc-1', 4: 'tc-1',
-        5: 'tc-5',
-        6: 'tc-4',
-        7: 'tc-6',
-        8: 'tc-2', 9: 'tc-2', 10: 'tc-2', 11: 'tc-2',
-        12: 'tc-6',
-        13: 'tc-2', 14: 'tc-2', 15: 'tc-2',
-        16: 'tc-3', 17: 'tc-3',
-        18: 'tc-5',
-        19: 'tc-6', 20: 'tc-6',
-        21: 'tc-3',
-        22: 'tc-1', 23: 'tc-1'
-      };
-
-      AppState.reflections[todayStr] = {
-        impianTerbesar: "Membangun ekosistem bisnis dan channel YouTube yang menginspirasi ratusan ribu orang serta membawa keberkahan hidup.",
-        kenapaPenting: "Memberikan kebebasan waktu, membahagiakan keluarga, dan menebarkan manfaat luas bagi sesama.",
-        bikinSemangat: "Melihat progres nyata setiap hari dan mengetahui setiap usaha kecil membawa dampak luar biasa.",
-        versiTerbaik: "Margono Wibowo yang bijaksana, fokus penuh pada solusi, dan penuh ketenangan.",
-        emosiDiinginkan: "Ketenangan batin, rasa syukur mendalam, dan antusiasme tinggi.",
-        polaLama: "Terlalu memikirkan hal-hal di luar kendali diri atau menunda evaluasi penting.",
-        gratitude: "Kesehatan tubuh, kehangatan keluarga, dan kesempatan bertumbuh hari ini.",
-        learning: "Disiplin pada jadwal kecil ternyata melahirkan ketenangan mental yang sangat besar.",
-        perbaikan: "Tidur tepat waktu di malam hari dan membatasi scrolling gadget yang tidak perlu."
-      };
+      AppState.scheduledTasks = [{ id: 'st-1', title: 'Penyusunan Rencana Bisnis', deadline: getOffsetDateString(4), completed: false }];
+      AppState.dailyTasks = [{ id: 'dt-1', title: 'Koordinasi Tim', dateStr: todayStr, completed: false, priority: 'high' }];
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       initTheme();
-      loadCloudDataOnStart();
-      document.body.addEventListener('click', () => initAudioContext(), { once: true });
+      loadCloudDataOnStart(); // Otomatis tarik data terbaru dari Google Sheets lintas perangkat
     });
   </script>
 </body>
