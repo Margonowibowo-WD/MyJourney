@@ -111,7 +111,6 @@
       z-index: 99999;
     }
 
-    /* Animasi garis berdenyut menyala khusus tanggal hari ini */
     @keyframes border-glow-pulse {
       0%, 100% {
         box-shadow: 0 0 8px rgba(43, 152, 245, 0.55), inset 0 0 3px rgba(43, 152, 245, 0.25);
@@ -126,7 +125,6 @@
       animation: border-glow-pulse 2.2s infinite ease-in-out;
     }
 
-    /* Animasi berkedip indikator tugas belum selesai */
     @keyframes badge-blink-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.6; transform: scale(0.96); }
@@ -144,7 +142,6 @@
       animation: pop-check 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    /* Animasi piala emas heboh dan sinar berputar */
     @keyframes rotate-sunburst {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
@@ -191,7 +188,6 @@
 
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans min-h-full flex flex-col selection:bg-brand-500 selection:text-white antialiased">
   <canvas id="celebrationCanvas"></canvas>
-  <!-- Notifikasi Toast di Posisi Kanan Atas Layar -->
   <div id="toastContainer" class="fixed top-5 right-5 z-50 flex flex-col items-end gap-2.5 pointer-events-none max-w-sm w-full px-4 sm:px-0"></div>
 
   <!-- Header -->
@@ -210,7 +206,6 @@
       </div>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Indikator Status Cloud Sync Otomatis -->
         <div id="cloudStatusBadge" class="px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 flex items-center gap-1.5 text-xs font-semibold shadow-xs">
           <span id="cloudDot" class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
           <span id="cloudText" class="hidden sm:inline">Menghubungkan Cloud...</span>
@@ -240,7 +235,7 @@
   </header>
 
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-7">
-    <!-- Affirmation & Welcoming Banner -->
+    <!-- Affirmation & Welcoming Banner (Ditambahkan Tombol "Catatan Saya") -->
     <section class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-brand-900 to-indigo-950 text-white p-6 sm:p-8 shadow-elevated border border-white/10">
       <div class="absolute -right-16 -top-16 w-64 h-64 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute -left-12 -bottom-12 w-60 h-60 bg-accent-purple/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -262,10 +257,18 @@
             </p>
           </div>
 
-          <div id="affirmationImageQuickBadge" class="hidden inline-flex items-center gap-2">
-            <button onclick="openAffirmationViewModal()" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500/30 to-brand-500/30 hover:from-emerald-500/50 hover:to-brand-500/50 border border-emerald-300/40 text-emerald-200 hover:text-white text-xs font-semibold backdrop-blur-md transition-all flex items-center gap-2 shadow-sm cursor-pointer">
-              <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-              <span>🖼️ Buka Gambar Afirmasi (Layar Penuh)</span>
+          <div class="flex items-center gap-2 flex-wrap pt-1">
+            <div id="affirmationImageQuickBadge" class="hidden inline-flex items-center gap-2">
+              <button onclick="openAffirmationViewModal()" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500/30 to-brand-500/30 hover:from-emerald-500/50 hover:to-brand-500/50 border border-emerald-300/40 text-emerald-200 hover:text-white text-xs font-semibold backdrop-blur-md transition-all flex items-center gap-2 shadow-sm cursor-pointer">
+                <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span>🖼️ Buka Gambar Afirmasi (Layar Penuh)</span>
+              </button>
+            </div>
+
+            <!-- Tombol Tambahan "Catatan Saya" -->
+            <button onclick="openMyPersonalNotesModal()" class="px-3.5 py-1.5 rounded-xl bg-amber-500/30 hover:bg-amber-500/50 border border-amber-300/40 text-amber-200 hover:text-white text-xs font-semibold backdrop-blur-md transition-all flex items-center gap-2 shadow-sm cursor-pointer">
+              <span>📝</span>
+              <span>Catatan Saya</span>
             </button>
           </div>
         </div>
@@ -413,9 +416,8 @@
       </section>
     </div>
 
-    <!-- TAB NAVIGASI & KONTEN (Pekerjaan Saya & Pekerjaan Kantor diletakkan di atas Habit Tracker) -->
+    <!-- TAB NAVIGASI & KONTEN (Pekerjaan Saya & Pekerjaan Kantor) -->
     <section class="bg-white dark:bg-slate-900 rounded-3xl shadow-subtle-card border border-slate-200/80 dark:border-slate-800 overflow-hidden">
-      <!-- Tabs Bar Terpisah -->
       <div class="flex border-b border-slate-200/80 dark:border-slate-800 overflow-x-auto bg-slate-50/70 dark:bg-slate-950/60 p-2 gap-1 sm:gap-2">
         <button id="tabBtn-tasks" onclick="switchTab('tasks')" class="tab-btn px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shrink-0 bg-white dark:bg-slate-800 text-brand-600 dark:text-brand-400 shadow-sm cursor-pointer">
           <span class="text-base">👤</span>
@@ -438,7 +440,6 @@
           </div>
         </div>
 
-        <!-- Deadline Color Legend -->
         <div class="p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-wrap items-center justify-between gap-2.5 text-[11px] font-body">
           <span class="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
             <svg class="w-3.5 h-3.5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v5l3 2"/></svg>
@@ -543,7 +544,7 @@
       </div>
     </section>
 
-    <!-- SECTION HABIT TRACKER (Kini berada di bawah Tab Pekerjaan) -->
+    <!-- SECTION HABIT TRACKER -->
     <section class="bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-7 shadow-subtle-card border border-slate-200/80 dark:border-slate-800 space-y-5">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -609,7 +610,6 @@
         </div>
       </div>
 
-      <!-- Bilah Pilihan Indikator Kustom -->
       <div class="space-y-2">
         <div class="flex items-center justify-between text-xs flex-wrap gap-2">
           <span class="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
@@ -620,12 +620,10 @@
         <div id="timeTrackerCategoriesContainer" class="flex flex-wrap items-center gap-2"></div>
       </div>
 
-      <!-- Wadah Pixel Matrix Bulanan 24 Jam x 30/31 Hari -->
       <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
         <div id="timeTrackerPixelMatrixContainer" class="min-w-[820px] p-4 select-none"></div>
       </div>
 
-      <!-- Ringkasan Alokasi Waktu Bulan Ini -->
       <div class="bg-slate-50 dark:bg-slate-950/60 rounded-2xl p-4 border border-slate-200/80 dark:border-slate-800 space-y-3">
         <div class="flex items-center justify-between flex-wrap gap-2">
           <span class="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
@@ -640,7 +638,6 @@
 
     <!-- SECTION CATATAN HARIAN, REFLEKSI DIRI & BANK AFIRMASI (Paling Bawah) -->
     <section class="bg-white dark:bg-slate-900 rounded-3xl shadow-subtle-card border border-slate-200/80 dark:border-slate-800 overflow-hidden">
-      <!-- Tabs Bar Bawah -->
       <div class="flex border-b border-slate-200/80 dark:border-slate-800 overflow-x-auto bg-slate-50/70 dark:bg-slate-950/60 p-2 gap-1 sm:gap-2">
         <button id="tabBtn-journal" onclick="switchTab('journal')" class="tab-btn px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shrink-0 bg-white dark:bg-slate-800 text-brand-600 dark:text-brand-400 shadow-sm cursor-pointer">
           <span class="text-base">✨</span>
@@ -835,7 +832,36 @@
     </div>
   </footer>
 
-  <!-- SEMUA MODAL LENGKAP -->
+  <!-- MODAL "CATATAN SAYA" (POPUP KHUSUS DARI BANNER AFIRMASI) -->
+  <div id="modalMyPersonalNotes" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-lg w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
+        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>📝</span> Catatan Pribadi Afirmasi Saya
+        </h3>
+        <button onclick="closeModal('modalMyPersonalNotes')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="space-y-3 text-xs">
+        <p class="text-slate-500 dark:text-slate-400 font-body">
+          Tuliskan catatan kilat, ide cemerlang, atau uneg-uneg pribadi Anda di sini. Otomatis tersimpan!
+        </p>
+        <div>
+          <textarea id="inputMyPersonalNotesContent" rows="7" class="w-full p-3.5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 font-body focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm" placeholder="Tulis catatan pribadi Anda di sini..."></textarea>
+        </div>
+      </div>
+      <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+        <span id="personalNotesSaveStatus" class="text-[11px] text-slate-400 italic">Otomatis tersimpan</span>
+        <div class="flex items-center gap-2">
+          <button onclick="closeModal('modalMyPersonalNotes')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Tutup</button>
+          <button onclick="saveMyPersonalNotes()" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-brand-500/20 active:scale-95 cursor-pointer">Simpan Catatan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEMUA MODAL LAINNYA -->
   <div id="modalAddScheduled" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -868,7 +894,6 @@
     </div>
   </div>
 
-  <!-- MODAL 2: TAMBAH CATATAN HARIAN SAYA -->
   <div id="modalAddTask" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -904,7 +929,6 @@
     </div>
   </div>
 
-  <!-- MODAL 3: TAMBAH / EDIT CATATAN TERJADWAL KANTOR -->
   <div id="modalAddOfficeScheduled" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -937,7 +961,6 @@
     </div>
   </div>
 
-  <!-- MODAL 4: TAMBAH CATATAN HARIAN KANTOR -->
   <div id="modalAddOfficeTask" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -973,7 +996,6 @@
     </div>
   </div>
 
-  <!-- MODAL 5: TAMBAH HABIT BARU -->
   <div id="modalAddHabit" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -1005,7 +1027,6 @@
     </div>
   </div>
 
-  <!-- MODAL 6: TAMBAH INDIKATOR TIME TRACKER -->
   <div id="modalAddTimeCategory" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -1056,7 +1077,6 @@
     </div>
   </div>
 
-  <!-- MODAL 7: FOCUS TIMER (POMODORO) -->
   <div id="modalFocus" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-sm w-full shadow-elevated border border-slate-200 dark:border-slate-800 text-center space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
@@ -1098,7 +1118,6 @@
     </div>
   </div>
 
-  <!-- MODAL 8: UPLOAD GAMBAR AFIRMASI -->
   <div id="modalAffirmationImage" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -1134,7 +1153,6 @@
     </div>
   </div>
 
-  <!-- MODAL 9: POPUP GAMBAR AFIRMASI (FULLSCREEN LIGHTBOX) -->
   <div id="modalAffirmationView" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/90 image-lightbox-modal hidden">
     <div class="relative bg-slate-900 border border-white/20 rounded-3xl overflow-hidden max-w-[94vw] max-h-[92vh] w-full h-full flex flex-col shadow-2xl animate-pop-check">
       <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/10 bg-slate-900/80 backdrop-blur-md">
@@ -1157,15 +1175,12 @@
     </div>
   </div>
 
-  <!-- MODAL 11: REWARD GIFT APRESIASI SUPER HEBOH DENGAN PIALA EMAS & KEMBANG API -->
   <div id="modalRewardGift" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md hidden">
     <div class="relative overflow-hidden bg-gradient-to-b from-amber-50 via-white to-amber-100/90 dark:from-slate-900 dark:via-slate-900 dark:to-amber-950/70 rounded-3xl p-6 sm:p-9 max-w-lg w-full shadow-2xl border-2 border-amber-400 dark:border-amber-400/90 text-center space-y-6 animate-pop-check animate-golden-beacon">
       
-      <!-- Efek Sinar Berputar (Sunburst) Spektakuler di Balik Piala -->
       <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-[radial-gradient(circle,_rgba(251,191,36,0.35)_0%,_rgba(245,158,11,0.15)_45%,_transparent_70%)] rounded-full blur-2xl pointer-events-none animate-sunburst"></div>
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-300/30 via-transparent to-transparent pointer-events-none"></div>
 
-      <!-- Wadah Piala Emas Spektakuler dengan Partikel Berkilau -->
       <div class="relative z-10 mx-auto w-36 h-36 flex items-center justify-center">
         <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-amber-300 to-orange-500 opacity-40 blur-2xl animate-pulse"></div>
         <div class="relative w-32 h-32 rounded-3xl bg-gradient-to-tr from-amber-400 via-yellow-300 to-orange-500 flex items-center justify-center shadow-2xl shadow-amber-500/60 ring-4 ring-amber-200 dark:ring-amber-300 animate-trophy-bounce">
@@ -1177,7 +1192,6 @@
         <span class="absolute -bottom-2 -right-2 text-2xl animate-pulse">👑</span>
       </div>
 
-      <!-- Ucapan & Gelar Hadiah -->
       <div class="relative z-10 space-y-3">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 text-slate-950 text-xs font-black uppercase tracking-widest shadow-lg shadow-amber-500/40 border border-yellow-200">
           <span>👑</span> MAHKOTA JUARA HARIAN PAK MARGONO <span>👑</span>
@@ -1198,7 +1212,6 @@
         </p>
       </div>
 
-      <!-- Tombol Aksi Heboh & Meriah -->
       <div class="relative z-10 flex flex-col sm:flex-row gap-3 pt-2">
         <button onclick="triggerSuperConfetti(); playFanfareSound();" class="flex-1 py-3.5 px-4 rounded-2xl bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-500 hover:to-yellow-500 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-yellow-500/30 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-yellow-200">
           <span>🎆</span> Ledakkan Kembang Api & Fanfare Lagi!
@@ -1210,7 +1223,6 @@
     </div>
   </div>
 
-  <!-- MODAL 12: CUSTOM AFIRMASI TEKS -->
   <div id="modalCustomAffirmation" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -1232,7 +1244,6 @@
     </div>
   </div>
 
-  <!-- MODAL 13: CADANGKAN & PULIHKAN DATA -->
   <div id="modalBackup" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -1261,16 +1272,13 @@
   </div>
 
   <script>
-    // =========================================================================
-    // URL GOOGLE APPS SCRIPT ANDA (Permanen tersambung otomatis)
-    // =========================================================================
     const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbzULMF2OiGe_xMXW_VpUL1anZs4B9Te9Shcjz3vVW_u1w7y3I_tQN6Cp1qi9O56nEau/exec";
-    // =========================================================================
 
     const AppState = {
       soundEnabled: true,
       currentAffirmationIndex: 0,
       affirmationImage: null,
+      myPersonalNotes: "",
       affirmations: [
         "Setiap langkah kecil yang konsisten hari ini adalah pondasi kesuksesan besar di masa depan.",
         "Fokus pada proses terbaik, hasil luar biasa akan mengikuti secara alami.",
@@ -1301,9 +1309,6 @@
       reflections: {}
     };
 
-    // =========================================================================
-    // GOOGLE SHEETS SYNC SYSTEM (LOAD & SAVE OTOMATIS)
-    // =========================================================================
     function updateCloudStatusBadge(status) {
       const dot = document.getElementById('cloudDot');
       const txt = document.getElementById('cloudText');
@@ -2557,7 +2562,6 @@
           `;
         }
         
-        // Tombol hapus kebiasaan di setiap baris habit
         html += `
           <div class="flex items-center justify-center">
             <button onclick="deleteHabit('${habit.id}')" class="p-1 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition-colors" title="Hapus Kebiasaan">
@@ -3230,6 +3234,26 @@
       triggerCloudSave();
     }
 
+    // Fungsi khusus pop-up "Catatan Saya"
+    function openMyPersonalNotesModal() {
+      const textarea = document.getElementById('inputMyPersonalNotesContent');
+      if (textarea) {
+        textarea.value = AppState.myPersonalNotes || "";
+      }
+      openModal('modalMyPersonalNotes');
+    }
+
+    function saveMyPersonalNotes() {
+      const textarea = document.getElementById('inputMyPersonalNotesContent');
+      if (textarea) {
+        AppState.myPersonalNotes = textarea.value;
+      }
+      playCelebrationSound();
+      showToast('Catatan Saya berhasil disimpan!', 'success');
+      closeModal('modalMyPersonalNotes');
+      triggerCloudSave();
+    }
+
     function openModal(id) {
       playClickSound();
       const el = document.getElementById(id);
@@ -3304,6 +3328,7 @@
             AppState.officeTasks = imported.officeTasks || [];
             AppState.officeDailyTasks = imported.officeDailyTasks || [];
             AppState.habits = imported.habits || [];
+            if (imported.myPersonalNotes !== undefined) AppState.myPersonalNotes = imported.myPersonalNotes;
             if (imported.reflections) AppState.reflections = imported.reflections;
             if (imported.timeCategories) AppState.timeCategories = imported.timeCategories;
             if (imported.timeTracking) AppState.timeTracking = imported.timeTracking;
