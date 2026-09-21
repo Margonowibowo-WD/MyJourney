@@ -1332,23 +1332,46 @@
       }, 500);
     }
 
+    // Database offline bawaan Libur Nasional Indonesia (Menjamin langsung muncul tanpa tergantung kestabilan API eksternal)
+    const fallbackHolidays2026 = {
+      "2026-01-01": "Tahun Baru Masehi",
+      "2026-01-16": "Isra Mi'raj Nabi Muhammad SAW",
+      "2026-02-17": "Tahun Baru Imlek",
+      "2026-03-19": "Hari Suci Nyepi",
+      "2026-03-20": "Hari Raya Idul Fitri",
+      "2026-03-21": "Hari Raya Idul Fitri",
+      "2026-04-03": "Wafat Isa Al Masih",
+      "2026-05-01": "Hari Buruh Internasional",
+      "2026-05-14": "Kenaikan Isa Al Masih",
+      "2026-05-27": "Hari Raya Idul Adha",
+      "2026-05-31": "Hari Raya Waisak",
+      "2026-06-01": "Hari Lahir Pancasila",
+      "2026-06-16": "Tahun Baru Islam",
+      "2026-08-17": "Hari Kemerdekaan RI",
+      "2026-08-25": "Maulid Nabi Muhammad SAW",
+      "2026-12-25": "Hari Raya Natal"
+    };
+
     async function fetchNationalHolidays(year) {
-      if (AppState.nationalHolidays[year]) return;
+      if (!AppState.nationalHolidays[year]) {
+        AppState.nationalHolidays[year] = {};
+        if (year === 2026) {
+          Object.assign(AppState.nationalHolidays[year], fallbackHolidays2026);
+        }
+      }
       try {
         const response = await fetch(`https://api-harilibur.vercel.app/api?year=${year}`);
         const data = await response.json();
         if (Array.isArray(data)) {
-          if (!AppState.nationalHolidays[year]) AppState.nationalHolidays[year] = {};
           data.forEach(item => {
             if (item.is_national_holiday) {
-              // Format dari API biasanya YYYY-MM-DD
               AppState.nationalHolidays[year][item.holiday_date] = item.holiday_name || 'Libur Nasional';
             }
           });
           renderCalendar();
         }
       } catch (e) {
-        // Fallback jika API gagal diakses
+        // Jika API gagal, fallback offline tetap aktif digunakan
       }
     }
 
@@ -1857,7 +1880,7 @@
           classes += 'bg-white dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-800 hover:border-brand-300 dark:hover:border-brand-600 ';
         }
 
-        // PENGECEKAN PRIORITAS: Jika Hari Minggu (0) atau Libur Nasional, warna MERAH. Jika Sabtu (6), warna BIRU. Selain itu HIJAU (Senin-Jumat).
+        // ATURAN PRIORITAS WARNA ANGKA: Libur Nasional / Minggu = MERAH, Sabtu = BIRU, Senin-Jumat = HIJAU
         let dayNumberColorClass = '';
         if (isSelected) {
           dayNumberColorClass = 'text-white';
