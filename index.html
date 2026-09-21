@@ -111,19 +111,23 @@
       z-index: 99999;
     }
 
-    @keyframes border-glow-pulse {
-      0%, 100% {
-        box-shadow: 0 0 8px rgba(43, 152, 245, 0.55), inset 0 0 3px rgba(43, 152, 245, 0.25);
-        border-color: #3b82f6;
-      }
-      50% {
-        box-shadow: 0 0 16px rgba(43, 152, 245, 0.95), inset 0 0 6px rgba(43, 152, 245, 0.45);
-        border-color: #60a5fa;
-      }
+    /* Animasi garis berdenyut menyala disesuaikan warna hari */
+    @keyframes border-glow-pulse-sunday {
+      0%, 100% { box-shadow: 0 0 8px rgba(244, 63, 94, 0.55), inset 0 0 3px rgba(244, 63, 94, 0.25); border-color: #f43f5e; }
+      50% { box-shadow: 0 0 16px rgba(244, 63, 94, 0.95), inset 0 0 6px rgba(244, 63, 94, 0.45); border-color: #fb7185; }
     }
-    .today-glow-border {
-      animation: border-glow-pulse 2.2s infinite ease-in-out;
+    @keyframes border-glow-pulse-saturday {
+      0%, 100% { box-shadow: 0 0 8px rgba(59, 130, 246, 0.55), inset 0 0 3px rgba(59, 130, 246, 0.25); border-color: #3b82f6; }
+      50% { box-shadow: 0 0 16px rgba(59, 130, 246, 0.95), inset 0 0 6px rgba(59, 130, 246, 0.45); border-color: #60a5fa; }
     }
+    @keyframes border-glow-pulse-weekday {
+      0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.55), inset 0 0 3px rgba(16, 185, 129, 0.25); border-color: #10b981; }
+      50% { box-shadow: 0 0 16px rgba(16, 185, 129, 0.95), inset 0 0 6px rgba(16, 185, 129, 0.45); border-color: #34d399; }
+    }
+
+    .glow-sunday { animation: border-glow-pulse-sunday 2.2s infinite ease-in-out; }
+    .glow-saturday { animation: border-glow-pulse-saturday 2.2s infinite ease-in-out; }
+    .glow-weekday { animation: border-glow-pulse-weekday 2.2s infinite ease-in-out; }
 
     @keyframes badge-blink-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -317,13 +321,13 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-7 gap-1 sm:gap-2 text-center py-3 text-[11px] sm:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+        <div class="grid grid-cols-7 gap-1 sm:gap-2 text-center py-3 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
           <span class="text-rose-600 dark:text-rose-400">Min</span>
-          <span>Sen</span>
-          <span>Sel</span>
-          <span>Rab</span>
-          <span>Kam</span>
-          <span>Jum</span>
+          <span class="text-emerald-600 dark:text-emerald-400">Sen</span>
+          <span class="text-emerald-600 dark:text-emerald-400">Sel</span>
+          <span class="text-emerald-600 dark:text-emerald-400">Rab</span>
+          <span class="text-emerald-600 dark:text-emerald-400">Kam</span>
+          <span class="text-emerald-600 dark:text-emerald-400">Jum</span>
           <span class="text-blue-600 dark:text-blue-400">Sab</span>
         </div>
 
@@ -1337,14 +1341,13 @@
           if (!AppState.nationalHolidays[year]) AppState.nationalHolidays[year] = {};
           data.forEach(item => {
             if (item.is_national_holiday) {
-              // item.holiday_date format YYYY-MM-DD
               AppState.nationalHolidays[year][item.holiday_date] = item.holiday_name || 'Libur Nasional';
             }
           });
           renderCalendar();
         }
       } catch (e) {
-        // Fallback jika API gagal diakses
+        // Fallback offline / network fail
       }
     }
 
@@ -1791,7 +1794,6 @@
         const isSelected = cellDateStr === formatDateKey(selectedDate);
         const dayOfWeek = cellDate.getDay(); // 0 = Minggu, 6 = Sabtu
 
-        // Cek hari libur nasional dari API
         const holidaysOfYear = AppState.nationalHolidays[currentViewYear] || {};
         const holidayName = holidaysOfYear[cellDateStr];
         const isNationalHoliday = !!holidayName;
@@ -1835,15 +1837,23 @@
         const cell = document.createElement('div');
         let classes = 'min-h-[64px] sm:min-h-[74px] p-1.5 sm:p-2 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ';
         
+        // Penyesuaian kelas animasi menyala (glow) sesuai hari (Minggu=Merah, Sabtu=Biru, Senin-Jumat=Hijau)
+        let glowClass = '';
+        if (isToday) {
+          if (dayOfWeek === 0 || isNationalHoliday) glowClass = ' glow-sunday';
+          else if (dayOfWeek === 6) glowClass = ' glow-saturday';
+          else glowClass = ' glow-weekday';
+        }
+
         if (isSelected) {
           classes += 'bg-brand-500 text-white border-brand-600 shadow-glow-brand font-bold ';
         } else if (isToday) {
-          classes += 'bg-white dark:bg-slate-900 border-2 border-brand-500 dark:border-brand-400 today-glow-border font-bold ';
+          classes += 'bg-white dark:bg-slate-900 border-2 font-bold' + glowClass;
         } else {
           classes += 'bg-white dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-800 hover:border-brand-300 dark:hover:border-brand-600 ';
         }
 
-        // Penentuan warna angka tanggal (Hari Minggu atau Libur Nasional = Merah, Sabtu = Biru)
+        // Penentuan warna angka tanggal (Minggu/Libur = Merah, Sabtu = Biru, Senin-Jumat = Hijau)
         let dayNumberColorClass = '';
         if (isSelected) {
           dayNumberColorClass = 'text-white';
@@ -1852,7 +1862,7 @@
         } else if (dayOfWeek === 6) {
           dayNumberColorClass = 'text-blue-600 dark:text-blue-400 font-extrabold';
         } else {
-          dayNumberColorClass = 'text-slate-700 dark:text-slate-200';
+          dayNumberColorClass = 'text-emerald-600 dark:text-emerald-400 font-semibold';
         }
 
         cell.className = classes;
