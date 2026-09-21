@@ -113,21 +113,32 @@
 
     /* Animasi garis berdenyut menyala disesuaikan warna hari */
     @keyframes border-glow-pulse-sunday {
-      0%, 100% { box-shadow: 0 0 8px rgba(244, 63, 94, 0.55), inset 0 0 3px rgba(244, 63, 94, 0.25); border-color: #f43f5e; }
-      50% { box-shadow: 0 0 16px rgba(244, 63, 94, 0.95), inset 0 0 6px rgba(244, 63, 94, 0.45); border-color: #fb7185; }
+      0%, 100% { box-shadow: 0 0 10px rgba(244, 63, 94, 0.65), inset 0 0 4px rgba(244, 63, 94, 0.3); border-color: #f43f5e; }
+      50% { box-shadow: 0 0 20px rgba(244, 63, 94, 0.98), inset 0 0 8px rgba(244, 63, 94, 0.6); border-color: #fb7185; }
     }
     @keyframes border-glow-pulse-saturday {
-      0%, 100% { box-shadow: 0 0 8px rgba(59, 130, 246, 0.55), inset 0 0 3px rgba(59, 130, 246, 0.25); border-color: #3b82f6; }
-      50% { box-shadow: 0 0 16px rgba(59, 130, 246, 0.95), inset 0 0 6px rgba(59, 130, 246, 0.45); border-color: #60a5fa; }
+      0%, 100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.65), inset 0 0 4px rgba(59, 130, 246, 0.3); border-color: #3b82f6; }
+      50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.98), inset 0 0 8px rgba(59, 130, 246, 0.6); border-color: #60a5fa; }
     }
     @keyframes border-glow-pulse-weekday {
-      0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.55), inset 0 0 3px rgba(16, 185, 129, 0.25); border-color: #10b981; }
-      50% { box-shadow: 0 0 16px rgba(16, 185, 129, 0.95), inset 0 0 6px rgba(16, 185, 129, 0.45); border-color: #34d399; }
+      0%, 100% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.65), inset 0 0 4px rgba(16, 185, 129, 0.3); border-color: #10b981; }
+      50% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.98), inset 0 0 8px rgba(16, 185, 129, 0.6); border-color: #34d399; }
     }
 
-    .glow-sunday { animation: border-glow-pulse-sunday 2.2s infinite ease-in-out; }
-    .glow-saturday { animation: border-glow-pulse-saturday 2.2s infinite ease-in-out; }
-    .glow-weekday { animation: border-glow-pulse-weekday 2.2s infinite ease-in-out; }
+    .glow-sunday { animation: border-glow-pulse-sunday 2s infinite ease-in-out; }
+    .glow-saturday { animation: border-glow-pulse-saturday 2s infinite ease-in-out; }
+    .glow-weekday { animation: border-glow-pulse-weekday 2s infinite ease-in-out; }
+
+    /* Efek sorot khusus baris hari ini di tracker */
+    .today-row-highlight {
+      background-color: rgba(43, 152, 245, 0.08) !important;
+      border: 1px dashed rgba(43, 152, 245, 0.4) !important;
+      border-radius: 12px;
+    }
+    html.dark .today-row-highlight {
+      background-color: rgba(43, 152, 245, 0.12) !important;
+      border: 1px dashed rgba(43, 152, 245, 0.5) !important;
+    }
 
     @keyframes badge-blink-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -436,7 +447,7 @@
       <div id="tabContent-tasks" class="p-5 sm:p-7 space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Kolom Harian Saya -->
-          <div class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative">
+          <div id="colDailyTasksContainer" class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative">
             <div>
               <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200 dark:border-slate-800">
                 <div class="flex items-center gap-2">
@@ -479,7 +490,7 @@
       <div id="tabContent-office" class="p-5 sm:p-7 space-y-6 hidden">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Kolom Harian Kantor -->
-          <div class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative">
+          <div id="colOfficeDailyContainer" class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative">
             <div>
               <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200 dark:border-slate-800">
                 <div class="flex items-center gap-2">
@@ -1332,7 +1343,7 @@
       }, 500);
     }
 
-    // Database offline resmi Hari Libur Nasional & Cuti Bersama Indonesia 2026 yang dijamin akurat & langsung tampil
+    // Database offline bawaan Libur Nasional & Cuti Bersama Resmi Indonesia 2026
     const officialHolidays2026 = {
       "2026-01-01": "Tahun Baru Masehi",
       "2026-01-16": "Isra Mi'raj Nabi Muhammad SAW",
@@ -1379,7 +1390,7 @@
           renderCalendar();
         }
       } catch (e) {
-        // Menggunakan fallback data offline jika fetch internet gagal/terblokir
+        // Fallback jika API publik offline, menggunakan database offline bawaan
       }
     }
 
@@ -1888,7 +1899,7 @@
           classes += 'bg-white dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-800 hover:border-brand-300 dark:hover:border-brand-600 ';
         }
 
-        // PRIORITAS UTAMA: Jika hari Minggu (0) ATAU Libur Nasional/Cuti Bersama, warna WAJIB MERAH. Jika Sabtu, BIRU. Selain itu HIJAU.
+        // ATURAN PRIORITAS WARNA ANGKA: Minggu atau Libur Nasional = MERAH, Sabtu = BIRU, Senin-Jumat = HIJAU
         let dayNumberColorClass = '';
         if (isSelected) {
           dayNumberColorClass = 'text-white';
@@ -1991,6 +2002,26 @@
       if (journalLabel) {
         journalLabel.textContent = `${dayNum} ${monthName} ${yearNum}`;
       }
+
+      // Update efek mencolok (berkedip/glow) pada kartu tugas/habit sesuai hari saat ini
+      const isSelectedToday = selectedStr === todayStr;
+      const dayOfWeekSelected = selectedDate.getDay();
+      const holidaysSelected = AppState.nationalHolidays[selectedDate.getFullYear()] || {};
+      const isSelectedHoliday = !!holidaysSelected[selectedStr];
+
+      let todayGlowClass = 'glow-weekday';
+      if (dayOfWeekSelected === 0 || isSelectedHoliday) todayGlowClass = 'glow-sunday';
+      else if (dayOfWeekSelected === 6) todayGlowClass = 'glow-saturday';
+
+      const colDaily = document.getElementById('colDailyTasksContainer');
+      const colOffice = document.getElementById('colOfficeDailyContainer');
+      [colDaily, colOffice].forEach(el => {
+        if (!el) return;
+        el.className = el.className.replace(/glow-(sunday|saturday|weekday)/g, '');
+        if (isSelectedToday) {
+          el.classList.add(todayGlowClass);
+        }
+      });
 
       loadReflectionsForSelectedDate();
       renderActiveTasks();
