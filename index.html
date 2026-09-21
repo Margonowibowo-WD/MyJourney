@@ -111,7 +111,7 @@
       z-index: 99999;
     }
 
-    /* Animasi garis berdenyut menyala untuk Kalender */
+    /* Animasi garis berdenyut menyala disesuaikan warna hari */
     @keyframes border-glow-pulse-sunday {
       0%, 100% { box-shadow: 0 0 8px rgba(244, 63, 94, 0.55), inset 0 0 3px rgba(244, 63, 94, 0.25); border-color: #f43f5e; }
       50% { box-shadow: 0 0 16px rgba(244, 63, 94, 0.95), inset 0 0 6px rgba(244, 63, 94, 0.45); border-color: #fb7185; }
@@ -129,22 +129,12 @@
     .glow-saturday { animation: border-glow-pulse-saturday 2.2s infinite ease-in-out; }
     .glow-weekday { animation: border-glow-pulse-weekday 2.2s infinite ease-in-out; }
 
-    /* Efek sorot berkedip/menyala khusus untuk baris tanggal hari ini di Habit & Time Tracker */
-    @keyframes tracker-today-pulse {
-      0%, 100% { background-color: rgba(43, 152, 245, 0.12); box-shadow: inset 0 0 10px rgba(43, 152, 245, 0.35); border: 1.5px solid #2b98f5; }
-      50% { background-color: rgba(43, 152, 245, 0.28); box-shadow: inset 0 0 18px rgba(43, 152, 245, 0.65); border: 1.5px solid #60a5fa; }
-    }
-    .tracker-today-highlight {
-      animation: tracker-today-pulse 1.8s infinite ease-in-out;
-      border-radius: 12px;
-    }
-
     @keyframes badge-blink-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(0.96); }
+      50% { opacity: 0.5; transform: scale(0.94); }
     }
     .animate-badge-blink {
-      animation: badge-blink-pulse 1.8s infinite ease-in-out;
+      animation: badge-blink-pulse 1.5s infinite ease-in-out;
     }
 
     @keyframes pop-check {
@@ -529,7 +519,7 @@
       </div>
     </section>
 
-    <!-- SECTION HABIT TRACKER (Baris Tanggal Hari Ini Berkedip/Menyala) -->
+    <!-- SECTION HABIT TRACKER -->
     <section class="bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-7 shadow-subtle-card border border-slate-200/80 dark:border-slate-800 space-y-5">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -568,7 +558,7 @@
       </div>
     </section>
 
-    <!-- SECTION TIME TRACKER 24 JAM PIXEL MATRIX (Baris Tanggal Hari Ini Berkedip/Menyala) -->
+    <!-- SECTION TIME TRACKER 24 JAM PIXEL MATRIX -->
     <section class="bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-7 shadow-subtle-card border border-slate-200/80 dark:border-slate-800 space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 dark:border-slate-800">
         <div class="flex items-center gap-3">
@@ -1342,6 +1332,7 @@
       }, 500);
     }
 
+    // Database offline bawaan Hari Libur Nasional & Cuti Bersama Resmi Indonesia Tahun 2026
     const officialHolidays2026 = {
       "2026-01-01": "Tahun Baru Masehi",
       "2026-01-16": "Isra Mi'raj Nabi Muhammad SAW",
@@ -1381,13 +1372,15 @@
         const data = await response.json();
         if (Array.isArray(data)) {
           data.forEach(item => {
-            if (item.is_national_holiday || item.holiday_name) {
+            if (item.holiday_date) {
               AppState.nationalHolidays[year][item.holiday_date] = item.holiday_name || 'Libur Nasional / Cuti Bersama';
             }
           });
           renderCalendar();
         }
-      } catch (e) {}
+      } catch (e) {
+        // Menggunakan database bawaan jika fetch jaringan gagal
+      }
     }
 
     async function loadCloudDataOnStart() {
@@ -1895,6 +1888,7 @@
           classes += 'bg-white dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-800 hover:border-brand-300 dark:hover:border-brand-600 ';
         }
 
+        // PRIORITAS UTAMA: Jika hari Minggu (0) atau Libur Nasional/Cuti Bersama, warna MERAH. Jika Sabtu (6), BIRU. Senin-Jumat, HIJAU.
         let dayNumberColorClass = '';
         if (isSelected) {
           dayNumberColorClass = 'text-white';
@@ -2599,17 +2593,25 @@
         purple: 'bg-purple-500 text-white'
       };
 
-      const todayDayNum = today.getDate();
-      const isCurrentMonthView = month === today.getMonth() && year === today.getFullYear();
-
       let html = `
         <div class="grid grid-cols-[180px_repeat(${daysInMonth},_minmax(22px,_1fr))_36px] gap-1 items-center pb-2 border-b border-slate-200 dark:border-slate-800 text-[11px] font-bold text-slate-400 dark:text-slate-500">
           <div>Kebiasaan Margono</div>
       `;
 
       for (let day = 1; day <= daysInMonth; day++) {
-        const isCurrentDay = day === todayDayNum && isCurrentMonthView;
-        html += `<div class="text-center ${isCurrentDay ? 'text-brand-600 dark:text-brand-400 font-extrabold' : ''}">${day}</div>`;
+        const cellDateObj = new Date(year, month, day);
+        const isCurrentDay = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+        const isSelectedDayCol = formatDateKey(cellDateObj) === formatDateKey(selectedDate);
+        
+        // Garis mencolok pada Tanggal dan Grid Habit Tracker untuk hari tersebut (Hari Terpilih / Hari Ini)
+        let colHighlightClass = '';
+        if (isCurrentDay) {
+          colHighlightClass = 'bg-brand-500/15 dark:bg-brand-500/25 ring-2 ring-brand-500/80 rounded-md font-extrabold text-brand-600 dark:text-brand-400';
+        } else if (isSelectedDayCol) {
+          colHighlightClass = 'bg-indigo-500/15 dark:bg-indigo-500/25 ring-2 ring-indigo-500/80 rounded-md font-bold text-indigo-600 dark:text-indigo-400';
+        }
+
+        html += `<div class="text-center py-1 ${colHighlightClass}">${day}</div>`;
       }
       html += `<div class="text-center">Aksi</div></div><div class="space-y-2 mt-3">`;
 
@@ -2624,14 +2626,21 @@
           const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
           const isDone = !!(habit.completions && habit.completions[dateStr]);
           const activeClass = colorMap[habit.color] || colorMap.emerald;
-          const isTodayCell = day === todayDayNum && isCurrentMonthView;
-
-          // Kotak tanggal hari ini pada baris habit diberi efek sorot berkedip/menyala mencolok
-          const todayCellGlow = isTodayCell ? ' tracker-today-highlight ring-2 ring-brand-500' : '';
+          
+          const cellDateObj = new Date(year, month, day);
+          const isCurrentDay = dateStr === todayStr;
+          const isSelectedDayCol = dateStr === formatDateKey(selectedDate);
+          
+          let cellHighlightBorder = '';
+          if (isCurrentDay) {
+            cellHighlightBorder = 'ring-2 ring-brand-500 ring-offset-1 z-10';
+          } else if (isSelectedDayCol) {
+            cellHighlightBorder = 'ring-2 ring-indigo-500 ring-offset-1 z-10';
+          }
 
           html += `
             <div onclick="toggleHabitDay('${habit.id}', '${dateStr}')" 
-                 class="h-6 w-full rounded cursor-pointer transition-all flex items-center justify-center text-[9px] font-black select-none ${isDone ? activeClass + ' shadow-sm' : 'bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700'}${todayCellGlow}">
+                 class="h-6 w-full rounded cursor-pointer transition-all flex items-center justify-center text-[9px] font-black select-none ${cellHighlightBorder} ${isDone ? activeClass + ' shadow-sm' : 'bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700'}">
               ${isDone ? '✓' : ''}
             </div>
           `;
@@ -2755,28 +2764,25 @@
 
       html += `<div class="text-right pr-1">Total</div></div><div class="space-y-1.5 mt-2.5">`;
 
-      const todayDayNum = today.getDate();
-      const isCurrentMonthView = month === today.getMonth() && year === today.getFullYear();
-
       for (let day = 1; day <= daysInMonth; day++) {
         const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        const isCurrentDay = day === todayDayNum && isCurrentMonthView;
+        const isCurrentDay = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
         const isSelectedDay = dateStr === formatDateKey(selectedDate);
         const dayData = AppState.timeTracking[dateStr] || {};
 
         let rowFilledHours = 0;
+        
+        // Garis mencolok pada Baris Tanggal Time Tracker untuk hari tersebut
         let rowDayClass = 'font-bold text-slate-700 dark:text-slate-300';
+        let rowHighlightStyle = '';
         if (isCurrentDay) {
-          rowDayClass = 'font-extrabold text-brand-600 dark:text-brand-400';
+          rowDayClass = 'font-extrabold text-brand-600 dark:text-brand-400 bg-brand-500/15 dark:bg-brand-500/25 rounded-md px-1 ring-2 ring-brand-500/80';
         } else if (isSelectedDay) {
-          rowDayClass = 'font-bold text-indigo-600 dark:text-indigo-400';
+          rowDayClass = 'font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-500/15 dark:bg-indigo-500/25 rounded-md px-1 ring-2 ring-indigo-500/80';
         }
 
-        // Baris tanggal hari ini pada Time Tracker diberi efek sorot menyala mencolok
-        const rowTodayHighlightClass = isCurrentDay ? ' tracker-today-highlight px-1' : '';
-
         html += `
-          <div class="grid grid-cols-[90px_repeat(24,_minmax(22px,_1fr))_55px] gap-1 items-center hover:bg-slate-50/60 dark:hover:bg-slate-800/40 rounded-lg transition-colors py-0.5${rowTodayHighlightClass}">
+          <div class="grid grid-cols-[90px_repeat(24,_minmax(22px,_1fr))_55px] gap-1 items-center hover:bg-slate-50/60 dark:hover:bg-slate-800/40 rounded-lg transition-colors py-0.5">
             <div class="text-xs ${rowDayClass} truncate pl-1 flex items-center gap-1 cursor-pointer" onclick="selectCalendarDate(${year}, ${month}, ${day})" title="Klik untuk fokus ke tanggal ini">
               <span>${day} ${monthNamesShort[month]}</span>
               ${isCurrentDay ? '<span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>' : ''}
@@ -2788,12 +2794,17 @@
           const cat = catMap[catId];
           const hourLabel = String(h).padStart(2, '0') + ':00';
 
+          // Garis mencolok pada kotak pixel jam di baris tanggal tersebut
+          let pixelHighlightBorder = '';
+          if (isCurrentDay) pixelHighlightBorder = 'ring-1 ring-brand-500/60';
+          else if (isSelectedDay) pixelHighlightBorder = 'ring-1 ring-indigo-500/60';
+
           if (cat) {
             rowFilledHours++;
             html += `
               <div onclick="togglePixelHour('${dateStr}', ${h})" 
                    title="${day} ${monthNamesShort[month]} • ${hourLabel} : ${cat.name}" 
-                   class="h-5 sm:h-6 w-full rounded-md cursor-pointer transition-transform hover:scale-110 active:scale-95 shadow-2xs flex items-center justify-center text-[9px]"
+                   class="h-5 sm:h-6 w-full rounded-md cursor-pointer transition-transform hover:scale-110 active:scale-95 shadow-2xs flex items-center justify-center text-[9px] ${pixelHighlightBorder}"
                    style="background-color: ${cat.color};">
               </div>
             `;
@@ -2801,7 +2812,7 @@
             html += `
               <div onclick="togglePixelHour('${dateStr}', ${h})" 
                    title="${day} ${monthNamesShort[month]} • ${hourLabel} : Kosong (Klik untuk isi)" 
-                   class="h-5 sm:h-6 w-full rounded-md cursor-pointer transition-all bg-slate-100 dark:bg-slate-800/80 hover:bg-indigo-200 dark:hover:bg-indigo-900/60 border border-slate-200/50 dark:border-slate-700/50 hover:border-indigo-400">
+                   class="h-5 sm:h-6 w-full rounded-md cursor-pointer transition-all bg-slate-100 dark:bg-slate-800/80 hover:bg-indigo-200 dark:hover:bg-indigo-900/60 border border-slate-200/50 dark:border-slate-700/50 hover:border-indigo-400 ${pixelHighlightBorder}">
               </div>
             `;
           }
