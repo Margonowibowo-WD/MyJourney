@@ -138,6 +138,16 @@
       border-width: 2px !important;
     }
 
+    /* Animasi menyala & berkedip untuk Kotak Catatan Harian jika masih ada tugas belum tuntas */
+    @keyframes container-blink-pulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(244, 63, 94, 0.5), inset 0 0 6px rgba(244, 63, 94, 0.2); border-color: #f43f5e; }
+      50% { box-shadow: 0 0 4px rgba(244, 63, 94, 0.1), inset 0 0 2px rgba(244, 63, 94, 0.05); border-color: rgba(244, 63, 94, 0.3); }
+    }
+    .container-pending-glow {
+      animation: container-blink-pulse 1.8s infinite ease-in-out;
+      border-width: 2px !important;
+    }
+
     @keyframes badge-blink-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(0.94); }
@@ -444,8 +454,8 @@
       <!-- TAB 1: PEKERJAAN SAYA -->
       <div id="tabContent-tasks" class="p-5 sm:p-7 space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Kolom Harian Saya -->
-          <div class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative">
+          <!-- Kolom Harian Saya (Diberi id agar bisa menyala & berkedip jika ada tugas belum tuntas) -->
+          <div id="containerCardMyDaily" class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative transition-all">
             <div>
               <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200 dark:border-slate-800">
                 <div class="flex items-center gap-2">
@@ -487,8 +497,8 @@
       <!-- TAB 2: PEKERJAAN KANTOR -->
       <div id="tabContent-office" class="p-5 sm:p-7 space-y-6 hidden">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Kolom Harian Kantor -->
-          <div class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative">
+          <!-- Kolom Harian Kantor (Diberi id agar bisa menyala & berkedip jika ada tugas belum tuntas) -->
+          <div id="containerCardOfficeDaily" class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative transition-all">
             <div>
               <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200 dark:border-slate-800">
                 <div class="flex items-center gap-2">
@@ -839,7 +849,7 @@
         <span id="personalNotesSaveStatus" class="text-[11px] text-slate-400 italic">Otomatis tersimpan</span>
         <div class="flex items-center gap-2">
           <button onclick="closeModal('modalMyPersonalNotes')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Tutup</button>
-          <button onclick="saveMyPersonalNotes()" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-brand-500/20 active:scale-95 cursor-pointer">Simpan Catatan</button>
+          <button onclick="saveMyPersonalNotes()" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 active:scale-95 cursor-pointer">Simpan Catatan</button>
         </div>
       </div>
     </div>
@@ -1834,7 +1844,7 @@
 
         const isToday = cellDateStr === todayStr;
         const isSelected = cellDateStr === formatDateKey(selectedDate);
-        const dayOfWeek = cellDate.getDay(); // 0 = Minggu, 1-5 = Senin-Jumat, 6 = Sabtu
+        const dayOfWeek = cellDate.getDay();
 
         const holidaysOfYear = AppState.nationalHolidays[currentViewYear] || {};
         const holidayName = holidaysOfYear[cellDateStr];
@@ -1888,7 +1898,6 @@
           else glowClass = ' glow-weekday';
         }
 
-        // Jika masih ada tugas Catatan Harian/Kantor yang belum tuntas, beri efek garis pinggir menyala dan berkedip
         if (hasPendingTasks && !isSelected) {
           classes += ' bg-white dark:bg-slate-900 pending-tasks-glow ';
         } else if (isSelected) {
@@ -2014,6 +2023,27 @@
       renderDailyTasksList();
       renderOfficeScheduledTasksList();
       renderOfficeDailyTasksList();
+
+      // Cek apakah ada tugas harian belum selesai pada tanggal yang sedang dipilih
+      const selectedStr = formatDateKey(selectedDate);
+      const myDaily = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr);
+      const officeDaily = (AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr);
+      
+      const pendingMy = myDaily.filter(t => !t.completed).length;
+      const pendingOffice = officeDaily.filter(t => !t.completed).length;
+
+      const cardMyDaily = document.getElementById('containerCardMyDaily');
+      const cardOfficeDaily = document.getElementById('containerCardOfficeDaily');
+
+      if (cardMyDaily) {
+        if (pendingMy > 0) cardMyDaily.classList.add('container-pending-glow');
+        else cardMyDaily.classList.remove('container-pending-glow');
+      }
+
+      if (cardOfficeDaily) {
+        if (pendingOffice > 0) cardOfficeDaily.classList.add('container-pending-glow');
+        else cardOfficeDaily.classList.remove('container-pending-glow');
+      }
     }
 
     function updateDailyProgress() {
