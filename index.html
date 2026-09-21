@@ -138,15 +138,28 @@
       border-width: 2px !important;
     }
 
-    /* Animasi menyala & berkedip untuk Kotak Catatan Harian jika masih ada tugas belum tuntas */
-    @keyframes container-blink-pulse {
+    /* Animasi menyala & berkedip untuk Kotak Catatan Harian.
+       Warnanya mengikuti warna tanggal yang sedang dipilih: merah (Minggu/libur),
+       biru (Sabtu), atau hijau (hari kerja). */
+    @keyframes container-blink-sunday {
       0%, 100% { box-shadow: 0 0 12px rgba(244, 63, 94, 0.5), inset 0 0 6px rgba(244, 63, 94, 0.2); border-color: #f43f5e; }
-      50% { box-shadow: 0 0 4px rgba(244, 63, 94, 0.1), inset 0 0 2px rgba(244, 63, 94, 0.05); border-color: rgba(244, 63, 94, 0.3); }
+      50% { box-shadow: 0 0 16px rgba(244, 63, 94, 0.9), inset 0 0 6px rgba(244, 63, 94, 0.4); border-color: #fb7185; }
+    }
+    @keyframes container-blink-saturday {
+      0%, 100% { box-shadow: 0 0 12px rgba(59, 130, 246, 0.5), inset 0 0 6px rgba(59, 130, 246, 0.2); border-color: #3b82f6; }
+      50% { box-shadow: 0 0 16px rgba(59, 130, 246, 0.9), inset 0 0 6px rgba(59, 130, 246, 0.4); border-color: #60a5fa; }
+    }
+    @keyframes container-blink-weekday {
+      0%, 100% { box-shadow: 0 0 12px rgba(16, 185, 129, 0.5), inset 0 0 6px rgba(16, 185, 129, 0.2); border-color: #10b981; }
+      50% { box-shadow: 0 0 16px rgba(16, 185, 129, 0.9), inset 0 0 6px rgba(16, 185, 129, 0.4); border-color: #34d399; }
     }
     .container-pending-glow {
-      animation: container-blink-pulse 1.8s infinite ease-in-out;
+      animation: container-blink-weekday 1.8s infinite ease-in-out;
       border-width: 2px !important;
     }
+    .container-pending-glow.pending-sunday { animation-name: container-blink-sunday; }
+    .container-pending-glow.pending-saturday { animation-name: container-blink-saturday; }
+    .container-pending-glow.pending-weekday { animation-name: container-blink-weekday; }
 
     @keyframes badge-blink-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -2035,15 +2048,25 @@
       const cardMyDaily = document.getElementById('containerCardMyDaily');
       const cardOfficeDaily = document.getElementById('containerCardOfficeDaily');
 
-      if (cardMyDaily) {
-        if (pendingMy > 0) cardMyDaily.classList.add('container-pending-glow');
-        else cardMyDaily.classList.remove('container-pending-glow');
-      }
+      // Warna kedipan mengikuti warna tanggal yang sedang dipilih di kalender.
+      const selectedDayOfWeek = selectedDate.getDay();
+      const selectedYear = selectedDate.getFullYear();
+      const selectedDateStr = formatDateKey(selectedDate);
+      const selectedHoliday = !!((AppState.nationalHolidays[selectedYear] || {})[selectedDateStr]);
+      const pendingColorClass = (selectedDayOfWeek === 0 || selectedHoliday)
+        ? 'pending-sunday'
+        : (selectedDayOfWeek === 6 ? 'pending-saturday' : 'pending-weekday');
 
-      if (cardOfficeDaily) {
-        if (pendingOffice > 0) cardOfficeDaily.classList.add('container-pending-glow');
-        else cardOfficeDaily.classList.remove('container-pending-glow');
-      }
+      const updatePendingGlow = (card, pending) => {
+        if (!card) return;
+        card.classList.remove('container-pending-glow', 'pending-sunday', 'pending-saturday', 'pending-weekday');
+        if (pending > 0) {
+          card.classList.add('container-pending-glow', pendingColorClass);
+        }
+      };
+
+      updatePendingGlow(cardMyDaily, pendingMy);
+      updatePendingGlow(cardOfficeDaily, pendingOffice);
     }
 
     function updateDailyProgress() {
