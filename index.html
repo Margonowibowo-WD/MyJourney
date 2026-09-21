@@ -1341,13 +1341,14 @@
           if (!AppState.nationalHolidays[year]) AppState.nationalHolidays[year] = {};
           data.forEach(item => {
             if (item.is_national_holiday) {
+              // Format dari API biasanya YYYY-MM-DD
               AppState.nationalHolidays[year][item.holiday_date] = item.holiday_name || 'Libur Nasional';
             }
           });
           renderCalendar();
         }
       } catch (e) {
-        // Fallback offline / network fail
+        // Fallback jika API gagal diakses
       }
     }
 
@@ -1789,7 +1790,6 @@
 
       for (let day = 1; day <= daysInMonth; day++) {
         const cellDate = new Date(currentViewYear, currentViewMonth, day);
-        // Format YYYY-MM-DD dengan aman lokal
         const y = cellDate.getFullYear();
         const m = String(cellDate.getMonth() + 1).padStart(2, '0');
         const d = String(cellDate.getDate()).padStart(2, '0');
@@ -1842,7 +1842,6 @@
         const cell = document.createElement('div');
         let classes = 'min-h-[64px] sm:min-h-[74px] p-1.5 sm:p-2 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ';
         
-        // Penyesuaian kelas animasi menyala (glow) sesuai hari (Minggu/Libur=Merah, Sabtu=Biru, Senin-Jumat=Hijau)
         let glowClass = '';
         if (isToday) {
           if (dayOfWeek === 0 || isNationalHoliday) glowClass = ' glow-sunday';
@@ -1858,7 +1857,7 @@
           classes += 'bg-white dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-800 hover:border-brand-300 dark:hover:border-brand-600 ';
         }
 
-        // Penentuan warna angka tanggal (Minggu/Libur = Merah, Sabtu = Biru, Senin-Jumat = Hijau)
+        // PENGECEKAN PRIORITAS: Jika Hari Minggu (0) atau Libur Nasional, warna MERAH. Jika Sabtu (6), warna BIRU. Selain itu HIJAU (Senin-Jumat).
         let dayNumberColorClass = '';
         if (isSelected) {
           dayNumberColorClass = 'text-white';
