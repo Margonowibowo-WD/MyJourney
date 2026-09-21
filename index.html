@@ -1789,10 +1789,15 @@
 
       for (let day = 1; day <= daysInMonth; day++) {
         const cellDate = new Date(currentViewYear, currentViewMonth, day);
-        const cellDateStr = formatDateKey(cellDate);
+        // Format YYYY-MM-DD dengan aman lokal
+        const y = cellDate.getFullYear();
+        const m = String(cellDate.getMonth() + 1).padStart(2, '0');
+        const d = String(cellDate.getDate()).padStart(2, '0');
+        const cellDateStr = `${y}-${m}-${d}`;
+
         const isToday = cellDateStr === todayStr;
         const isSelected = cellDateStr === formatDateKey(selectedDate);
-        const dayOfWeek = cellDate.getDay(); // 0 = Minggu, 6 = Sabtu
+        const dayOfWeek = cellDate.getDay(); // 0 = Minggu, 1-5 = Senin-Jumat, 6 = Sabtu
 
         const holidaysOfYear = AppState.nationalHolidays[currentViewYear] || {};
         const holidayName = holidaysOfYear[cellDateStr];
@@ -1837,7 +1842,7 @@
         const cell = document.createElement('div');
         let classes = 'min-h-[64px] sm:min-h-[74px] p-1.5 sm:p-2 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ';
         
-        // Penyesuaian kelas animasi menyala (glow) sesuai hari (Minggu=Merah, Sabtu=Biru, Senin-Jumat=Hijau)
+        // Penyesuaian kelas animasi menyala (glow) sesuai hari (Minggu/Libur=Merah, Sabtu=Biru, Senin-Jumat=Hijau)
         let glowClass = '';
         if (isToday) {
           if (dayOfWeek === 0 || isNationalHoliday) glowClass = ' glow-sunday';
