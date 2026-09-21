@@ -129,6 +129,15 @@
     .glow-saturday { animation: border-glow-pulse-saturday 2.2s infinite ease-in-out; }
     .glow-weekday { animation: border-glow-pulse-weekday 2.2s infinite ease-in-out; }
 
+    @keyframes pending-border-blink {
+      0%, 100% { border-color: #f43f5e; box-shadow: 0 0 10px rgba(244, 63, 94, 0.6); }
+      50% { border-color: #cbd5e1; box-shadow: 0 0 2px rgba(244, 63, 94, 0.1); }
+    }
+    .pending-tasks-glow {
+      animation: pending-border-blink 1.8s infinite ease-in-out;
+      border-width: 2px !important;
+    }
+
     @keyframes badge-blink-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(0.94); }
@@ -1332,7 +1341,6 @@
       }, 500);
     }
 
-    // Database offline bawaan Hari Libur Nasional & Cuti Bersama Resmi Indonesia Tahun 2026
     const officialHolidays2026 = {
       "2026-01-01": "Tahun Baru Masehi",
       "2026-01-16": "Isra Mi'raj Nabi Muhammad SAW",
@@ -1378,9 +1386,7 @@
           });
           renderCalendar();
         }
-      } catch (e) {
-        // Menggunakan database bawaan jika fetch jaringan gagal
-      }
+      } catch (e) {}
     }
 
     async function loadCloudDataOnStart() {
@@ -1839,10 +1845,12 @@
 
         const pendingMyDaily = myDailyList.filter(t => !t.completed).length;
         const pendingOfficeDaily = officeDailyList.filter(t => !t.completed).length;
+        const hasPendingTasks = (pendingMyDaily + pendingOfficeDaily) > 0;
+
+        let indicatorsHtml = '';
         const totalSpecific = myDailyList.length + officeDailyList.length;
         const totalPendingSpecific = pendingMyDaily + pendingOfficeDaily;
 
-        let indicatorsHtml = '';
         if (totalSpecific > 0) {
           indicatorsHtml += `<div class="flex items-center gap-1 flex-wrap justify-end mt-1">`;
           if (totalPendingSpecific === 0) {
@@ -1880,15 +1888,17 @@
           else glowClass = ' glow-weekday';
         }
 
-        if (isSelected) {
-          classes += 'bg-brand-500 text-white border-brand-600 shadow-glow-brand font-bold ';
+        // Jika masih ada tugas Catatan Harian/Kantor yang belum tuntas, beri efek garis pinggir menyala dan berkedip
+        if (hasPendingTasks && !isSelected) {
+          classes += ' bg-white dark:bg-slate-900 pending-tasks-glow ';
+        } else if (isSelected) {
+          classes += ' bg-brand-500 text-white border-brand-600 shadow-glow-brand font-bold ';
         } else if (isToday) {
-          classes += 'bg-white dark:bg-slate-900 border-2 font-bold' + glowClass;
+          classes += ' bg-white dark:bg-slate-900 border-2 font-bold' + glowClass;
         } else {
-          classes += 'bg-white dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-800 hover:border-brand-300 dark:hover:border-brand-600 ';
+          classes += ' bg-white dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-800 hover:border-brand-300 dark:hover:border-brand-600 ';
         }
 
-        // PRIORITAS UTAMA: Jika hari Minggu (0) atau Libur Nasional/Cuti Bersama, warna MERAH. Jika Sabtu (6), BIRU. Senin-Jumat, HIJAU.
         let dayNumberColorClass = '';
         if (isSelected) {
           dayNumberColorClass = 'text-white';
@@ -2603,7 +2613,6 @@
         const isCurrentDay = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
         const isSelectedDayCol = formatDateKey(cellDateObj) === formatDateKey(selectedDate);
         
-        // Garis mencolok pada Tanggal dan Grid Habit Tracker untuk hari tersebut (Hari Terpilih / Hari Ini)
         let colHighlightClass = '';
         if (isCurrentDay) {
           colHighlightClass = 'bg-brand-500/15 dark:bg-brand-500/25 ring-2 ring-brand-500/80 rounded-md font-extrabold text-brand-600 dark:text-brand-400';
@@ -2627,7 +2636,6 @@
           const isDone = !!(habit.completions && habit.completions[dateStr]);
           const activeClass = colorMap[habit.color] || colorMap.emerald;
           
-          const cellDateObj = new Date(year, month, day);
           const isCurrentDay = dateStr === todayStr;
           const isSelectedDayCol = dateStr === formatDateKey(selectedDate);
           
@@ -2772,9 +2780,7 @@
 
         let rowFilledHours = 0;
         
-        // Garis mencolok pada Baris Tanggal Time Tracker untuk hari tersebut
         let rowDayClass = 'font-bold text-slate-700 dark:text-slate-300';
-        let rowHighlightStyle = '';
         if (isCurrentDay) {
           rowDayClass = 'font-extrabold text-brand-600 dark:text-brand-400 bg-brand-500/15 dark:bg-brand-500/25 rounded-md px-1 ring-2 ring-brand-500/80';
         } else if (isSelectedDay) {
@@ -2794,7 +2800,6 @@
           const cat = catMap[catId];
           const hourLabel = String(h).padStart(2, '0') + ':00';
 
-          // Garis mencolok pada kotak pixel jam di baris tanggal tersebut
           let pixelHighlightBorder = '';
           if (isCurrentDay) pixelHighlightBorder = 'ring-1 ring-brand-500/60';
           else if (isSelectedDay) pixelHighlightBorder = 'ring-1 ring-indigo-500/60';
