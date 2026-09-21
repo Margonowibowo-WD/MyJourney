@@ -235,7 +235,7 @@
   </header>
 
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-7">
-    <!-- Affirmation & Welcoming Banner (Ditambahkan Tombol "Catatan Saya") -->
+    <!-- Affirmation & Welcoming Banner -->
     <section class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-brand-900 to-indigo-950 text-white p-6 sm:p-8 shadow-elevated border border-white/10">
       <div class="absolute -right-16 -top-16 w-64 h-64 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute -left-12 -bottom-12 w-60 h-60 bg-accent-purple/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -265,7 +265,6 @@
               </button>
             </div>
 
-            <!-- Tombol Tambahan "Catatan Saya" -->
             <button onclick="openMyPersonalNotesModal()" class="px-3.5 py-1.5 rounded-xl bg-amber-500/30 hover:bg-amber-500/50 border border-amber-300/40 text-amber-200 hover:text-white text-xs font-semibold backdrop-blur-md transition-all flex items-center gap-2 shadow-sm cursor-pointer">
               <span>📝</span>
               <span>Catatan Saya</span>
@@ -434,18 +433,22 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              Agenda Pekerjaan Saya: <span id="agendaDateTitleBadge" class="text-brand-600 dark:text-brand-400 underline decoration-brand-300 dark:decoration-brand-700 decoration-2 underline-offset-4">Tanggal Hari Ini</span>
+              Agenda Pekerjaan Saya: <span id="agendaDateTitleBadge" class="text-brand-600 dark:text-brand-400">Tanggal Hari Ini</span>
             </h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 font-body">Catatan pribadi diurutkan dari yang paling prioritas dan mendesak di posisi teratas.</p>
           </div>
         </div>
 
-        <div class="p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-wrap items-center justify-between gap-2.5 text-[11px] font-body">
-          <span class="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v5l3 2"/></svg>
-            Warna Indikator Deadline Catatan Terjadwal:
-          </span>
-          <div class="flex flex-wrap items-center gap-2">
+        <!-- Tombol Ikon Petunjuk Warna Deadline -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <button onclick="toggleDeadlineLegend()" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-all cursor-pointer">
+              <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 8h.01M11 12h1v4h1"/></svg>
+              <span>Info Indikator Warna Deadline</span>
+              <svg id="legendChevron" class="w-3.5 h-3.5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+
+          <div id="deadlineLegendContainer" class="hidden p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-wrap items-center gap-2 text-[11px] font-body">
             <span class="px-2 py-0.5 rounded-md font-semibold bg-red-200 dark:bg-red-950/90 text-red-900 dark:text-red-200 border border-red-400 dark:border-red-700">&le;0 Hari (Expired)</span>
             <span class="px-2 py-0.5 rounded-md font-semibold bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800">1-5 Hari (Mepet Deadline)</span>
             <span class="px-2 py-0.5 rounded-md font-semibold bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-800">6-10 Hari (Segera)</span>
@@ -498,9 +501,8 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              Agenda Pekerjaan Kantor: <span id="officeDateTitleBadge" class="text-emerald-600 dark:text-emerald-400 underline decoration-emerald-300 dark:decoration-emerald-700 decoration-2 underline-offset-4">Tanggal Hari Ini</span>
+              Agenda Pekerjaan Kantor: <span id="officeDateTitleBadge" class="text-emerald-600 dark:text-emerald-400">Tanggal Hari Ini</span>
             </h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 font-body">Catatan operasional dan pekerjaan kantor terstruktur rapi.</p>
           </div>
         </div>
 
@@ -832,7 +834,7 @@
     </div>
   </footer>
 
-  <!-- MODAL "CATATAN SAYA" (POPUP KHUSUS DARI BANNER AFIRMASI) -->
+  <!-- MODAL "CATATAN SAYA" -->
   <div id="modalMyPersonalNotes" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
     <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-lg w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -1761,6 +1763,17 @@
         badgeClass: 'bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-800',
         cardBorderClass: 'border-l-4 border-l-blue-500'
       };
+    }
+
+    function toggleDeadlineLegend() {
+      playClickSound();
+      const container = document.getElementById('deadlineLegendContainer');
+      const chevron = document.getElementById('legendChevron');
+      if (!container) return;
+      const isHidden = container.classList.toggle('hidden');
+      if (chevron) {
+        chevron.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(180deg)';
+      }
     }
 
     function renderCalendar() {
@@ -3234,7 +3247,6 @@
       triggerCloudSave();
     }
 
-    // Fungsi khusus pop-up "Catatan Saya"
     function openMyPersonalNotesModal() {
       const textarea = document.getElementById('inputMyPersonalNotesContent');
       if (textarea) {
