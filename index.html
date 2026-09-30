@@ -404,8 +404,6 @@
           <div class="mt-3 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 font-body">
             <span id="dailyMyTaskCount">0 Tugas Saya</span>
             <span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-            <span id="dailyOfficeTaskCount">0 Kantor</span>
-            <span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
             <span id="dailyStatusNotice" class="font-medium text-emerald-600 dark:text-emerald-400">Terus maju!</span>
           </div>
         </div>
@@ -451,16 +449,12 @@
       </section>
     </div>
 
-    <!-- TAB NAVIGASI & KONTEN (Pekerjaan Saya & Pekerjaan Kantor) -->
+    <!-- TAB NAVIGASI & KONTEN (Pekerjaan Saya) -->
     <section class="bg-white dark:bg-slate-900 rounded-3xl shadow-subtle-card border border-slate-200/80 dark:border-slate-800 overflow-hidden">
       <div class="flex border-b border-slate-200/80 dark:border-slate-800 overflow-x-auto bg-slate-50/70 dark:bg-slate-950/60 p-2 gap-1 sm:gap-2">
         <button id="tabBtn-tasks" onclick="switchTab('tasks')" class="tab-btn px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shrink-0 bg-white dark:bg-slate-800 text-brand-600 dark:text-brand-400 shadow-sm cursor-pointer">
           <span class="text-base">👤</span>
           Pekerjaan Saya (<span id="tabBadgeMyTasks">0</span>)
-        </button>
-        <button id="tabBtn-office" onclick="switchTab('office')" class="tab-btn px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shrink-0 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-slate-800/60 cursor-pointer">
-          <span class="text-base">💼</span>
-          Pekerjaan Kantor (<span id="tabBadgeOfficeTasks">0</span>)
         </button>
       </div>
 
@@ -507,48 +501,6 @@
         </div>
       </div>
 
-      <!-- TAB 2: PEKERJAAN KANTOR -->
-      <div id="tabContent-office" class="p-5 sm:p-7 space-y-6 hidden">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Kolom Harian Kantor (Diberi id agar bisa menyala & berkedip jika ada tugas belum tuntas) -->
-          <div id="containerCardOfficeDaily" class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative transition-all">
-            <div>
-              <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200 dark:border-slate-800">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-emerald-100 dark:ring-emerald-950"></span>
-                  <h4 class="text-sm font-bold text-slate-800 dark:text-slate-100">Catatan Kantor <span id="officeDateTitleBadge" class="font-normal text-slate-500 dark:text-slate-400">(Tanggal Ini)</span></h4>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span id="badgeOfficeDailyCompleted" class="text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-200 dark:border-emerald-800 px-2 py-0.5 rounded-full">0/0</span>
-                  <button onclick="openAddOfficeTaskModal()" class="w-7 h-7 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm flex items-center justify-center cursor-pointer transition-all active:scale-95" title="Tambah Agenda Kantor Tanggal Ini">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                  </button>
-                </div>
-              </div>
-              <div id="officeDailyTasksList" class="space-y-2.5"></div>
-            </div>
-          </div>
-
-          <!-- Kolom Terjadwal Kantor -->
-          <div class="bg-slate-50/70 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative">
-            <div>
-              <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200 dark:border-slate-800">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-teal-500 ring-4 ring-teal-100 dark:ring-teal-950"></span>
-                  <h4 class="text-sm font-bold text-slate-800 dark:text-slate-100">Catatan Kantor Terjadwal</h4>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span id="badgeOfficeScheduledCompleted" class="text-[11px] font-semibold text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/70 border border-teal-200 dark:border-teal-800 px-2 py-0.5 rounded-full">0/0</span>
-                  <button onclick="openAddOfficeScheduledModal()" class="w-7 h-7 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold shadow-sm flex items-center justify-center cursor-pointer transition-all active:scale-95" title="Tambah Catatan Terjadwal Kantor">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                  </button>
-                </div>
-              </div>
-              <div id="officeScheduledTasksList" class="space-y-2.5"></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- SECTION HABIT TRACKER -->
@@ -830,7 +782,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400 font-body">
       <p class="flex items-center gap-1.5">
         <span class="w-2 h-2 rounded-full bg-brand-500"></span>
-        <strong>My Journey Margono Wibowo</strong> &copy; 2026. Jurnal Pribadi, Pekerjaan Kantor, Habit & Time Tracker.
+        <strong>My Journey Margono Wibowo</strong> &copy; 2026. Jurnal Pribadi, Habit & Time Tracker.
       </p>
       <div class="flex items-center gap-4">
         <span>Fokus, Konsisten & Tepat Waktu</span>
@@ -932,73 +884,6 @@
       <div class="flex items-center justify-end gap-2 pt-2">
         <button onclick="closeModal('modalAddTask')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
         <button onclick="saveNewDailyTask()" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-brand-500/20 active:scale-95 cursor-pointer">Simpan Agenda</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="modalAddOfficeScheduled" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 id="modalOfficeScheduledTitle" class="text-base font-bold text-slate-900 dark:text-white">Tambah Catatan Terjadwal Kantor</h3>
-        <button onclick="closeModal('modalAddOfficeScheduled')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <input type="hidden" id="editOfficeScheduledId" value="">
-      <div class="space-y-3 text-xs">
-        <div>
-          <label for="inputOfficeScheduledTitle" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Pekerjaan Kantor Terjadwal:</label>
-          <input type="text" id="inputOfficeScheduledTitle" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="Contoh: Laporan Bulanan Direksi, Tender Proyek, Evaluasi Tim...">
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label for="inputOfficeScheduledDate" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Tanggal Mulai:</label>
-            <input type="date" id="inputOfficeScheduledDate" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none">
-          </div>
-          <div>
-            <label for="inputOfficeScheduledDeadline" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Deadline Kantor:</label>
-            <input type="date" id="inputOfficeScheduledDeadline" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none">
-          </div>
-        </div>
-      </div>
-      <div class="flex items-center justify-end gap-2 pt-2">
-        <button onclick="closeModal('modalAddOfficeScheduled')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveOfficeScheduledTask()" class="px-5 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-md shadow-teal-500/20 active:scale-95 cursor-pointer">Simpan Tugas</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="modalAddOfficeTask" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
-    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full shadow-elevated border border-slate-200 dark:border-slate-800 space-y-4 animate-pop-check">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-900 dark:text-white">Tambah Catatan Harian Kantor</h3>
-        <button onclick="closeModal('modalAddOfficeTask')" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="space-y-3 text-xs">
-        <div>
-          <label for="inputOfficeTaskTitle" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Tugas Kantor:</label>
-          <input type="text" id="inputOfficeTaskTitle" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:outline-none" placeholder="Tuliskan tugas operasional kantor hari ini...">
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label for="inputOfficeTaskDate" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Tanggal Pelaksanaan:</label>
-            <input type="date" id="inputOfficeTaskDate" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-          </div>
-          <div>
-            <label for="inputOfficeTaskPriority" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Prioritas:</label>
-            <select id="inputOfficeTaskPriority" class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-              <option value="high">Tinggi (Penting)</option>
-              <option value="medium" selected>Sedang</option>
-              <option value="low">Rendah / Rutin</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="flex items-center justify-end gap-2 pt-2">
-        <button onclick="closeModal('modalAddOfficeTask')" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">Batal</button>
-        <button onclick="saveNewOfficeDailyTask()" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-500/20 active:scale-95 cursor-pointer">Simpan Tugas</button>
       </div>
     </div>
   </div>
@@ -1262,7 +1147,7 @@
       <div class="space-y-4 text-xs font-body text-slate-600 dark:text-slate-300">
         <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
           <p class="font-bold text-slate-800 dark:text-slate-100 mb-1">Unduh Salinan Data Jurnal:</p>
-          <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-2.5">Simpan semua tugas pribadi, kantor, habit, time tracker, dan refleksi ke berkas .json.</p>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-2.5">Simpan semua tugas pribadi, habit, time tracker, dan refleksi ke berkas .json.</p>
           <button onclick="exportDataToFile()" class="w-full py-2 rounded-xl bg-slate-800 dark:bg-brand-600 hover:bg-slate-900 dark:hover:bg-brand-700 text-white font-bold text-xs transition-all cursor-pointer">
             Download File Data (.json)
           </button>
@@ -1296,8 +1181,6 @@
       ],
       scheduledTasks: [],
       dailyTasks: [],
-      officeTasks: [],
-      officeDailyTasks: [],
       habits: [
         { id: 'hb-1', name: 'Bangun Pagi & Meditasi', color: 'emerald', completions: {} },
         { id: 'hb-2', name: 'Olahraga / Jalan 30 Menit', color: 'indigo', completions: {} },
@@ -1427,7 +1310,7 @@
       try {
         const res = await fetch(GOOGLE_SHEET_URL);
         const cloudData = await res.json();
-        if (cloudData && (cloudData.dailyTasks || cloudData.scheduledTasks || cloudData.officeTasks || cloudData.habits)) {
+        if (cloudData && (cloudData.dailyTasks || cloudData.scheduledTasks || cloudData.habits)) {
           Object.assign(AppState, cloudData);
           showToast('Data berhasil dimuat dari Google Sheet!', 'success');
         } else {
@@ -1863,43 +1746,34 @@
         const holidayName = holidaysOfYear[cellDateStr];
         const isNationalHoliday = !!holidayName;
 
-        const myDailyList = (AppState.dailyTasks || []).filter(t => t.dateStr === cellDateStr);
-        const officeDailyList = (AppState.officeDailyTasks || []).filter(t => t.dateStr === cellDateStr);
+          const myDailyList = (AppState.dailyTasks || []).filter(t => t.dateStr === cellDateStr);
 
-        const pendingMyDaily = myDailyList.filter(t => !t.completed).length;
-        const pendingOfficeDaily = officeDailyList.filter(t => !t.completed).length;
-        const hasPendingTasks = (pendingMyDaily + pendingOfficeDaily) > 0;
+          const pendingMyDaily = myDailyList.filter(t => !t.completed).length;
+          const hasPendingTasks = pendingMyDaily > 0;
 
-        let indicatorsHtml = '';
-        const totalSpecific = myDailyList.length + officeDailyList.length;
-        const totalPendingSpecific = pendingMyDaily + pendingOfficeDaily;
+          let indicatorsHtml = '';
+          const totalSpecific = myDailyList.length;
+          const totalPendingSpecific = pendingMyDaily;
 
-        if (totalSpecific > 0) {
-          indicatorsHtml += `<div class="flex items-center gap-1 flex-wrap justify-end mt-1">`;
-          if (totalPendingSpecific === 0) {
-            indicatorsHtml += `
-              <span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-emerald-500 text-white text-[10px] font-extrabold shadow-xs" title="Semua tugas spesifik hari ini tuntas!">
-                ✓ Selesai
-              </span>
-            `;
-          } else {
-            if (pendingMyDaily > 0) {
+          if (totalSpecific > 0) {
+            indicatorsHtml += `<div class="flex items-center gap-1 flex-wrap justify-end mt-1">`;
+            if (totalPendingSpecific === 0) {
               indicatorsHtml += `
-                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-brand-100 dark:bg-brand-950/80 text-brand-800 dark:text-brand-200 border border-brand-300 dark:border-brand-700 text-[11px] font-black shadow-xs animate-badge-blink" title="${pendingMyDaily} Tugas Saya belum selesai">
-                  <span>👤</span><span>${pendingMyDaily}</span>
+                <span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-md bg-emerald-500 text-white text-[10px] font-extrabold shadow-xs" title="Semua tugas spesifik hari ini tuntas!">
+                  ✓ Selesai
                 </span>
               `;
+            } else {
+              if (pendingMyDaily > 0) {
+                indicatorsHtml += `
+                  <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-brand-100 dark:bg-brand-950/80 text-brand-800 dark:text-brand-200 border border-brand-300 dark:border-brand-700 text-[11px] font-black shadow-xs animate-badge-blink" title="${pendingMyDaily} Tugas Saya belum selesai">
+                    <span>👤</span><span>${pendingMyDaily}</span>
+                  </span>
+                `;
+              }
             }
-            if (pendingOfficeDaily > 0) {
-              indicatorsHtml += `
-                <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 text-[11px] font-black shadow-xs animate-badge-blink" title="${pendingOfficeDaily} Tugas Kantor belum selesai">
-                  <span>💼</span><span>${pendingOfficeDaily}</span>
-                </span>
-              `;
-            }
+            indicatorsHtml += `</div>`;
           }
-          indicatorsHtml += `</div>`;
-        }
 
         const cell = document.createElement('div');
         let classes = 'min-h-[64px] sm:min-h-[74px] p-1.5 sm:p-2 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ';
@@ -2014,11 +1888,6 @@
         agendaBadge.textContent = `(${dayNum} ${monthName} ${yearNum}${isToday ? ' - Hari Ini' : ''})`;
       }
 
-      const officeDateBadge = document.getElementById('officeDateTitleBadge');
-      if (officeDateBadge) {
-        officeDateBadge.textContent = `(${dayNum} ${monthName} ${yearNum}${isToday ? ' - Hari Ini' : ''})`;
-      }
-
       const journalLabel = document.getElementById('journalDateLabel');
       if (journalLabel) {
         journalLabel.textContent = `${dayNum} ${monthName} ${yearNum}`;
@@ -2031,74 +1900,61 @@
       renderTimeTracker();
     }
 
-    function renderActiveTasks() {
-      renderScheduledTasksList();
-      renderDailyTasksList();
-      renderOfficeScheduledTasksList();
-      renderOfficeDailyTasksList();
+      function renderActiveTasks() {
+        renderScheduledTasksList();
+        renderDailyTasksList();
 
-      // Cek apakah ada tugas harian belum selesai pada tanggal yang sedang dipilih
-      const selectedStr = formatDateKey(selectedDate);
-      const myDaily = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr);
-      const officeDaily = (AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr);
-      
-      const pendingMy = myDaily.filter(t => !t.completed).length;
-      const pendingOffice = officeDaily.filter(t => !t.completed).length;
+        // Cek apakah ada tugas harian belum selesai pada tanggal yang sedang dipilih
+        const selectedStr = formatDateKey(selectedDate);
+        const myDaily = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr);
 
-      const cardMyDaily = document.getElementById('containerCardMyDaily');
-      const cardOfficeDaily = document.getElementById('containerCardOfficeDaily');
+        const pendingMy = myDaily.filter(t => !t.completed).length;
 
-      // Warna kedipan mengikuti warna tanggal yang sedang dipilih di kalender.
-      const selectedDayOfWeek = selectedDate.getDay();
-      const selectedYear = selectedDate.getFullYear();
-      const selectedDateStr = formatDateKey(selectedDate);
-      const selectedHoliday = !!((AppState.nationalHolidays[selectedYear] || {})[selectedDateStr]);
-      const pendingColorClass = (selectedDayOfWeek === 0 || selectedHoliday)
-        ? 'pending-sunday'
-        : (selectedDayOfWeek === 6 ? 'pending-saturday' : 'pending-weekday');
+        const cardMyDaily = document.getElementById('containerCardMyDaily');
 
-      const updatePendingGlow = (card, pending) => {
-        if (!card) return;
-        card.classList.remove('container-pending-glow', 'pending-sunday', 'pending-saturday', 'pending-weekday');
-        if (pending > 0) {
-          card.classList.add('container-pending-glow', pendingColorClass);
-        }
-      };
+        // Warna kedipan mengikuti warna tanggal yang sedang dipilih di kalender.
+        const selectedDayOfWeek = selectedDate.getDay();
+        const selectedYear = selectedDate.getFullYear();
+        const selectedDateStr = formatDateKey(selectedDate);
+        const selectedHoliday = !!((AppState.nationalHolidays[selectedYear] || {})[selectedDateStr]);
+        const pendingColorClass = (selectedDayOfWeek === 0 || selectedHoliday)
+          ? 'pending-sunday'
+          : (selectedDayOfWeek === 6 ? 'pending-saturday' : 'pending-weekday');
 
-      updatePendingGlow(cardMyDaily, pendingMy);
-      updatePendingGlow(cardOfficeDaily, pendingOffice);
-    }
+        const updatePendingGlow = (card, pending) => {
+          if (!card) return;
+          card.classList.remove('container-pending-glow', 'pending-sunday', 'pending-saturday', 'pending-weekday');
+          if (pending > 0) {
+            card.classList.add('container-pending-glow', pendingColorClass);
+          }
+        };
 
-    function updateDailyProgress() {
-      const selectedStr = formatDateKey(selectedDate);
-      const myDaily = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr);
-      const officeDaily = (AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr);
+        updatePendingGlow(cardMyDaily, pendingMy);
+      }
 
-      const totalAll = myDaily.length + officeDaily.length;
-      const completedAll = myDaily.filter(t => t.completed).length + officeDaily.filter(t => t.completed).length;
-      const pct = totalAll === 0 ? 0 : Math.round((completedAll / totalAll) * 100);
+      function updateDailyProgress() {
+        const selectedStr = formatDateKey(selectedDate);
+        const myDaily = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr);
 
-      const pPct = document.getElementById('dailyProgressPct');
-      if (pPct) pPct.textContent = `${pct}%`;
+        const totalAll = myDaily.length;
+        const completedAll = myDaily.filter(t => t.completed).length;
+        const pct = totalAll === 0 ? 0 : Math.round((completedAll / totalAll) * 100);
 
-      const pBar = document.getElementById('dailyProgressBar');
-      if (pBar) pBar.style.width = `${pct}%`;
+        const pPct = document.getElementById('dailyProgressPct');
+        if (pPct) pPct.textContent = `${pct}%`;
 
-      const pSub = document.getElementById('dailyProgressSub');
-      if (pSub) pSub.textContent = `${completedAll} dari ${totalAll} tugas spesifik beres`;
+        const pBar = document.getElementById('dailyProgressBar');
+        if (pBar) pBar.style.width = `${pct}%`;
 
-      const countMy = document.getElementById('dailyMyTaskCount');
-      if (countMy) countMy.textContent = `${myDaily.filter(t => t.completed).length}/${myDaily.length} Saya`;
+        const pSub = document.getElementById('dailyProgressSub');
+        if (pSub) pSub.textContent = `${completedAll} dari ${totalAll} tugas spesifik beres`;
 
-      const countOff = document.getElementById('dailyOfficeTaskCount');
-      if (countOff) countOff.textContent = `${officeDaily.filter(t => t.completed).length}/${officeDaily.length} Kantor`;
+        const countMy = document.getElementById('dailyMyTaskCount');
+        if (countMy) countMy.textContent = `${myDaily.filter(t => t.completed).length}/${myDaily.length} Saya`;
 
-      const tabBadgeMy = document.getElementById('tabBadgeMyTasks');
-      if (tabBadgeMy) tabBadgeMy.textContent = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr).length + (AppState.scheduledTasks || []).length;
-
-      const tabBadgeOff = document.getElementById('tabBadgeOfficeTasks');
-      if (tabBadgeOff) tabBadgeOff.textContent = (AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr).length + (AppState.officeTasks || []).length;
-    }
+        const tabBadgeMy = document.getElementById('tabBadgeMyTasks');
+        if (tabBadgeMy) tabBadgeMy.textContent = (AppState.dailyTasks || []).filter(t => t.dateStr === selectedStr).length + (AppState.scheduledTasks || []).length;
+      }
 
     function updateMonthlyProgress() {
       const year = currentViewYear;
@@ -2116,20 +1972,7 @@
         }
       });
 
-      (AppState.officeDailyTasks || []).forEach(t => {
-        const parts = t.dateStr.split('-');
-        if (parseInt(parts[0], 10) === year && parseInt(parts[1], 10) - 1 === month) {
-          monthTotal++;
-          if (t.completed) monthCompleted++;
-        }
-      });
-
       (AppState.scheduledTasks || []).forEach(s => {
-        monthTotal++;
-        if (s.completed) monthCompleted++;
-      });
-
-      (AppState.officeTasks || []).forEach(s => {
         monthTotal++;
         if (s.completed) monthCompleted++;
       });
@@ -2391,250 +2234,6 @@
       AppState.dailyTasks = (AppState.dailyTasks || []).filter(t => t.id !== id);
       playClickSound();
       showToast('Agenda harian dihapus.', 'info');
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
-    function renderOfficeScheduledTasksList() {
-      const container = document.getElementById('officeScheduledTasksList');
-      if (!container) return;
-      container.innerHTML = '';
-
-      let list = [...(AppState.officeTasks || [])];
-      list.sort((a, b) => {
-        if (a.completed !== b.completed) return a.completed ? 1 : -1;
-        return calculateDaysRemaining(a.deadline) - calculateDaysRemaining(b.deadline);
-      });
-
-      const badge = document.getElementById('badgeOfficeScheduledCompleted');
-      if (badge) badge.textContent = `${list.filter(t => t.completed).length}/${list.length}`;
-
-      if (list.length === 0) {
-        container.innerHTML = `<div class="text-center py-6 text-slate-400 dark:text-slate-500 text-xs font-body italic">Belum ada catatan kantor terjadwal.</div>`;
-        return;
-      }
-
-      list.forEach(task => {
-        const days = calculateDaysRemaining(task.deadline);
-        const style = getDeadlineColorStyle(days);
-        const card = document.createElement('div');
-        card.className = `p-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 ${style.cardBorderClass} shadow-sm flex items-center justify-between gap-3 transition-all hover:shadow-md`;
-        card.innerHTML = `
-          <div class="flex items-center gap-3 flex-1 min-w-0">
-            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleOfficeScheduledTask('${task.id}')" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 cursor-pointer">
-            <div class="min-w-0 flex-1">
-              <p class="text-xs font-bold text-slate-800 dark:text-slate-100 truncate ${task.completed ? 'line-through text-slate-400 dark:text-slate-500' : ''}">
-                ${task.title}
-              </p>
-              <div class="flex flex-wrap items-center gap-2 mt-1 text-[10px]">
-                <span class="text-slate-400 dark:text-slate-500">Mulai: ${task.scheduledDate || '-'}</span>
-                <span class="text-slate-400 dark:text-slate-500">•</span>
-                <span class="px-1.5 py-0.5 rounded font-bold border ${style.badgeClass}">
-                  ${task.deadline ? 'Deadline: ' + task.deadline + ' (' + style.label + ')' : 'Tanpa Deadline'}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center gap-1 shrink-0">
-            <button onclick="openEditOfficeScheduledModal('${task.id}')" class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-teal-600 transition-colors" title="Edit">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-            </button>
-            <button onclick="deleteOfficeScheduledTask('${task.id}')" class="p-1.5 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/50 text-slate-400 hover:text-rose-600 transition-colors" title="Hapus">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-            </button>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    function toggleOfficeScheduledTask(id) {
-      const task = (AppState.officeTasks || []).find(t => t.id === id);
-      if (!task) return;
-      task.completed = !task.completed;
-      if (task.completed) {
-        triggerConfettiCelebration();
-        playCelebrationSound();
-        showToast(`Tugas kantor terjadwal selesai: ${task.title}`, 'success');
-        checkDateCompletionForReward(task.scheduledDate || formatDateKey(selectedDate));
-      } else {
-        playClickSound();
-      }
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
-    function openAddOfficeScheduledModal() {
-      document.getElementById('editOfficeScheduledId').value = '';
-      document.getElementById('modalOfficeScheduledTitle').textContent = 'Tambah Catatan Terjadwal Kantor';
-      document.getElementById('inputOfficeScheduledTitle').value = '';
-      document.getElementById('inputOfficeScheduledDate').value = formatDateKey(selectedDate);
-      document.getElementById('inputOfficeScheduledDeadline').value = getOffsetDateString(7);
-      openModal('modalAddOfficeScheduled');
-    }
-
-    function openEditOfficeScheduledModal(id) {
-      const task = (AppState.officeTasks || []).find(t => t.id === id);
-      if (!task) return;
-      document.getElementById('editOfficeScheduledId').value = task.id;
-      document.getElementById('modalOfficeScheduledTitle').textContent = 'Edit Catatan Terjadwal Kantor';
-      document.getElementById('inputOfficeScheduledTitle').value = task.title;
-      document.getElementById('inputOfficeScheduledDate').value = task.scheduledDate || formatDateKey(today);
-      document.getElementById('inputOfficeScheduledDeadline').value = task.deadline || getOffsetDateString(7);
-      openModal('modalAddOfficeScheduled');
-    }
-
-    function saveOfficeScheduledTask() {
-      const editId = document.getElementById('editOfficeScheduledId').value;
-      const title = document.getElementById('inputOfficeScheduledTitle').value.trim();
-      const schedDate = document.getElementById('inputOfficeScheduledDate').value;
-      const deadline = document.getElementById('inputOfficeScheduledDeadline').value;
-
-      if (!title) {
-        showToast('Mohon beri nama tugas kantor terjadwal.', 'warning');
-        return;
-      }
-
-      if (editId) {
-        const task = (AppState.officeTasks || []).find(t => t.id === editId);
-        if (task) {
-          task.title = title;
-          task.scheduledDate = schedDate;
-          task.deadline = deadline;
-          showToast('Catatan kantor terjadwal diperbarui!', 'success');
-        }
-      } else {
-        AppState.officeTasks.push({
-          id: 'ost-' + Date.now(),
-          title: title,
-          scheduledDate: schedDate,
-          deadline: deadline,
-          completed: false
-        });
-        showToast('Catatan kantor terjadwal berhasil ditambahkan!', 'success');
-        playCelebrationSound();
-      }
-
-      closeModal('modalAddOfficeScheduled');
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
-    function deleteOfficeScheduledTask(id) {
-      AppState.officeTasks = (AppState.officeTasks || []).filter(t => t.id !== id);
-      playClickSound();
-      showToast('Catatan kantor terjadwal dihapus.', 'info');
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
-    function renderOfficeDailyTasksList() {
-      const container = document.getElementById('officeDailyTasksList');
-      if (!container) return;
-      container.innerHTML = '';
-
-      const selectedStr = formatDateKey(selectedDate);
-      let list = [...(AppState.officeDailyTasks || []).filter(t => t.dateStr === selectedStr)];
-
-      const priorityWeight = { high: 1, medium: 2, low: 3 };
-      list.sort((a, b) => {
-        if (a.completed !== b.completed) return a.completed ? 1 : -1;
-        return (priorityWeight[a.priority] || 2) - (priorityWeight[b.priority] || 2);
-      });
-
-      const badge = document.getElementById('badgeOfficeDailyCompleted');
-      if (badge) badge.textContent = `${list.filter(t => t.completed).length}/${list.length}`;
-
-      if (list.length === 0) {
-        container.innerHTML = `<div class="text-center py-6 text-slate-400 dark:text-slate-500 text-xs font-body italic">Belum ada agenda kantor di tanggal ini.</div>`;
-        return;
-      }
-
-      list.forEach(task => {
-        const card = document.createElement('div');
-        const pColors = {
-          high: 'text-rose-600 bg-rose-50 dark:bg-rose-950/60 border-rose-200 dark:border-rose-900',
-          medium: 'text-amber-600 bg-amber-50 dark:bg-amber-950/60 border-amber-200 dark:border-amber-900',
-          low: 'text-emerald-600 bg-emerald-50 dark:bg-emerald-950/60 border-emerald-200 dark:border-emerald-800'
-        };
-        card.className = 'p-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between gap-3 transition-all hover:shadow-md';
-        card.innerHTML = `
-          <div class="flex items-center gap-3 flex-1 min-w-0">
-            <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleOfficeDailyTask('${task.id}')" class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 cursor-pointer">
-            <div class="min-w-0 flex-1">
-              <p class="text-xs font-bold text-slate-800 dark:text-slate-100 truncate ${task.completed ? 'line-through text-slate-400 dark:text-slate-500' : ''}">
-                ${task.title}
-              </p>
-              <span class="inline-block mt-0.5 text-[10px] px-1.5 py-0.5 rounded font-semibold border ${pColors[task.priority] || pColors.medium}">
-                Prioritas ${task.priority === 'high' ? 'Tinggi' : task.priority === 'low' ? 'Rendah' : 'Sedang'}
-              </span>
-            </div>
-          </div>
-          <button onclick="deleteOfficeDailyTask('${task.id}')" class="p-1.5 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/50 text-slate-400 hover:text-rose-600 transition-colors" title="Hapus">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-          </button>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    function toggleOfficeDailyTask(id) {
-      const task = (AppState.officeDailyTasks || []).find(t => t.id === id);
-      if (!task) return;
-      task.completed = !task.completed;
-      if (task.completed) {
-        triggerConfettiCelebration();
-        playCelebrationSound();
-        showToast(`Tugas kantor selesai: ${task.title}`, 'success');
-        checkDateCompletionForReward(task.dateStr);
-      } else {
-        playClickSound();
-      }
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
-    function openAddOfficeTaskModal() {
-      document.getElementById('inputOfficeTaskTitle').value = '';
-      document.getElementById('inputOfficeTaskDate').value = formatDateKey(selectedDate);
-      openModal('modalAddOfficeTask');
-    }
-
-    function saveNewOfficeDailyTask() {
-      const title = document.getElementById('inputOfficeTaskTitle').value.trim();
-      const dateVal = document.getElementById('inputOfficeTaskDate').value;
-      const priority = document.getElementById('inputOfficeTaskPriority').value;
-
-      if (!title) {
-        showToast('Mohon tulis nama tugas kantor.', 'warning');
-        return;
-      }
-
-      AppState.officeDailyTasks.push({
-        id: 'odt-' + Date.now(),
-        dateStr: dateVal,
-        title: title,
-        priority: priority,
-        completed: false
-      });
-
-      closeModal('modalAddOfficeTask');
-      showToast('Agenda kantor baru berhasil ditambahkan!', 'success');
-      playCelebrationSound();
-      renderCalendar();
-      updateDateDependents();
-      triggerCloudSave();
-    }
-
-    function deleteOfficeDailyTask(id) {
-      AppState.officeDailyTasks = (AppState.officeDailyTasks || []).filter(t => t.id !== id);
-      playClickSound();
-      showToast('Agenda kantor dihapus.', 'info');
       renderCalendar();
       updateDateDependents();
       triggerCloudSave();
@@ -3224,19 +2823,18 @@
       "Kerja tuntas, hati tenang. Nikmati kebebasan waktu Anda malam ini dengan senyum penuh kepuasan."
     ];
 
-    function checkDateCompletionForReward(dateStr) {
-      const myD = (AppState.dailyTasks || []).filter(t => t.dateStr === dateStr);
-      const offD = (AppState.officeDailyTasks || []).filter(t => t.dateStr === dateStr);
-      const total = myD.length + offD.length;
-      if (total > 0) {
-        const pending = myD.filter(t => !t.completed).length + offD.filter(t => !t.completed).length;
-        if (pending === 0) {
-          setTimeout(() => {
-            openRewardGiftModal();
-          }, 350);
+      function checkDateCompletionForReward(dateStr) {
+        const myD = (AppState.dailyTasks || []).filter(t => t.dateStr === dateStr);
+        const total = myD.length;
+        if (total > 0) {
+          const pending = myD.filter(t => !t.completed).length;
+          if (pending === 0) {
+            setTimeout(() => {
+              openRewardGiftModal();
+            }, 350);
+          }
         }
       }
-    }
 
     function openRewardGiftModal() {
       triggerSuperConfetti();
@@ -3471,11 +3069,9 @@
       reader.onload = function(e) {
         try {
           const imported = JSON.parse(e.target.result);
-          if (imported.scheduledTasks || imported.dailyTasks || imported.officeTasks) {
+          if (imported.scheduledTasks || imported.dailyTasks) {
             AppState.scheduledTasks = imported.scheduledTasks || [];
             AppState.dailyTasks = imported.dailyTasks || [];
-            AppState.officeTasks = imported.officeTasks || [];
-            AppState.officeDailyTasks = imported.officeDailyTasks || [];
             AppState.habits = imported.habits || [];
             if (imported.myPersonalNotes !== undefined) AppState.myPersonalNotes = imported.myPersonalNotes;
             if (imported.reflections) AppState.reflections = imported.reflections;
@@ -3507,7 +3103,7 @@
 
     function switchTab(tabName) {
       playClickSound();
-      const tabs = ['tasks', 'office', 'journal', 'vision'];
+      const tabs = ['tasks', 'journal', 'vision'];
       tabs.forEach(t => {
         const btn = document.getElementById(`tabBtn-${t}`);
         const content = document.getElementById(`tabContent-${t}`);
@@ -3553,16 +3149,6 @@
         { id: 'dt-1', dateStr: getOffsetDateString(0), title: 'Koordinasi Tim & Review Naskah Video', priority: 'high', completed: false },
         { id: 'dt-2', dateStr: getOffsetDateString(0), title: 'Membaca Riset Industri & Analisis Metrik', priority: 'medium', completed: false },
         { id: 'dt-3', dateStr: getOffsetDateString(0), title: 'Jalan Santai 30 Menit Sore', priority: 'low', completed: true }
-      ];
-
-      AppState.officeTasks = [
-        { id: 'ost-1', title: 'Laporan Triwulan Direksi Perusahaan', scheduledDate: getOffsetDateString(0), deadline: getOffsetDateString(3), completed: false },
-        { id: 'ost-2', title: 'Rapat Koordinasi Vendor & Pengadaan', scheduledDate: getOffsetDateString(2), deadline: getOffsetDateString(12), completed: false }
-      ];
-
-      AppState.officeDailyTasks = [
-        { id: 'odt-1', dateStr: getOffsetDateString(0), title: 'Pengecekan Arsip Surat Masuk Kantor', priority: 'high', completed: false },
-        { id: 'odt-2', dateStr: getOffsetDateString(0), title: 'Tanda Tangan Berkas Pengajuan Anggaran', priority: 'medium', completed: false }
       ];
 
       const daysCount = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
